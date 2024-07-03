@@ -10,6 +10,7 @@
     padding: 0;
 }
 
+
 .container {
     display: flex;
     justify-content: center;
@@ -20,24 +21,43 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
+.opacity-manager{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: black;
+    z-index: 0;
+    opacity: 0.75;
+}
+
 
 .planet {
+    position: relative;
     width: 20rem;
     height: 20rem;
-    background: url("https://i.ibb.co/KmW0cqb/venus.jpg");
+    background: url("Images\\pexels-pixabay-41949.jpg");
     border-radius: 50%;
     position: relative;
-    box-shadow: inset -2em -2em 2em rgba(0, 0, 0), -0.5em -0.5em 1em #f0d08b;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #0e0ec7a5;
     animation: rotate 10s linear infinite;
-}
-
-
-.planet
- {
     background-repeat: repeat;
     background-size: 200% 100%;
+    margin: auto;
 }
+.planet-manager{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    background-color: rgba(67, 65, 65, 0.201);
+    z-index: 1;
+}
+.navbar h1{
+    margin: 10px;
+}
+
 
 @keyframes rotate {
     to {
@@ -45,7 +65,10 @@
     }
 }
 .navbar{
-    width: 97%;
+    padding: 5px;
+    border-radius: 13px;
+    width: 98%;
+    background-color: rgb(28, 26, 26);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -76,4 +99,16 @@
 .navbar ul li a:hover {
     color: #ff5722;
     border-bottom: 2px solid #ff5722;
+}
+.scrollbar{
+    display: flex;
+    width: 97%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+@media (max-width:700px){
+    .navbar{
+        flex-direction: column;
+        gap: 12px;
+    }
 }
