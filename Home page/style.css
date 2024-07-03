@@ -37,10 +37,10 @@
     position: relative;
     width: 20rem;
     height: 20rem;
-    background: url("Images\\pexels-pixabay-41949.jpg");
+    background: url("Images\\earth.jpg");
     border-radius: 50%;
     position: relative;
-    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #0e0ec7a5;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #0e0ec7;
     animation: rotate 10s linear infinite;
     background-repeat: repeat;
     background-size: 200% 100%;
