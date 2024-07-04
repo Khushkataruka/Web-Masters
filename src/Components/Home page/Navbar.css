@@ -1,0 +1,55 @@
+/* Orbitron */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+/* Ubuntu */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+nav {
+    height: 58px;
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    z-index: 30;
+    top: 0;
+}
+
+.logo{
+    margin: 15px;
+}
+.logo h1 {
+
+    font-size: 24px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#Cosmic {
+    color: rgb(101, 101, 146);
+}
+
+#Voyage {
+    color: rgb(168, 184, 218);
+}
+.links{
+    margin: 15px;
+}
+.links ul {
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+.links ul li a {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(168, 184, 218);
+}
+
+@media (max-width:629px){
+    nav{
+        flex-direction: column;
+    }
+}

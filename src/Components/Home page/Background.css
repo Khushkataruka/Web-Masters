@@ -1,0 +1,159 @@
+
+/* Ubuntu */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+    font-family: Ubuntu,sans-serif;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.pt {
+    color: wheat;
+    position: absolute;
+    z-index: 10;
+    height: calc(100vh - 98px - 40rem);
+    width: 100%;
+    display: flex;
+    bottom: 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap:20px;
+}
+
+.opacity-manager {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: black;
+    z-index: 0;
+    opacity: 0.75;
+}
+
+
+.planet {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 10s linear infinite;
+    background-repeat: repeat;
+    background-size: 200% 100%;
+    z-index: 30;
+    margin: auto;
+}
+.sun{
+    top: 30px;
+    width: 25rem;
+    height: 25rem;
+    background-image: url("Images/Sun.jpg");
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #fe6a1b;
+}
+@media (max-width:450px){
+    .sun{
+        width: 20rem;
+        height: 20rem;
+    }
+}
+
+.mercury{
+    background-image:url("Images/Mercury.jpg") ;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em rgba(133,133,133,1);
+}
+.venus{
+    background-image:url("Images/Venus.jpg") ;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #f5ca67;
+}
+.earth{
+    background-image:url("Images/earth.jpg") ;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em rgb(11, 11, 126);
+}
+.mars{
+    background-image:url("Images/Mars.jpg") ;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #99503b;
+}
+.jupiter{
+    background-image:url("Images/Jupiter.jpg") ;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #c1cdd2;
+}
+
+.saturn{
+    background-image:url("Images/Saturn.jpg") ;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #f7ddb6;
+}
+.saturn .ring {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 300px;
+    height: 40px;
+    margin-left: -80px;
+    margin-top: -20px;
+    background: radial-gradient(ellipse at center, rgba(16, 15, 15, 0.2), rgba(0, 0, 0, 0.2));
+    border-radius: 50%;
+    transform: rotate(30deg);
+ 
+}
+.uranus{
+    background-image:url("Images/Uranus.jpg");
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #50909a;
+}
+.neptune{
+    background-image:url("Images/Neptune.jpg") ;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #355fb1;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    justify-content: center;
+    margin: 15px;
+    height: fit-content;
+    width: 300px;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: black;
+    position: relative;
+    cursor: pointer;
+    background-color: #242424a8;
+}
+.card img {
+    opacity: 0;
+    width: 100%;
+    object-fit: contain;
+}
+
+.planet-manager {
+    position: absolute;
+    height: inherit;
+    border-radius: 50%;
+    background-color: rgba(25, 23, 23, 0.201);
+    z-index: 1;
+}
+
+
+@keyframes rotate {
+    to {
+        background-position: -200% 0;
+    }
+}
