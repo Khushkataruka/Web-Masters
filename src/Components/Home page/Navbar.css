@@ -14,11 +14,14 @@ nav {
     color: white;
     z-index: 30;
     top: 0;
+    background-color: rgba(28, 27, 27, 0.824);
+
 }
 
-.logo{
+.logo {
     margin: 15px;
 }
+
 .logo h1 {
 
     font-size: 24px;
@@ -32,9 +35,11 @@ nav {
 #Voyage {
     color: rgb(168, 184, 218);
 }
-.links{
+
+.links {
     margin: 15px;
 }
+
 .links ul {
     margin: 5px;
     padding: 5px;
@@ -42,14 +47,15 @@ nav {
     list-style: none;
     gap: 20px;
 }
+
 .links ul li a {
     font-size: 20px;
     text-decoration: none;
     color: rgb(168, 184, 218);
 }
 
-@media (max-width:629px){
-    nav{
+@media (max-width:629px) {
+    nav {
         flex-direction: column;
     }
 }
