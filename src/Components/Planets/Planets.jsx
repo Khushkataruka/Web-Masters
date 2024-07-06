@@ -130,7 +130,7 @@ const Planets = () => {
                 document.querySelector(".sun-ring-container").style.display = "none";
             }
 
-            window.scrollTo({ top: 40, behavior: 'smooth' }); // Scroll to top on click
+            window.scrollTo({ top: 10, behavior: 'smooth' }); // Scroll to top on click
         };
 
         cards.forEach(card => {
