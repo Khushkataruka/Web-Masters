@@ -61,8 +61,8 @@ body {
 .sun {
     width: 22rem;
     height: 22rem;
-    background-image: url("Images/Sun.jpg");
-    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #fe6a1b;
+    background-image: url("Images/planet-3.jpg");
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #0a0856;
 }
 
 @media (max-width:450px) {

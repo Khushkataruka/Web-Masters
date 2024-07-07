@@ -110,9 +110,10 @@ const sunDetails = {
 };
 
 const Planets = () => {
-    const [planetDetails, setPlanetDetails] = useState(sunDetails);
+    const [planetDetails, setPlanetDetails] = useState(planets[2]);
 
     useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         const cards = document.querySelectorAll(".card");
         const sun = document.querySelector(".planet.sun");
 
@@ -130,7 +131,7 @@ const Planets = () => {
                 document.querySelector(".sun-ring-container").style.display = "none";
             }
 
-            window.scrollTo({ top: 10, behavior: 'smooth' }); // Scroll to top on click
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top on click
         };
 
         cards.forEach(card => {
