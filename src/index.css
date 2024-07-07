@@ -9,6 +9,12 @@
 body {
     background-color: white;
 }
+.cosmic{
+    color: black;
+}
+.voyage{
+    color: white;
+}
 
 .Container {
     width: 100%;
@@ -30,7 +36,7 @@ body {
     top: 140px;
     font-family: 'Orbitron', sans-serif;
     margin: 15px;
-    color: rgb(9, 36, 80);
+    color: black;
     transition: all 0.7s ease-in;
 }
 
@@ -42,7 +48,7 @@ body {
     width: 90%;
     margin: 15px;
     font-family: 'Ubuntu', sans-serif;
-    color: rgb(56, 49, 49);
+    color:white;
     font-size: 24px;
     transition: all 0.7s ease-in;
 }

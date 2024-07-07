@@ -25,7 +25,7 @@ function App() {
       element: <> <div className="Container">
         <Navbar />
         <div className="ct">
-          <h1>Cosmic Voyage</h1>
+          <h1><span className="cosmic">Cosmic</span> <span className="voyage">Voyage</span></h1>
           <p>That's one small step for man, one giant leap for mankind.</p>
         </div>
       </div>
