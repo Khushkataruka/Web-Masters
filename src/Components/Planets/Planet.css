@@ -18,7 +18,6 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    justify-content: center;
     min-height: 100vh;
     background-image: url("https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-position: center;
@@ -29,8 +28,6 @@ body {
 
 .pt {
     color: whitesmoke;
-    background-color: white;
-    z-index: 1;
     width: 100%;
     display: flex;
     bottom: 0;
@@ -50,11 +47,10 @@ body {
 
 
 .planet {
-    width: 15rem;
-    height: 15rem;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
     position: relative;
-    top: 15px;
     animation: rotate 10s linear infinite;
     background-repeat: repeat;
     background-size: 200% 100%;
@@ -63,10 +59,10 @@ body {
 }
 
 .sun {
-    width: 40rem;
-    height: 40rem;
+    width: 22rem;
+    height: 22rem;
     background-image: url("Images/planet-3.jpg");
-    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #6561d47a;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #0a0856;
 }
 
 @media (max-width:450px) {
@@ -78,33 +74,33 @@ body {
 
 .mercury {
     background-image: url("Images/planet-1.jpg");
-    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em rgb(53 53 53 / 82%);
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em rgba(133, 133, 133, 1);
 }
 
 .venus {
     background-image: url("Images/planet-2.jpg");
-    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #ffd98361;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #f5ca67;
 }
 
 .earth {
     background-image: url("Images/planet-3.jpg");
-    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em rgba(122, 122, 247, 0.452);
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em rgb(11, 11, 126);
 }
 
 .mars {
     background-image: url("Images/planet-4.jpg");
-    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #994f3b6e;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #99503b;
 }
 
 .jupiter {
     background-image: url("Images/planet-5.jpg");
-    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #c1cdd260;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #c1cdd2;
 }
 
 .saturn {
     z-index: 1;
     background-image: url("Images/planet-6.jpg");
-    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.2em -0.2em 1em #f7ddb652;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.2em -0.2em 1em #f7ddb6;
 }
 
 .ring-container {
@@ -127,7 +123,7 @@ body {
 }
 
 .ring1 {
-    width: 18rem;
+    width: 14rem;
     height: 14rem;
     top: 50%;
     left: 50%;
@@ -135,7 +131,7 @@ body {
 }
 
 .ring2 {
-    width: 20rem;
+    width: 16rem;
     height: 16rem;
     top: 50%;
     left: 50%;
@@ -143,7 +139,7 @@ body {
 }
 
 .ring3 {
-    width: 22rem;
+    width: 20rem;
     height: 18rem;
     top: 50%;
     left: 50%;
@@ -152,30 +148,29 @@ body {
 
 .uranus {
     background-image: url("Images/planet-7.jpg");
-    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #91dce742;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #50909a;
 }
 
 .neptune {
     background-image: url("Images/planet-8.jpg");
-    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #355eb162;
+    box-shadow: inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #355fb1;
 }
 
 
 .card {
     display: flex;
-    background-image: url("Images/abc.jpg");
     flex-direction: column;
     gap: 23px;
     justify-content: center;
     margin: 15px;
     height: fit-content;
-    width: 275px;
+    width: 300px;
     padding: 10px;
     border-radius: 7px;
     background-color: black;
     position: relative;
     cursor: pointer;
-    background-color: #000000f0;
+    background-color: #242424a8;
     transition: all 0.5s;
 }
 
@@ -216,7 +211,6 @@ body {
     margin: 20px 0px;
     width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -263,16 +257,17 @@ body {
     justify-content: space-between;
     color: white;
     width: 50%;
-    background-color: #4d4d4dd3;
+    background-color: #514a4a4a;
     min-height: 450px;
+    margin: 23px;
     border-radius: 20px;
-    z-index: 3;
 }
 
-
-@media(width:375) {
-    .container {
-        width: 457px;
+@media (max-width:1032px) {
+    .sun {
+        margin: 26px 0px;
+        width: 20rem;
+        height: 20rem;
     }
 }
 
@@ -288,41 +283,13 @@ body {
 }
 
 .sun-ring-1 {
-    width: 43rem;
+    width: 25rem;
 }
 
 .sun-ring-2 {
-    width: 46rem;
+    width: 30rem;
 }
 
 .sun-ring-3 {
-    width: 50rem;
-}
-
-@media (max-width:1032px) {
-    .sun {
-        margin: 26px 0px;
-        width: 20rem;
-        height: 20rem;
-    }
-
-    .sun-ring-1 {
-        width: 370px;
-    }
-
-    .sun-ring-2 {
-        width: 400px;
-    }
-
-    .sun-ring-3 {
-        width: 430px;
-    }
-}
-
-@media (min-width:1360px) {
-    .pt {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        justify-items: center;
-    }
+    width: 35rem;
 }

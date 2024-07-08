@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './Planet.css';
-import './Navbar.css';
-
 
 const planets = [
     {
@@ -9,7 +7,7 @@ const planets = [
         title: "Mercury",
         className: "mercury",
         description: "Mercury is the smallest planet in the Solar System and the closest to the Sun. It has a diameter of about 4,880 kilometers. Despite being close to the Sun, it is not the hottest planet due to its lack of atmosphere. Mercury's surface is covered with craters from collisions with asteroids and comets. One of the most prominent features is the Caloris Basin, about 1,550 kilometers in diameter.",
-        box_shadow: "inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em rgb(53 53 53 / 82%)",
+        box_shadow: "inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em rgba(133, 133, 133, 1)",
         details: [
             "Diameter: 4,880 kilometers",
             "Distance from Sun: Closest planet",
@@ -21,7 +19,7 @@ const planets = [
         title: "Venus",
         className: "venus",
         description: "Venus, the second planet from the Sun, is known for its extremely hot surface, with temperatures around 465°C. It has a thick atmosphere composed mainly of carbon dioxide, with clouds of sulfuric acid. Venus rotates slowly and in the opposite direction of most planets. Its surface features vast volcanic plains and mountain ranges.",
-        box_shadow: "inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #ffd98361",
+        box_shadow: "inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #f5ca67",
         details: [
             "Surface Temperature: 465°C",
             "Atmosphere: Thick, mainly carbon dioxide",
@@ -33,7 +31,7 @@ const planets = [
         title: "Earth",
         className: "earth",
         description: "Earth, the third planet from the Sun, is the only known planet to support life. It has diverse climates and geography, including oceans, mountains, forests, and deserts. Earth's atmosphere is mostly nitrogen and oxygen. The planet has a unique system of tectonic plates that cause earthquakes and volcanic activity. About 71% of Earth's surface is covered by water.",
-        box_shadow: "inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em rgba(122, 122, 247, 0.452)",
+        box_shadow: "inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em rgb(11, 11, 126)",
         details: [
             "Diameter: 12,742 kilometers",
             "Distance from Sun: 3rd planet",
@@ -45,7 +43,7 @@ const planets = [
         title: "Mars",
         className: "mars",
         description: "Mars, the fourth planet from the Sun, is known as the Red Planet due to its reddish appearance. It has a diameter of about 6,779 kilometers. Mars features the largest volcano in the Solar System, Olympus Mons, and a canyon system, Valles Marineris. The thin atmosphere is composed mostly of carbon dioxide.",
-        box_shadow: " inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #994f3b6e",
+        box_shadow:" inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #99503b",
         details: [
             "Diameter: 6,779 kilometers",
             "Distance from Sun: 4th planet",
@@ -57,7 +55,7 @@ const planets = [
         title: "Jupiter",
         className: "jupiter",
         description: "Jupiter is the largest planet in the Solar System, known for its Great Red Spot, a massive storm. It has a diameter of about 139,820 kilometers and at least 79 moons, including the four largest: Ganymede, Callisto, Io, and Europa. Jupiter's atmosphere features bands of clouds and complex weather systems.",
-        box_shadow: "inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #c1cdd260",
+        box_shadow: "inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #c1cdd2",
         details: [
             "Diameter: 139,820 kilometers",
             "Distance from Sun: 5th planet",
@@ -69,7 +67,7 @@ const planets = [
         title: "Saturn",
         className: "saturn",
         description: "Saturn, the sixth planet from the Sun, is famous for its ring system made of ice and rock particles. It has a diameter of about 116,460 kilometers and at least 83 moons, with Titan being the largest. Saturn's rings are divided into several main groups, each consisting of thousands of ringlets.",
-        box_shadow: "inset -2em -2em 2em rgb(9, 9, 9), -0.2em -0.2em 1em #f7ddb652",
+        box_shadow: "inset -2em -2em 2em rgb(9, 9, 9), -0.2em -0.2em 1em #f7ddb6",
         details: [
             "Diameter: 116,460 kilometers",
             "Distance from Sun: 6th planet",
@@ -81,7 +79,7 @@ const planets = [
         title: "Uranus",
         className: "uranus",
         description: "Uranus, the seventh planet from the Sun, has a blue-green color due to methane in its atmosphere. It has a diameter of about 50,724 kilometers and is tilted on its side, causing extreme seasonal variations. Uranus has at least 27 moons and a faint ring system.",
-        box_shadow: " inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #91dce742",
+        box_shadow:" inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #50909a",
         details: [
             "Diameter: 50,724 kilometers",
             "Distance from Sun: 7th planet",
@@ -93,7 +91,7 @@ const planets = [
         title: "Neptune",
         className: "neptune",
         description: "Neptune, the eighth planet from the Sun, has a deep blue color. It has a diameter of about 49,244 kilometers and at least 14 moons, with Triton being the largest. Neptune's atmosphere features the fastest winds in the Solar System.",
-        box_shadow: "inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #355eb162",
+        box_shadow: "inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #355fb1",
         details: [
             "Diameter: 49,244 kilometers",
             "Distance from Sun: 8th planet",
@@ -151,25 +149,7 @@ const Planets = () => {
     return (
         <>
             <div className="header">
-                {/* <h1>Planets</h1> */}
-                <div>
-                    <nav>
-                        <div className="logo">
-                            <h1>
-                                <span id="Cosmic">Cosmic</span>
-                                <span id="Voyage">Voyage</span>
-                            </h1>
-                        </div>
-                        <div className="links">
-                            <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">News</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
+                <h1>Planets</h1>
             </div>
             <div className="container">
                 <div className="opacity-manager"></div>
@@ -200,11 +180,10 @@ const Planets = () => {
                         )}
                     </div>
                 </div>
-            </div>
-            <div className="pthead">
                 <div className="pt">
                     {planets.map((planet) => (
                         <div key={planet.id} className="card" data-id={planet.id}>
+                            <h2>{planet.title}</h2>
                             <div className={`planet ${planet.className}`}>
                                 {planet.className === 'saturn' && (
                                     <div className="ring-container">
@@ -214,7 +193,6 @@ const Planets = () => {
                                     </div>
                                 )}
                             </div>
-                            <h2>{planet.title}</h2>
                             <div className="planet-manager"></div>
                         </div>
                     ))}
