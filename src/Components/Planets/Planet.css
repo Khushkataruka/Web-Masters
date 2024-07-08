@@ -293,3 +293,11 @@ body {
 .sun-ring-3 {
     width: 35rem;
 }
+@media (max-width:1132px){
+    .planet-info{
+        flex-direction: column;
+    }
+    .content{
+        width: 94%;
+    }
+}

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Planet.css';
+import Navbar from '../Home page/Navbar';
+
 
 const planets = [
     {
@@ -43,7 +45,7 @@ const planets = [
         title: "Mars",
         className: "mars",
         description: "Mars, the fourth planet from the Sun, is known as the Red Planet due to its reddish appearance. It has a diameter of about 6,779 kilometers. Mars features the largest volcano in the Solar System, Olympus Mons, and a canyon system, Valles Marineris. The thin atmosphere is composed mostly of carbon dioxide.",
-        box_shadow:" inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #99503b",
+        box_shadow: " inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #99503b",
         details: [
             "Diameter: 6,779 kilometers",
             "Distance from Sun: 4th planet",
@@ -79,7 +81,7 @@ const planets = [
         title: "Uranus",
         className: "uranus",
         description: "Uranus, the seventh planet from the Sun, has a blue-green color due to methane in its atmosphere. It has a diameter of about 50,724 kilometers and is tilted on its side, causing extreme seasonal variations. Uranus has at least 27 moons and a faint ring system.",
-        box_shadow:" inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #50909a",
+        box_shadow: " inset -2em -2em 2em rgb(9, 9, 9), -0.5em -0.5em 1em #50909a",
         details: [
             "Diameter: 50,724 kilometers",
             "Distance from Sun: 7th planet",
@@ -148,9 +150,7 @@ const Planets = () => {
 
     return (
         <>
-            <div className="header">
-                <h1>Planets</h1>
-            </div>
+            <Navbar/>
             <div className="container">
                 <div className="opacity-manager"></div>
                 <div className="planet-info">
