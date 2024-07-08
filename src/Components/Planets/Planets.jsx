@@ -201,22 +201,24 @@ const Planets = () => {
                     </div>
                 </div>
             </div>
-            <div className="pt">
-                {planets.map((planet) => (
-                    <div key={planet.id} className="card" data-id={planet.id}>
-                        <div className={`planet ${planet.className}`}>
-                            {planet.className === 'saturn' && (
-                                <div className="ring-container">
-                                    <div className="ring ring1"></div>
-                                    <div className="ring ring2"></div>
-                                    <div className="ring ring3"></div>
-                                </div>
-                            )}
+            <div className="pthead">
+                <div className="pt">
+                    {planets.map((planet) => (
+                        <div key={planet.id} className="card" data-id={planet.id}>
+                            <div className={`planet ${planet.className}`}>
+                                {planet.className === 'saturn' && (
+                                    <div className="ring-container">
+                                        <div className="ring ring1"></div>
+                                        <div className="ring ring2"></div>
+                                        <div className="ring ring3"></div>
+                                    </div>
+                                )}
+                            </div>
+                            <h2>{planet.title}</h2>
+                            <div className="planet-manager"></div>
                         </div>
-                        <h2>{planet.title}</h2>
-                        <div className="planet-manager"></div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </>
     );

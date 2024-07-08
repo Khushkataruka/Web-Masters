@@ -265,7 +265,6 @@ body {
     width: 50%;
     background-color: #4d4d4dd3;
     min-height: 450px;
-    /* margin: 23px; */
     border-radius: 20px;
     z-index: 3;
 }
@@ -299,12 +298,14 @@ body {
 .sun-ring-3 {
     width: 50rem;
 }
+
 @media (max-width:1032px) {
     .sun {
         margin: 26px 0px;
         width: 20rem;
         height: 20rem;
     }
+
     .sun-ring-1 {
         width: 370px;
     }
@@ -315,5 +316,13 @@ body {
 
     .sun-ring-3 {
         width: 430px;
+    }
+}
+
+@media (min-width:1360px) {
+    .pt {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
     }
 }
