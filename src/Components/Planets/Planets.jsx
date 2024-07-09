@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Planet.css';
-import Navbar from '../Home page/Navbar';
+import Navbar from '../Home page/Navbar/Navbar';
 
 
 const planets = [
@@ -128,6 +128,7 @@ const Planets = () => {
             sun.style.boxShadow = selectedPlanet.box_shadow;
 
             if (id === 6) {
+              
                 document.querySelector(".sun-ring-container").style.display = "block";
             } else {
                 document.querySelector(".sun-ring-container").style.display = "none";
@@ -150,7 +151,7 @@ const Planets = () => {
 
     return (
         <>
-            <Navbar/>
+            <Navbar />
             <div className="container">
                 <div className="opacity-manager"></div>
                 <div className="planet-info">

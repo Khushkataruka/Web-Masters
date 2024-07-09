@@ -12,7 +12,7 @@
     margin-top: 5rem;
     width: 15rem;
     height: 400px;
-  
+
     position: relative;
     display: flex;
     align-items: end;
@@ -23,18 +23,22 @@
     background: url("https://science.nasa.gov/wp-content/uploads/2023/04/272_MarsInSight_poster-jpg.webp") center no-repeat;
     background-size: cover;
 }
-.Stars{
-    background: url("src\\Components\\Home page\\pexels-egos68-1906658.jpg") center no-repeat;
+
+.Stars {
+    background: url("src\\Components\\Home page\\HomeImages\\pexels-egos68-1906658.jpg") center no-repeat;
     background-size: cover;
 }
-.Galaxies{
-    background: url("src\\Components\\Home page\\pexels-pixabay-2150.jpg") center no-repeat;
-    background-size: cover; 
-}
-.Constellations{
-    background: url("src\\Components\\Home page\\pexels-samkolder-2387877.jpg") center no-repeat;
+
+.Galaxies {
+    background: url("src\\Components\\Home page\\HomeImages\\pexels-pixabay-2150.jpg") center no-repeat;
     background-size: cover;
 }
+
+.Constellations {
+    background: url("src\\Components\\Home page\\HomeImages\\pexels-samkolder-2387877.jpg") center no-repeat;
+    background-size: cover;
+}
+
 .displaycard:hover {
     transform: scale(1.05);
 }

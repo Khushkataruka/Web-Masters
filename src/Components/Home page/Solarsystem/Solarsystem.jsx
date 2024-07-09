@@ -6,19 +6,19 @@ import { Link } from 'react-router-dom'
 const entities = [
     {
         title: "Planets",
-        link:"/planets"
+        link: "/planets"
     },
     {
         title: "Stars",
-         link:"/stars"
+        link: "/stars"
     },
     {
         title: "Galaxies",
-         link:"/galaxies"
+        link: "/galaxies"
     },
     {
         title: "Constellations",
-         link:"/constellations"
+        link: "/constellations"
     }
 ]
 const Solarsystem = () => {
@@ -29,7 +29,7 @@ const Solarsystem = () => {
                 <div className="info-ss">
                     {entities.map(entity => {
                         return (<div key={entity.title}><Link to={entity.link}>
-                            <div  className={`displaycard ${entity.title}`}>
+                            <div className={`displaycard ${entity.title}`}>
                                 <div className="o-manager">
                                 </div>
                                 <div className="title">

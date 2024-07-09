@@ -1,9 +1,8 @@
 import Planets from "./Components/Planets/Planets"
-import Navbar from "./Components/Home page/Navbar"
-import Solarsystem from "./Components/Home page/Solarsystem"
+import Navbar from "./Components/Home page/Navbar/Navbar"
+import Solarsystem from "./Components/Home page/Solarsystem/Solarsystem"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { useEffect } from "react"
-import { useLocation } from 'react-router-dom';
 
 
 
