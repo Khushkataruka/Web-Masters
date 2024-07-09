@@ -2,6 +2,7 @@ import Planets from "./Components/Planets/Planets"
 import Navbar from "./Components/Home page/Navbar/Navbar"
 import Solarsystem from "./Components/Home page/Solarsystem/Solarsystem"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import News from "./Components/News/News"
 import { useEffect } from "react"
 
 
@@ -21,7 +22,7 @@ function App() {
 
     {
       path: "/",
-      element: <> <div className="Container">
+      element: <><div className="Container">
         <Navbar />
         <div className="ct">
           <h1><span className="cosmic">Cosmic</span> <span className="voyage">Voyage</span></h1>
@@ -34,6 +35,10 @@ function App() {
     {
       path: "/planets",
       element: <><Planets /></>
+    },
+    {
+      path: "/news",
+      element: <><News /></>
     }
 
   ])
