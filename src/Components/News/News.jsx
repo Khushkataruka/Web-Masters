@@ -1,5 +1,6 @@
 // src/News.js
 import React, { useEffect, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import Navbar from '../Home page/Navbar/Navbar';
 import './News.css';
 
@@ -9,23 +10,21 @@ const fetchNews = async (query, page) => {
         throw new Error('Network response was not ok');
     }
     const news = await response.json();
-    pre.href = `/news/?page=${page > 1 ? page - 1 : "#"}`
-    next.href = `/news/?page=${page + 1}`
     return news.articles.filter(article => article.urlToImage); // Filter articles with valid urlToImage
 };
 
 const News = () => {
+    const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
+
     const [news, setNews] = useState([]);
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(parseInt(searchParams.get('page')) || 1);
+    const [query, setQuery] = useState(searchParams.get('query') || "NASA and SpaceX");
 
     useEffect(() => {
-        let page = parseInt(window.location.href.split("?")[1].split("&")[0].split("=")[1])
-        // let query = window.location.href.split("?")[1].split("&")[1].split("=")[1]
-
-
         const getNews = async () => {
             try {
-                const data = await fetchNews("Nasa And SpaceX", page);
+                const data = await fetchNews(query, page);
                 setNews(data);
             } catch (error) {
                 console.error("Error fetching news:", error);
@@ -33,13 +32,19 @@ const News = () => {
         };
 
         getNews();
-        const articlesperpage = 100
-        const totalarticles = News.length
-        const totalpages = Math.ceil(totalarticles / articlesperpage)
+    }, [query, page]); // Add query and page as dependencies to re-fetch news when they change
 
+    const handleQueryChange = (e) => {
+        const newQuery = e.target.value;
+        setQuery(newQuery);
+        setPage(1); // Reset to first page whenever the query changes
+        setSearchParams({ query: newQuery, page: 1 });
+    };
 
-
-    }, []);
+    const handlePageChange = (newPage) => {
+        setPage(newPage);
+        setSearchParams({ query, page: newPage });
+    };
 
     return (
         <div>
@@ -49,6 +54,7 @@ const News = () => {
                     <h1>Latest Space News</h1>
                     <p>Stay up-to-date with the latest content from NASA as we explore the universe and discover more about our home planet.</p>
                 </div>
+
                 <div className="news-cards">
                     {news.length > 0 ? (
                         news.map((article, index) => (
@@ -72,11 +78,15 @@ const News = () => {
             </div>
             <nav className='pages'>
                 <ul className="pagination">
-                    <li className="page-item"><a id='pre' className="page-link" href="#" >Previous</a></li>
-                    <li className="page-item"><a className="page-link" href="#" >1</a></li>
-                    <li className="page-item"><a className="page-link" href="#">2</a></li>
-                    <li className="page-item"><a className="page-link" href="#">3</a></li>
-                    <li className="page-item"><a id='next' className="page-link" href="#" >Next</a></li>
+                    <li className={`page-item ${page <= 1 ? 'disabled' : ''}`} onClick={() => page > 1 && handlePageChange(page - 1)}>
+                        <a id='pre' className="page-link" href="#">Previous</a>
+                    </li>
+                    <li className="page-item"><a className="page-link" href="#" onClick={() => handlePageChange(1)}>1</a></li>
+                    <li className="page-item"><a className="page-link" href="#" onClick={() => handlePageChange(2)}>2</a></li>
+                    <li className="page-item"><a className="page-link" href="#" onClick={() => handlePageChange(3)}>3</a></li>
+                    <li className="page-item" onClick={() => handlePageChange(page + 1)}>
+                        <a id='next' className="page-link" href="#">Next</a>
+                    </li>
                 </ul>
             </nav>
         </div>
