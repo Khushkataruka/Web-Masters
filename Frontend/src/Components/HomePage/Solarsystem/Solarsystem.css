@@ -1,0 +1,76 @@
+.solar-system {
+    width: 97%;
+    margin: 20px auto;
+}
+
+.solar-system h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.displaycard {
+    margin-top: 5rem;
+    width: 15rem;
+    height: 400px;
+
+    position: relative;
+    display: flex;
+    align-items: end;
+    transition: all 0.5s;
+}
+
+.Planets {
+    background: url("https://science.nasa.gov/wp-content/uploads/2023/04/272_MarsInSight_poster-jpg.webp") center no-repeat;
+    background-size: cover;
+}
+
+.Stars {
+    background: url("https://images.pexels.com/photos/1906658/pexels-photo-1906658.jpeg?auto=compress&cs=tinysrgb&w=600") center no-repeat;
+    background-size: cover;
+}
+
+.Galaxies {
+    background: url("src\\Components\\HomePage\\HomeImages\\pexels-pixabay-2150.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.Constellations {
+    background: url("https://images.pexels.com/photos/2387877/pexels-photo-2387877.jpeg?auto=compress&cs=tinysrgb&w=600") center no-repeat;
+    background-size: cover;
+}
+
+.displaycard:hover {
+    transform: scale(1.05);
+}
+
+.info-ss {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0px auto;
+    color: white;
+    justify-content: center;
+}
+
+.o-manager {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 100;
+}
+
+.title {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    margin: 30px 20px;
+}
