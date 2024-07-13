@@ -70,3 +70,12 @@ body {
         display: none;
     }
 }
+
+.welcome {
+    width: 100%;
+    text-align: center;
+    margin: 30px auto;
+    color: white;
+    position: absolute;
+    z-index: 10;
+}

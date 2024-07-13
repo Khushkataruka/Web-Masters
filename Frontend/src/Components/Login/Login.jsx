@@ -1,15 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.css';
 import Navbar from '../HomePage/Navbar/Navbar';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const [isRegister, setIsRegister] = useState(false);
     const { register, handleSubmit } = useForm();
+    const [res, setRes] = useState("");
+    const [isLogged, setIsLogged] = useState(false); // State to manage login status
+    const navigate = useNavigate();
+
+    // Check local storage on component mount
+    useEffect(() => {
+        const storedLoginStatus = localStorage.getItem('isLogged');
+        if (storedLoginStatus === 'true') {
+            setIsLogged(true);
+        }
+    }, []);
 
     const onSubmit = async data => {
         try {
-            const response = await fetch("http://localhost:3000/", {
+            const endpoint = isRegister ? "register" : "login";
+
+            const response = await fetch(`http://localhost:3000/${endpoint}`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -17,13 +31,21 @@ function Login() {
                 },
                 body: JSON.stringify(data)
             });
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const responseData = await response.text();
+            const responseData = await response.json();
+            setRes(responseData.message);
             console.log(responseData);
+
+            if ((response.status === 200 && !isRegister) || (response.status === 201 && isRegister)) {
+                setIsLogged(true); // Set islogged to true upon successful login
+                localStorage.setItem('isLogged', 'true'); // Store login status in local storage
+                localStorage.setItem('name', responseData.data.name)
+                localStorage.setItem('email', responseData.data.email)
+                navigate("/");
+                window.location.reload()
+            }
         } catch (error) {
             console.error("Error:", error);
+            setRes("A network error occurred. Please try again.");
         }
     };
 
@@ -31,7 +53,7 @@ function Login() {
 
     return (
         <>
-            <Navbar />
+            <Navbar isLogged={isLogged} /> {/* Pass islogged state to Navbar */}
             <div className="login-container">
                 <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
                     <h2 className="login-title">{isRegister ? 'Register' : 'Login'}</h2>
@@ -83,6 +105,7 @@ function Login() {
                     <p className="toggle-text" onClick={toggleForm}>
                         {isRegister ? 'Already have an account? Login' : "Don't have an account? Register"}
                     </p>
+                    <p id="check">{res}</p>
                 </form>
             </div>
         </>

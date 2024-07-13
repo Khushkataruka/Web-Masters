@@ -8,13 +8,15 @@ import Login from "./Components/Login/Login";
 
 function App() {
   useEffect(() => {
-    const container = document.querySelector(".ct");
-    if (container) {
-      const [heading, paragraph] = container.children;
-      heading.style.top = "0";
-      heading.style.opacity = "1";
-      paragraph.style.top = "0";
-      paragraph.style.opacity = "1";
+    if (window.location.pathname==="/") {
+      const container = document.querySelector(".ct");
+      if (container) {
+        const [heading, paragraph] = container.children;
+        heading.style.top = "0";
+        heading.style.opacity = "1";
+        paragraph.style.top = "0";
+        paragraph.style.opacity = "1";
+      }
     }
   }, []);
 
@@ -24,6 +26,9 @@ function App() {
       element: (
         <div className="Container">
           <Navbar />
+          {localStorage.getItem("isLogged") == "true" &&
+            <h1 className="welcome">{`Welcome ${localStorage.getItem("name")}`}</h1>
+          }
           <div className="ct">
             <h1>
               <span className="cosmic">Cosmic</span> <span className="voyage">Voyage</span>
@@ -43,8 +48,8 @@ function App() {
       element: <News />,
     },
     {
-      path:"/login",
-      element:<Login/>
+      path: "/login",
+      element: <Login />
     }
   ]);
 

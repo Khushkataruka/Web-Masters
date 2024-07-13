@@ -21,16 +21,19 @@ const News = () => {
     const [news, setNews] = useState([]);
     const [page, setPage] = useState(parseInt(searchParams.get('page')) || 1);
     const [query, setQuery] = useState(searchParams.get('query') || "NASA and SpaceX");
+    const [loading, setLoading] = useState(false); // Loader state
 
     // Fetch news whenever the query or page changes
     useEffect(() => {
         const getNews = async () => {
+            setLoading(true); // Start loading
             try {
                 const data = await fetchNews(query, page);
                 setNews(data);
             } catch (error) {
                 console.error("Error fetching news:", error);
             }
+            setLoading(false); // End loading
         };
 
         getNews();
@@ -53,32 +56,40 @@ const News = () => {
     return (
         <div>
             <Navbar />
+
             <div className="news-content">
                 <div className="heading">
                     <h1>Latest Space News</h1>
                     <p>Stay up-to-date with the latest content from NASA as we explore the universe and discover more about our home planet.</p>
                 </div>
-
-                <div className="news-cards">
-                    {news.length > 0 ? (
-                        news.map((article, index) => (
-                            <div className="news-card" key={index}>
-                                {article.urlToImage && (
-                                    <>
-                                        <img src={article.urlToImage} alt={article.title} />
-                                        <div className="abt-news">
-                                            <h2>{article.title}</h2>
-                                            <p>{article.description}</p>
-                                            <a href={article.url} target="_blank" rel="noopener noreferrer">Read more</a>
-                                        </div>
-                                    </>
-                                )}
+                {localStorage.getItem("isLogged") === "true" ? (
+                    <div className="news-cards">
+                        {loading ? (
+                            <div className="spinner-container">
+                                <div className="spinner"></div>
                             </div>
-                        ))
-                    ) : (
-                        <p>No news available</p>
-                    )}
-                </div>
+                        ) : news.length > 0 ? (
+                            news.map((article, index) => (
+                                <div className="news-card" key={index}>
+                                    {article.urlToImage && (
+                                        <>
+                                            <img src={article.urlToImage} alt={article.title} />
+                                            <div className="abt-news">
+                                                <h2>{article.title}</h2>
+                                                <p>{article.description}</p>
+                                                <a href={article.url} target="_blank" rel="noopener noreferrer">Read more</a>
+                                            </div>
+                                        </>
+                                    )}
+                                </div>
+                            ))
+                        ) : (
+                            <p>No news available</p>
+                        )}
+                    </div>
+                ) : (
+                    <h1 className="checklogin">Login To Watch News</h1>
+                )}
             </div>
 
             <nav className='pages'>
