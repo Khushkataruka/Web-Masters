@@ -1,6 +1,7 @@
 
 .news-content {
     margin: 23px;
+    color: white;
 }
 
 .heading {
@@ -59,6 +60,7 @@
     }
 }
 .pagination{
+    background-color: black;
     display: flex;
     align-items: center;
     list-style: none;
@@ -78,8 +80,8 @@
     font-weight: 200;
 }
 .pages ul li a:hover{
-    color: black;
-    font-weight: 400;
+    color: #f3f3f3;
+    font-weight: 500;
 }
 .checklogin{
     width: 100%;
