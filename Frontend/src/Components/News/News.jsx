@@ -39,6 +39,14 @@ const News = () => {
         getNews();
     }, [query, page]);
 
+    useEffect(() => {
+        if (window.location.pathname == "/news") {
+            document.body.style.backgroundColor = "black"
+        }
+
+    }, [])
+
+
     // Handle changes in the search query
     const handleQueryChange = (e) => {
         const newQuery = e.target.value;
