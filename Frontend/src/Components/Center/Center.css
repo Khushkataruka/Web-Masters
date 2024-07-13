@@ -1,0 +1,136 @@
+.space-centers {
+    width: 100%;
+    position: relative;
+}
+
+.nasa {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.i1 {
+    position: relative;
+    justify-items: center;
+    background:
+        linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%),
+        url('nasa.jpg') center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 90vh;
+    width: 100%;
+}
+
+.parent {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
+    padding: 4.5rem 0;
+    display: flex;
+}
+
+.grid {
+    padding: 4.5rem 1.5rem;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 85rem;
+}
+
+.details1 {
+    display: flex;
+    height: inherit;
+    color: white;
+    background-color: transparent;
+}
+
+.row1 {
+    flex: 0 1 auto;
+}
+
+.row-content {
+    margin: 0;
+    display: block;
+}
+
+.row-content h2 {
+    font-weight: 800;
+    line-height: 1;
+    font-size: 5rem;
+    font-family: "inter", sans-serif;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.row-content p {
+    font-size: 1.1rem;
+    line-height: 1.65em;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-family: "Public Sans Web", sans-serif;
+}
+
+.empty {
+    width: 50%;
+}
+
+@media (max-width:576px) {
+    .row-content h2 {
+        font-size: 3rem;
+    }
+
+    .row-content p {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width:1023px) {
+    .row1 {
+        width: 100%;
+    }
+
+    .empty {
+        display: none;
+    }
+}
+
+/* .topic1 {
+    position: relative;
+    height: 80%;
+    width: 70%;
+}
+
+.i2 {
+    position: relative;
+    background: url('isro.jpg') center no-repeat;
+    background-size: cover;
+    height: 80%;
+    width: 30%;
+    margin: 15px;
+}
+
+.topic2 {
+    position: relative;
+    height: 80%;
+    width: 70%;
+}
+
+.i3 {
+    position: relative;
+    background: url('spacex.jpg') center no-repeat;
+    background-size: cover;
+    height: 80%;
+    width: 30%;
+    margin: 15px;
+}
+
+.topic3 {
+    position: relative;
+    height: 80%;
+    width: 70%;
+} */

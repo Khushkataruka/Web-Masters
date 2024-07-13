@@ -31,6 +31,7 @@ const Navbar = () => {
                 <div className="links">
                     <ul>
                         <li onClick={() => { window.location.reload() }}><Link to="/">Home</Link></li>
+                        <li onClick={()=>{window.location.reload}}><Link to="/about">About</Link></li>
                         <li onClick={()=>{window.location.reload}}><Link to="/news">News</Link></li>
                         <li>
                             {isLogged ? (

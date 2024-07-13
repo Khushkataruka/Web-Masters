@@ -298,7 +298,7 @@ body {
     .content {
         width: 94%;
         margin: 23px 0px;
-        
+
     }
 }
 
@@ -339,5 +339,14 @@ body {
 
     .sun-ring-1 {
         width: 16rem;
+    }
+}
+
+@media(min-width:1448px) {
+    .pt {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-items: center;
     }
 }

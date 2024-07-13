@@ -1,0 +1,70 @@
+import React from 'react';
+import './Footer.css';
+import { FacebookRounded, Twitter, X, YouTube, Instagram, LinkedIn } from '@mui/icons-material';
+
+
+const Footer = () => {
+    return (
+        <div>
+            <footer>
+                <div class="footer-content">
+                    <div className="footer-child">
+                        <div className="footer-title">
+                            <div className="footer-title-child">
+
+                                <h3 className='logo'><span id="Cosmic">Cosmic</span>
+                                    <span id="Voyage">Voyage</span></h3>
+                                <p>Embark on a journey through the cosmos with Cosmic Voyage, where the universe is our destination</p>
+                            </div>
+                        </div>
+                        <div className="all-links">
+                            <div className="footer-links">
+                                <div className="footer-tags">
+                                    <ul>
+                                        <li className="tags"><a href="/">Home</a></li>
+                                        <li className="tags"><a href="#">About</a></li>
+                                        <li className="tags"><a href="/news">News</a></li>
+                                        <li className="tags"><a href="#">Contact Us</a></li>
+                                        <li className="links"><a href="/planets">Planets</a></li>
+                                        <li className="links"><a href="#">Stars</a></li>
+                                        <li className="links"><a href="#">Galaxies</a></li>
+                                        <li className="links"><a href="#">Constellations</a></li>
+                                        <li className="links"><a href="/center">Space Centers</a></li>
+                                        <li className="links"><a href="/login">Sign up / Log in</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="symbols">
+                            <div className="symbols-child">
+                                <div className="social-media">
+                                    <p>Follow us </p>
+                                    <ul>
+                                        <li id='facebook'><a ><FacebookRounded /></a></li>
+                                        <li id='twitter'><a><Twitter /></a></li>
+                                        <li id='x'><a><X /></a></li>
+                                        <li id='youtube'><a><YouTube /></a></li>
+                                        <li id='instagram'><a><Instagram /></a></li>
+                                        <li id='linkedin'><a><LinkedIn /></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="email-subscription"><from className="subscription-form">
+                                <lable for="email">Subscribe</lable> <br /> <br /> <br />
+                                <input type="email" placeholder="E-Mail Adress" id="email">
+                                </input>
+                                <button type="submit">Send</button>
+                            </from></div>
+                        </div>
+                    </div>
+                    <div className="footer-bottom">
+                        <p>Copyright  © <a href="#">Web Masters</a>  </p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    )
+}
+
+export default Footer

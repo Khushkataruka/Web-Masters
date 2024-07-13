@@ -5,10 +5,13 @@ import Navbar from "./Components/HomePage/Navbar/Navbar"; // Changed Home page t
 import Solarsystem from "./Components/HomePage/Solarsystem/Solarsystem"; // Changed Home page to HomePage for consistency
 import News from "./Components/News/News";
 import Login from "./Components/Login/Login";
+import Sc from "./Components/HomePage/Sc/Sc";
+import Center from "./Components/Center/Center";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   useEffect(() => {
-    if (window.location.pathname==="/") {
+    if (window.location.pathname === "/") {
       const container = document.querySelector(".ct");
       if (container) {
         const [heading, paragraph] = container.children;
@@ -36,20 +39,38 @@ function App() {
             <p>That's one small step for man, one giant leap for mankind.</p>
           </div>
           <Solarsystem />
+          <Sc />
+          <Footer />
         </div>
       ),
     },
     {
       path: "/planets",
-      element: <Planets />,
+      element: <>
+        <Planets />
+        <Footer />
+      </>
     },
     {
       path: "/news",
-      element: <News />,
+      element: <>
+        <News />
+        {/* <Footer /> */}
+      </>
     },
     {
       path: "/login",
-      element: <Login />
+      element: <>
+        <Login />
+        <Footer />
+      </>
+    },
+    {
+      path: "/center",
+      element: <>
+        <Center />
+        <Footer />
+      </>
     }
   ]);
 
