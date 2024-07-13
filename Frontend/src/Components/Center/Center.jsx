@@ -35,6 +35,36 @@ const Center = () => {
                         <div className="topic1"></div>
                     </div>
                 </div>
+                <div className="nasa-box">
+                    <input type="checkbox" id="myCheckbox" />
+                    <div className="nasa-box-child">
+                        <div className="nasa-box-content">
+                            <div className="nasa-topic">
+                                <div className="topic-heading">
+                                    <h3>Hubs of Innovation</h3>
+                                </div>
+                                <div className="topic-main"><p>
+                                    NASA's Space Research Centers are the beating heart of space exploration and innovation.
+                                    Each center specializes in different aspects of space science, technology development,
+                                    and mission planning, playing a crucial role in advancing our understanding of the universe
+                                    and enhancing our capabilities to explore it. Here's a closer look at some
+                                    of the key research centers and their contributions to space exploration:</p></div>
+                                <div className="topic-footer">
+                                    <label htmlFor="myCheckbox" style={{ cursor: 'pointer' }}>
+                                        More Info
+                                    </label>
+                                </div>
+                            </div>
+                            <div className="nasa-img">
+                                <div className="nasa-img-child">
+                                    {/* <div className="nasa-img-main">
+                                    </div> */}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
                 <div className="isro">
                     <div className="i2"></div>
                     <div className="topic2"></div>

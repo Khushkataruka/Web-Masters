@@ -79,6 +79,92 @@
     width: 50%;
 }
 
+.nasa-box {
+    width: 100%;
+    display: block;
+    height: 50%;
+}
+
+.nasa-box-child {
+    height: 100%;
+    width: inherit;
+    max-width: 85rem;
+    padding: 4.5rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    /* display: block; */
+    /* margin: 0rem 6rem; */
+}
+
+.nasa-box-content {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* display: flex; */
+    /* grid-template-columns: repeat(2, 1fr); */
+
+}
+
+.nasa-topic {
+    /* display: grid; */
+    width: 50%;   
+    
+    height: inherit;
+}
+.topic-heading h3{
+    font-family: "inter", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.05em;
+ 
+}
+
+.topic-main p {
+    line-height: 2rem;
+    font-size: 1rem;
+    font-family: "Public Sans Web", sans-serif;
+     margin: 3rem 0rem;
+}
+.nasa-img{
+      width: 50%;
+      position: relative;
+      display: block;
+}
+.nasa-img-child {
+    position: relative;
+    width: 100%;
+    background: url("space1.jpg") center no-repeat;
+    background-size: contain;
+    height: 40vh;
+    /* padding-left: 2.5rem; */
+}
+
+/* .nasa-img-child {
+    width: 100%;
+    display: block;
+}
+
+.nasa-img-main {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 100%;
+    width: 100%;
+} */
+
+/* figure{
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+    background: url(space.jpg) center no-repeat;
+    background-size: cover;
+    height: 100%;
+} */
+
 @media (max-width:576px) {
     .row-content h2 {
         font-size: 3rem;

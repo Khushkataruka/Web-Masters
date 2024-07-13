@@ -207,9 +207,17 @@ svg:hover {
         grid-template-columns: auto auto auto;
         column-gap: 10px;
     }
-
+    .footer-links{
+        margin: 0;
+    }
     .symbols {
         grid-column: 1/4;
+    }
+    .email-subscription{
+        margin: 0;
+    }
+    .symbols p{
+        margin-top: 0;
     }
 
 }
