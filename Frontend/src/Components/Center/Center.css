@@ -15,7 +15,7 @@
     justify-items: center;
     background:
         linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%),
-        url('nasa.jpg') center no-repeat;
+        url('CenterImage/nasa.jpg') center no-repeat;
     background-size: cover;
     overflow: hidden;
     height: 90vh;
@@ -27,7 +27,7 @@
     justify-items: center;
     background:
         linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%),
-        url('spacex.webp') center no-repeat;
+        url('CenterImage/spacex.webp') center no-repeat;
     background-size: cover;
     overflow: hidden;
     height: 90vh;
@@ -39,7 +39,7 @@
     justify-items: center;
     background:
         linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%),
-        url('isro.webp') center no-repeat;
+        url('CenterImage/isro.webp') center no-repeat;
     background-size: cover;
     overflow: hidden;
     height: 90vh;
@@ -197,7 +197,7 @@
 }
 
 .sc-img-child {
-    background: url("space1.jpg") center no-repeat;
+    background: url("CenterImage/space1.jpg") center no-repeat;
     position: relative;
     width: 100%;
     background-size: contain;
@@ -271,7 +271,7 @@
 }
 
 .ksc-img {
-    background: url("ksc.webp") center no-repeat;
+    background: url("CenterImage/ksc.webp") center no-repeat;
     position: relative;
     width: 100%;
     background-size: contain;
@@ -279,7 +279,7 @@
 }
 
 .jsc-img {
-    background: url(jsc.jpg) center no-repeat;
+    background: url("CenterImage/jsc.jpg") center no-repeat;
     position: relative;
     width: 100%;
     background-size: contain;
@@ -287,7 +287,7 @@
 }
 
 .jpl-img {
-    background: url(jpl.jpg) center no-repeat;
+    background: url("CenterImage/jpl.jpg") center no-repeat;
     position: relative;
     width: 100%;
     background-size: contain;
@@ -296,7 +296,7 @@
 
 
 .spacex-img-child {
-    background: url(space2.jpg) center no-repeat;
+    background: url("CenterImage/space2.jpg") center no-repeat;
     position: relative;
     width: 100%;
     background-size: contain;
@@ -304,7 +304,7 @@
 }
 
 .isro-img-child {
-    background: url(space3.jpg) center no-repeat;
+    background: url("CenterImage/space3.jpg") center no-repeat;
     position: relative;
     width: 100%;
     background-size: contain;
@@ -312,7 +312,7 @@
 }
 
 .falcon-img {
-    background: url("falcon.jpeg") center no-repeat;
+    background: url("CenterImage/falcon.jpeg") center no-repeat;
     position: relative;
     width: 100%;
     background-size: contain;
@@ -320,7 +320,7 @@
 }
 
 .dragon-img {
-    background: url(dragon.webp) center no-repeat;
+    background: url("CenterImage/dragon.webp") center no-repeat;
     position: relative;
     width: 100%;
     background-size: contain;
@@ -328,7 +328,7 @@
 }
 
 .starship-img {
-    background: url(starship.webp) center no-repeat;
+    background: url("CenterImage/starship.webp") center no-repeat;
     position: relative;
     width: 100%;
     background-size: contain;
@@ -336,7 +336,7 @@
 }
 
 .chandrayaan-img {
-    background: url("chandrayaan.jpg") center no-repeat;
+    background: url("CenterImage/chandrayaan.jpg") center no-repeat;
     position: relative;
     width: 93%;
     background-size: contain;
@@ -344,7 +344,7 @@
 }
 
 .mangalyaan-img {
-    background: url("Mangalyaan.jpeg") center no-repeat;
+    background: url("CenterImage/Mangalyaan.jpeg") center no-repeat;
     position: relative;
     width: 93%;
     background-size: contain;
@@ -352,7 +352,7 @@
 }
 
 .aditya-img {
-    background: url("adithya.webp") center no-repeat;
+    background: url("CenterImage/adithya.webp") center no-repeat;
     position: relative;
     width: 93%;
     background-size: contain;
@@ -406,7 +406,7 @@
     .chandrayaan-img,
     .aditya-img,
     .mangalyaan-img {
-        background: url(/src/Components/Center/space1.jpg) center no-repeat;
+        background: url("CenterImage/space1.jpg") center no-repeat;
         background-size: cover;
         height: inherit;
         transform: scale(1);
@@ -419,57 +419,57 @@
     }
 
     .ksc-img {
-        background: url("ksc.webp") center no-repeat;
+        background: url("CenterImage/ksc.webp") center no-repeat;
         background-size: cover;
     }
 
     .spacex-img-child {
-        background: url(space2.jpg) center no-repeat;
+        background: url("CenterImage/space2.jpg") center no-repeat;
         background-size: cover;
     }
 
     .isro-img-child {
-        background: url(space3.jpg) center no-repeat;
+        background: url("CenterImage/space3.jpg") center no-repeat;
         background-size: cover;
     }
 
     .jsc-img {
-        background: url(jsc.jpg) center no-repeat;
+        background: url("CenterImage/jsc.jpg") center no-repeat;
         background-size: cover;
     }
 
     .jpl-img {
-        background: url(jpl.jpg) center no-repeat;
+        background: url("CenterImage/jpl.jpg") center no-repeat;
         background-size: cover;
     }
 
     .falcon-img {
-        background: url(falcon.jpeg) center no-repeat;
+        background: url("CenterImage/falcon.jpeg") center no-repeat;
         background-size: cover;
     }
 
     .dragon-img {
-        background: url(dragon.webp) center no-repeat;
+        background: url("CenterImage/dragon.webp") center no-repeat;
         background-size: cover;
     }
 
     .starship-img {
-        background: url(starship.webp) center no-repeat;
+        background: url("CenterImage/starship.webp") center no-repeat;
         background-size: cover;
     }
 
     .chandrayaan-img {
-        background: url(chandrayaan.jpg) center no-repeat;
+        background: url("CenterImage/chandrayaan.jpg") center no-repeat;
         background-size: cover;
     }
 
     .mangalyaan-img {
-        background: url(Mangalyaan.jpeg) center no-repeat;
+        background: url("CenterImage/Mangalyaan.jpeg") center no-repeat;
         background-size: cover;
     }
 
     .aditya-img {
-        background: url(adithya.webp) center no-repeat;
+        background: url("CenterImage/adithya.webp") center no-repeat;
         background-size: cover;
     }
 
