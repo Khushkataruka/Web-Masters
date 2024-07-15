@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Planets from "./Components/Planets/Planets";
 import Navbar from "./Components/HomePage/Navbar/Navbar"; // Changed Home page to HomePage for consistency
+import Stars from "./Components/Stars/Stars";
+import Galaxies from "./Components/Galaxies/Galaxies";
 import Solarsystem from "./Components/HomePage/Solarsystem/Solarsystem"; // Changed Home page to HomePage for consistency
 import News from "./Components/News/News";
 import Login from "./Components/Login/Login";
@@ -50,6 +52,24 @@ function App() {
         <Planets />
         <Footer />
       </>
+    },
+    {
+      path: "/Stars",
+      element: (
+        <>
+          <Stars />
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: "/Galaxies",
+      element: (
+        <>
+          <Galaxies />
+          <Footer />
+        </>
+      ),
     },
     {
       path: "/news",
