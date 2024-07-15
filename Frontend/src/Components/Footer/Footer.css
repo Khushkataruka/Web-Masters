@@ -219,5 +219,7 @@ svg:hover {
     .symbols p{
         margin-top: 0;
     }
-
+    .symbols{
+        margin-bottom: 1rem;
+    }
 }

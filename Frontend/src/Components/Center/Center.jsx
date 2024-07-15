@@ -6,8 +6,10 @@ import CloseIcon from '@mui/icons-material/Close';
 const Center = () => {
     const [isExpandedNASA, setIsExpandedNASA] = useState(false);
     const [isExpandedSpaceX, setIsExpandedSpaceX] = useState(false);
+    const [isExpandedISRO, setIsExpandedISRO] = useState(false);
     const slideBoxRefNASA = useRef(null);
     const slideBoxRefSpaceX = useRef(null);
+    const slideBoxRefISRO = useRef(null);
 
     useEffect(() => {
         // Scroll to the top of the page when the component mounts
@@ -20,6 +22,10 @@ const Center = () => {
 
     const handleCheckboxChangeSpaceX = () => {
         setIsExpandedSpaceX(!isExpandedSpaceX);
+    };
+
+    const handleCheckboxChangeISRO = () => {
+        setIsExpandedISRO(!isExpandedISRO);
     };
 
     return (
@@ -251,12 +257,12 @@ const Center = () => {
                                                     <h3>Falcon Heavy</h3>
                                                 </div>
                                                 <div className="topic-main"><p>
-                                                <b>Falcon Heavy </b>is one of SpaceX's most powerful rockets, designed to carry large payloads to various 
-                                                orbits and beyond. As the world's most powerful operational rocket, Falcon Heavy can lift nearly 64 
-                                                metric tons (141,000 pounds) into orbit, more than twice the payload capacity of the next closest operational vehicle.
-                                                The rocket consists of three Falcon 9 nine-engine cores, whose 27 Merlin engines together generate more than 5 million pounds of thrust at liftoff. 
-                                                This immense power allows Falcon Heavy to carry heavy and complex payloads, making it ideal for a variety of missions, including commercial satellite 
-                                                launches and interplanetary exploration.
+                                                    <b>Falcon Heavy </b>is one of SpaceX's most powerful rockets, designed to carry large payloads to various
+                                                    orbits and beyond. As the world's most powerful operational rocket, Falcon Heavy can lift nearly 64
+                                                    metric tons (141,000 pounds) into orbit, more than twice the payload capacity of the next closest operational vehicle.
+                                                    The rocket consists of three Falcon 9 nine-engine cores, whose 27 Merlin engines together generate more than 5 million pounds of thrust at liftoff.
+                                                    This immense power allows Falcon Heavy to carry heavy and complex payloads, making it ideal for a variety of missions, including commercial satellite
+                                                    launches and interplanetary exploration.
                                                 </p></div>
                                                 <div className="topic-footer">
                                                     <a href='https://www.spacex.com/vehicles/starship/'>Learn More</a>
@@ -277,11 +283,11 @@ const Center = () => {
                                                     <h3>Dragon</h3>
                                                 </div>
                                                 <div className="topic-main"><p>
-                                                    <b>Dragon</b> is a spacecraft developed by SpaceX to transport cargo and crew to space. 
-                                                    It is part of SpaceX's efforts to make space travel more affordable and accessible, and 
-                                                    it plays a key role in the company's vision for the future of space exploration.The Dragon 
-                                                    spacecraft is capable of carrying up to 7 passengers to and from Earth orbit, and beyond. 
-                                                    It is the only spacecraft currently flying that is capable of returning significant amounts 
+                                                    <b>Dragon</b> is a spacecraft developed by SpaceX to transport cargo and crew to space.
+                                                    It is part of SpaceX's efforts to make space travel more affordable and accessible, and
+                                                    it plays a key role in the company's vision for the future of space exploration.The Dragon
+                                                    spacecraft is capable of carrying up to 7 passengers to and from Earth orbit, and beyond.
+                                                    It is the only spacecraft currently flying that is capable of returning significant amounts
                                                     of cargo to Earth, and is the first private spacecraft to take humans to the space station.</p></div>
                                                 <div className="topic-footer">
                                                     <a href='https://www.spacex.com/vehicles/dragon/'>Learn More</a>
@@ -302,11 +308,11 @@ const Center = () => {
                                                     <h3>Starship</h3>
                                                 </div>
                                                 <div className="topic-main"><p>
-                                                    <b>Starship</b> is SpaceX's next-generation spacecraft designed to carry both crew and cargo to a variety of destinations, 
+                                                    <b>Starship</b> is SpaceX's next-generation spacecraft designed to carry both crew and cargo to a variety of destinations,
                                                     including the Moon, Mars, and beyond. It represents SpaceX's most ambitious project to date, aiming to make human space travel
-                                                     more accessible and to facilitate the colonization of other planets.Starship is the world’s most powerful launch vehicle ever
-                                                      developed, capable of carrying up to 150 metric tonnes fully reusable and 250 metric tonnes expendable.Development and manufacturing 
-                                                      of Starship takes place at Starbase, one of the world’s first commercial spaceports designed for orbital missions.</p></div>
+                                                    more accessible and to facilitate the colonization of other planets.Starship is the world’s most powerful launch vehicle ever
+                                                    developed, capable of carrying up to 150 metric tonnes fully reusable and 250 metric tonnes expendable.Development and manufacturing
+                                                    of Starship takes place at Starbase, one of the world’s first commercial spaceports designed for orbital missions.</p></div>
                                                 <div className="topic-footer">
                                                     <a href='https://www.spacex.com/vehicles/starship/'>Learn More</a>
                                                 </div>
@@ -319,8 +325,147 @@ const Center = () => {
                     </div>
                 </div>
                 <div className="isro">
-                    <div className="i2"></div>
-                    <div className="topic2"></div>
+                    <div className="i1">
+                        <div className="parent">
+                            <div className="grid">
+                                <div className="details1">
+                                    <div className="row1">
+                                        <div className="row-content">
+                                            <h2>
+                                                ISRO
+                                            </h2>
+                                            <p>The Indian Space Research Organisation (ISRO) is dedicated to harnessing space technology for national development while
+                                                pursuing space science research and planetary exploration. ISRO has made significant advancements in satellite communication,
+                                                remote sensing, and the development of launch vehicles. With ambitious missions such as Chandrayaan and Mangalyaan, ISRO is
+                                                at the forefront of space exploration, continuously pushing the boundaries of science and technology.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className='empty'></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="topic1"></div>
+                    </div>
+                </div>
+                <div className='tt'>
+                    <input type="checkbox" id="myCheckboxISRO" checked={isExpandedISRO} onChange={handleCheckboxChangeISRO} />
+                    <div className="sc-box">
+                        <div className="sc-box-child">
+                            <div className="sc-box-content">
+                                <div className="sc-topic">
+                                    <div className="topic-heading">
+                                        <h3>Leading India’s Space Aspirations</h3>
+                                    </div>
+                                    <div className="topic-main"><p>
+                                        ISRO's remarkable journey in space exploration is marked by several groundbreaking missions. The Mars Orbiter Mission (Mangalyaan), launched in 2013,
+                                        made India the first country to reach Mars on its first attempt, providing valuable data on Mars' atmosphere and surface. The Chandrayaan missions
+                                        have been equally significant; Chandrayaan-1, launched in 2008, confirmed the presence of water molecules on the Moon, while Chandrayaan-2 in 2019
+                                        aimed to explore the Moon's south pole, despite the lander's communication loss. Chandrayaan-3 is set to attempt another lunar landing in the near f
+                                        uture.</p></div>
+                                    <div className="topic-footer">
+                                        <label htmlFor="myCheckboxISRO" style={{ cursor: 'pointer' }}>
+                                            More Info
+                                        </label>
+                                    </div>
+                                </div>
+                                <div className="sc-img">
+                                    <div className="isro-img-child">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+
+                        className={`sc-slide-box3 ${isExpandedISRO ? 'expanded' : ''}`}
+                        ref={slideBoxRefISRO}
+                        style={{
+                            maxHeight: isExpandedISRO ? `${slideBoxRefISRO.current.scrollHeight}px` : '0',
+                        }}
+                    >
+                        <div className='cross3'>
+
+                            <label htmlFor="myCheckboxISRO" style={{ cursor: 'pointer' }}>
+                                <CloseIcon />
+                            </label>
+                        </div>
+                        <div className="sc-slide-child">
+                            <div className="sc-slide-main">
+                                <div className="chandrayaan">
+                                    <div className="sc-box-child">
+                                        <div className="sc-box-content">
+                                            <div className="sc-img">
+                                                <div className="chandrayaan-img">
+                                                </div>
+                                            </div>
+                                            <div className="sc-topic">
+                                                <div className="topic-heading">
+                                                    <h3>Chandrayaan-3 </h3>
+                                                </div>
+                                                <div className="topic-main"><p>
+                                                    <b>Chandrayaan-3  </b>is India's third lunar exploration mission developed by the Indian Space Research Organisation (ISRO).
+                                                    Building on the legacy of Chandrayaan-1 and Chandrayaan-2, Chandrayaan-3 aims to achieve a successful soft landing on the Moon's
+                                                    surface. This mission focuses on the lunar south pole, a region of great interest due to its potential water ice deposits and unique
+                                                    geological features.The mission is expected to provide valuable insights into the Moon's surface and contribute to our understanding
+                                                    of lunar science
+                                                </p></div>
+                                                <div className="topic-footer">
+                                                    <a href='https://www.isro.gov.in/Chandrayaan3_Details.html'>Learn More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="mangalyaan">
+                                    <div className="sc-box-child">
+                                        <div className="sc-box-content">
+                                            <div className="sc-img">
+                                                <div className="mangalyaan-img">
+                                                </div>
+                                            </div>
+                                            <div className="sc-topic">
+                                                <div className="topic-heading">
+                                                    <h3>Mangalyaan</h3>
+                                                </div>
+                                                <div className="topic-main"><p>
+                                                    <b>Mangalyaan</b> also known as the Mars Orbiter Mission (MOM), is India's first interplanetary mission launched by the Indian Space Research
+                                                    Organisation (ISRO). It was launched on November 5, 2013, with the primary objective of exploring Mars' surface features, morphology, mineralogy,
+                                                    and atmosphere.It made India the first Asian nation to reach Martian orbit and the fourth space agency in the world to do so.Mangalyaan's success
+                                                    was a significant achievement for ISRO, demonstrating India's capabilities in space exploration and interplanetary missions. </p></div>
+                                                <div className="topic-footer">
+                                                    <a href='https://www.isro.gov.in/MarsOrbiterMissionSpacecraft.html'>Learn More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="aditya">
+                                    <div className="sc-box-child">
+                                        <div className="sc-box-content">
+                                            <div className="sc-img">
+                                                <div className="aditya-img">
+                                                </div>
+                                            </div>
+                                            <div className="sc-topic">
+                                                <div className="topic-heading">
+                                                    <h3>Aditya L1</h3>
+                                                </div>
+                                                <div className="topic-main"><p>
+                                                    <b>Aditya L1</b> shall be the first space based Indian mission to study the Sun. The spacecraft shall be placed in a halo orbit around the Lagrange point 
+                                                    1 (L1) of the Sun-Earth system, which is about 1.5 million km from the Earth. A satellite placed in the halo orbit around the L1 point has the major advantage
+                                                     of continuously viewing the Sun without any occultation/eclipses. This will provide a greater advantage of observing the solar activities and its effect on space 
+                                                     weather in real time.The instruments of Aditya-L1 are tuned to observe the solar atmosphere mainly the chromosphere and corona.</p></div>
+                                                <div className="topic-footer">
+                                                    <a href='https://www.isro.gov.in/Aditya_L1.html'>Learn More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

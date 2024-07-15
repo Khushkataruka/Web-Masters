@@ -34,6 +34,18 @@
     width: 100%;
 }
 
+.isro .i1 {
+    position: relative;
+    justify-items: center;
+    background:
+        linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%),
+        url('isro.webp') center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 90vh;
+    width: 100%;
+}
+
 .parent {
     position: absolute;
     width: inherit;
@@ -98,7 +110,8 @@
 }
 
 #myCheckboxNASA,
-#myCheckboxSpaceX {
+#myCheckboxSpaceX,
+#myCheckboxISRO {
     display: none;
 }
 
@@ -161,7 +174,9 @@
 .sc-img {
     width: 50%;
     position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 
 #myCheckboxNASA:checked~.sc-box label {
@@ -172,9 +187,13 @@
     display: none;
 }
 
+#myCheckboxISRO:checked~.sc-box label {
+    display: none;
+}
+
 .tt {
     position: relative;
-    background-color: rgba(216, 215, 214, 0.212);
+    background-color: rgb(0 0 0 / 13%);
 }
 
 .sc-img-child {
@@ -196,7 +215,8 @@
     max-height: 100vh;
 }
 
-.sc-slide-box2 {
+.sc-slide-box2,
+.sc-slide-box3 {
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -207,8 +227,13 @@
     max-height: 100vh;
 }
 
+.sc-slide-box3.expanded {
+    max-height: 100vh;
+}
+
 .cross,
-.cross2 {
+.cross2,
+.cross3 {
     position: relative;
     left: 30px;
     top: 20px;
@@ -219,7 +244,8 @@
 }
 
 .cross label,
-.cross2 label {
+.cross2 label,
+.cross3 label {
     height: 24px;
     display: inline-block;
     border: 1px solid black;
@@ -268,8 +294,17 @@
     height: 40vh;
 }
 
+
 .spacex-img-child {
     background: url(space2.jpg) center no-repeat;
+    position: relative;
+    width: 100%;
+    background-size: contain;
+    height: 40vh;
+}
+
+.isro-img-child {
+    background: url(space3.jpg) center no-repeat;
     position: relative;
     width: 100%;
     background-size: contain;
@@ -296,6 +331,30 @@
     background: url(starship.webp) center no-repeat;
     position: relative;
     width: 100%;
+    background-size: contain;
+    height: 40vh;
+}
+
+.chandrayaan-img {
+    background: url("chandrayaan.jpg") center no-repeat;
+    position: relative;
+    width: 93%;
+    background-size: contain;
+    height: 40vh;
+}
+
+.mangalyaan-img {
+    background: url("Mangalyaan.jpeg") center no-repeat;
+    position: relative;
+    width: 93%;
+    background-size: contain;
+    height: 40vh;
+}
+
+.aditya-img {
+    background: url("adithya.webp") center no-repeat;
+    position: relative;
+    width: 93%;
     background-size: contain;
     height: 40vh;
 }
@@ -338,7 +397,15 @@
     .sc-img-child,
     .ksc-img,
     .jsc-img,
-    .jpl-img {
+    .jpl-img,
+    .spacex-img-child,
+    .isro-img-child,
+    .falcon-img,
+    .dragon-img,
+    .starship-img,
+    .chandrayaan-img,
+    .aditya-img,
+    .mangalyaan-img {
         background: url(/src/Components/Center/space1.jpg) center no-repeat;
         background-size: cover;
         height: inherit;
@@ -356,6 +423,16 @@
         background-size: cover;
     }
 
+    .spacex-img-child {
+        background: url(space2.jpg) center no-repeat;
+        background-size: cover;
+    }
+
+    .isro-img-child {
+        background: url(space3.jpg) center no-repeat;
+        background-size: cover;
+    }
+
     .jsc-img {
         background: url(jsc.jpg) center no-repeat;
         background-size: cover;
@@ -366,11 +443,41 @@
         background-size: cover;
     }
 
+    .falcon-img {
+        background: url(falcon.jpeg) center no-repeat;
+        background-size: cover;
+    }
+
+    .dragon-img {
+        background: url(dragon.webp) center no-repeat;
+        background-size: cover;
+    }
+
+    .starship-img {
+        background: url(starship.webp) center no-repeat;
+        background-size: cover;
+    }
+
+    .chandrayaan-img {
+        background: url(chandrayaan.jpg) center no-repeat;
+        background-size: cover;
+    }
+
+    .mangalyaan-img {
+        background: url(Mangalyaan.jpeg) center no-repeat;
+        background-size: cover;
+    }
+
+    .aditya-img {
+        background: url(adithya.webp) center no-repeat;
+        background-size: cover;
+    }
+
     .topic-heading h3 {
         margin-top: 15px;
     }
 
     .sc-box-child {
-        padding: 2rem;
+        padding: 3rem;
     }
 }
