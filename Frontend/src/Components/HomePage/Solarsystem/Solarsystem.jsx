@@ -25,7 +25,6 @@ const Solarsystem = () => {
     return (
         <div>
             <div className="solar-system">
-                <h1>Our Solar System</h1>
                 <div className="info-ss">
                     {entities.map(entity => {
                         return (<div key={entity.title}><Link to={entity.link}>

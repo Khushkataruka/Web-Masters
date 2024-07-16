@@ -41,81 +41,10 @@ const starPhases = [
         ]
     }
 ];
-//  const topstars=[
-//     {
-//        id:1,
-//        title:"",
-//        className:"",
-//        description:"",
-//        image:"",
-//     },
-//     {
-//         id:2,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:3,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:4,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:5,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:6,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:7,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:8,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:9,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:10,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      }
-//  ];
 
 const Stars = () => {
     const [currentPhase, setCurrentPhase] = useState(starPhases[0]);
+    const [learnMore, setLearnMore] = useState(false);
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'instant' });
@@ -125,6 +54,7 @@ const Stars = () => {
             const id = parseInt(event.currentTarget.dataset.id);
             const selectedPhase = starPhases.find(phase => phase.id === id);
             setCurrentPhase(selectedPhase);
+            setLearnMore(false); // Reset learn more when changing phase
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         };
@@ -138,9 +68,9 @@ const Stars = () => {
         };
     }, []);
 
-    // const topstars =() => {
-    //     const[currentPhase, setCurrentPhase] = useState(starPhases[0]);
-    // }
+    const toggleLearnMore = () => {
+        setLearnMore(!learnMore);
+    };
 
     return (
         <>
@@ -156,15 +86,20 @@ const Stars = () => {
                                 <div className='heads'>
                                     <h1>{currentPhase.title}</h1>
                                     <p>{currentPhase.description}</p>
+                                    <button  onClick={toggleLearnMore}>
+                                        {learnMore ? "Show Less" : "Learn More"}
+                                    </button>
                                 </div>
-                                <div className="details">
-                                    {currentPhase.details.map((detail, index) => (
-                                        <div key={index} className="detail">
-                                            <h2>{detail.split(":")[0]}</h2>
-                                            <p>{detail.split(":")[1]}</p>
-                                        </div>
-                                    ))}
-                                </div>
+                                {learnMore && (
+                                    <div className="details">
+                                        {currentPhase.details.map((detail, index) => (
+                                            <div key={index} className="detail">
+                                                <h2>{detail.split(":")[0]}</h2>
+                                                <p>{detail.split(":")[1]}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </>
                         )}
                     </div>

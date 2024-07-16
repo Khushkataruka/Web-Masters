@@ -10,7 +10,7 @@
 }
 body {
     background-color: black;
-    font-family: 'Space Age', sans-serif !important; 
+    /* font-family: 'Space Age', sans-serif !important;  */
 }
 .container1 {
     display: flex;
@@ -18,9 +18,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: url("https://c4.wallpaperflare.com/wallpaper/324/59/747/space-stars-nebula-space-art-wallpaper-preview.jpg");
-    background-repeat: no-repeat;
-    background-size:cover;
+   background-color: black;
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
@@ -46,6 +44,7 @@ body {
     margin-bottom: 20px;
 }
 .content{
+    min-height: fit-content;
     width: 92%;
     margin-left: 20px;
 }

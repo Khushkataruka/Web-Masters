@@ -9,7 +9,7 @@ const galaxyPhases = [
         title: "Formation",
         className: "formation",
         description: "Galaxies form from vast clouds of gas and dark matter through the process of gravitational collapse. Over time, these clouds coalesce and form dense regions that eventually give rise to stars, star clusters, and the overall structure of the galaxy. This process can take billions of years and is influenced by various factors, including the presence of dark matter and interactions with nearby galaxies.",
-        image: "https://cdn.esahubble.org/archives/images/screen/potw2344a.jpg",
+        image: "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         details: [
             "Dark matter influence: Dark matter plays a crucial role in galaxy formation by providing additional gravitational pull, helping gas clouds collapse more efficiently.",
             "Protogalaxy formation: Initially, smaller structures called protogalaxies form and gradually merge to create larger galaxies.",
@@ -115,6 +115,7 @@ const galaxyPhases = [
 //  ];
 
 const Galaxies = () => {
+    const [learnMore, setLearnMore] = useState(false);
     const [currentPhase, setCurrentPhase] = useState(galaxyPhases[0]);
 
     useEffect(() => {
@@ -138,6 +139,10 @@ const Galaxies = () => {
         };
     }, []);
 
+    const toggleLearnMore = () => {
+        setLearnMore(!learnMore);
+    };
+
     // const topstars =() => {
     //     const[currentPhase, setCurrentPhase] = useState(galaxyPhases[0]);
     // }
@@ -156,6 +161,9 @@ const Galaxies = () => {
                                 <div className='heads'>
                                     <h1>{currentPhase.title}</h1>
                                     <p>{currentPhase.description}</p>
+                                    <button onClick={toggleLearnMore}>
+                                        {learnMore ? "Show Less" : "Learn More"}
+                                    </button>
                                 </div>
                                 <div className="details">
                                     {currentPhase.details.map((detail, index) => (

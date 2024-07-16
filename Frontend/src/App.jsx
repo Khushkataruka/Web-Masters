@@ -31,9 +31,7 @@ function App() {
       element: (
         <div className="Container">
           <Navbar />
-          {localStorage.getItem("isLogged") == "true" &&
-            <h1 className="welcome">{`Welcome ${localStorage.getItem("name")}`}</h1>
-          }
+        
           <div className="ct">
             <h1>
               <span className="cosmic">Cosmic</span> <span className="voyage">Voyage</span>

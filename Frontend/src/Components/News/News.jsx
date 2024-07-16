@@ -41,7 +41,7 @@ const News = () => {
 
     useEffect(() => {
         if (window.location.pathname == "/news") {
-            document.body.style.backgroundColor = "black"
+            document.body.style.backgroundColor = "white"
         }
 
     }, [])
