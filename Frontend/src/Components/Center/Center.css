@@ -125,6 +125,7 @@
 
 .sc-box-content {
     display: flex;
+    /* flex-direction: row-reverse; */
 }
 
 .sc-topic {
@@ -136,7 +137,6 @@
     font-weight: 700;
     font-size: 3rem;
     line-height: 1.05em;
-    color: black;
 }
 
 .topic-main p {
@@ -144,7 +144,6 @@
     font-size: 1rem;
     font-family: "Public Sans Web", sans-serif;
     margin: 3rem 0rem;
-    color: black;
 }
 
 .topic-footer {
@@ -152,7 +151,6 @@
 }
 
 .topic-footer a {
-    color: black;
     text-decoration: underline;
 }
 
@@ -193,7 +191,7 @@
 
 .tt {
     position: relative;
-    background-color: rgb(0 0 0 / 13%);
+    background-color: #17171b;
 }
 
 .sc-img-child {
@@ -248,10 +246,14 @@
 .cross3 label {
     height: 24px;
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 6px;
     position: absolute;
     left: 0;
+}
+
+.wrong svg {
+    fill: white;
 }
 
 .sc-slide-child {
@@ -357,6 +359,23 @@
     width: 93%;
     background-size: contain;
     height: 40vh;
+}
+
+.color {
+    color: white;
+}
+
+.colorp {
+    color: #d1d1d1;
+}
+
+.topic-footer .colorp:hover {
+    color: white;
+}
+
+.flex1 {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 @media (max-width:576px) {
