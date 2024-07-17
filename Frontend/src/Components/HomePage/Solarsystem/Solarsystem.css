@@ -1,76 +1,143 @@
-.solar-system {
-    width: 97%;
-    margin: 20px auto;
+.scroll-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-.solar-system h1 {
-    font-size: 40px;
-    text-align: center;
+.scroll-content-container {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease;
+  overflow-x: hidden;
+  /* Hide horizontal scrollbar */
 }
 
-.displaycard {
-    margin-top: 5rem;
-    width: 15rem;
-    height: 400px;
-
-    position: relative;
-    display: flex;
-    align-items: end;
-    transition: all 0.5s;
+.scroll-content {
+  flex: 0 0 100%;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
 }
 
-.Planets {
-    background: url("https://science.nasa.gov/wp-content/uploads/2023/04/272_MarsInSight_poster-jpg.webp") center no-repeat;
-    background-size: cover;
-}
-
-.Stars {
-    background: url("https://images.pexels.com/photos/1906658/pexels-photo-1906658.jpeg?auto=compress&cs=tinysrgb&w=600") center no-repeat;
-    background-size: cover;
-}
-
-.Galaxies {
-    background: url("src\\Components\\HomePage\\HomeImages\\pexels-pixabay-2150.jpg") center no-repeat;
-    background-size: cover;
-}
-
-.Constellations {
-    background: url("https://images.pexels.com/photos/2387877/pexels-photo-2387877.jpeg?auto=compress&cs=tinysrgb&w=600") center no-repeat;
-    background-size: cover;
-}
-
-.displaycard:hover {
-    transform: scale(1.05);
-}
-
-.info-ss {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin: 0px auto;
-    color: white;
-    justify-content: center;
-}
-
-.o-manager {
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+#scroll-content1 {
+  background: linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%), url(planets.jpg) center no-repeat;
+  background-size: cover;
 
 }
 
-a {
-    text-decoration: none;
-    color: white;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 100;
+#scroll-content2 {
+  background: linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%), url(star.webp) center no-repeat;
+  background-size: cover;
+
 }
 
-.title {
-    display: flex;
-    position: relative;
-    z-index: 2;
-    margin: 30px 20px;
+#scroll-content3 {
+  background: linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%), url(galaxy.jpg) center no-repeat;
+  background-size: cover;
+
+}
+
+#scroll-content4 {
+  background: linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%), url(const.jpeg) center no-repeat;
+  background-size: cover;
+
+}
+
+.box {
+  position: absolute;
+  bottom: 30vh;
+  left: 5vh;
+}
+
+.text {
+  color: white;
+  font: 32px / 36px D-DIN-Bold, Arial, Verdana, sans-serif;
+  margin-bottom: 40px;
+}
+
+.b1 {
+  border: 2px solid white;
+  position: relative;
+  width: 170px;
+  height: 50px;
+  background-color: #00000050;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: color 0.5s ease;
+}
+
+.link {
+  color: white;
+  font: 16px / 24px D-DIN-Medium, Arial, Verdana, sans-serif;
+  font-size: 18px;
+  z-index: 1;
+  transition: color 0.5s ease;
+}
+
+.b1::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transition: top 0.5s ease;
+}
+
+.b1:hover::before {
+  top: 0;
+}
+
+.b1:hover .link {
+  color: black;
+}
+
+.scroll-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 30px; */
+}
+
+#but-left {
+  margin-left: 15px;
+}
+
+#but-right {
+  margin-right: 10px;
+}
+
+#but-left svg {
+  font-size: 50px;
+  fill: rgb(136, 136, 136);
+}
+
+#but-right svg {
+  font-size: 50px;
+  fill: rgb(136, 136, 136);
+}
+
+#but-left svg:hover {
+  fill: white;
+  font-size: 51px;
+}
+
+#but-right svg:hover {
+  font-size: 51px;
+  fill: white;
+}
+
+.scroll-controls button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  /* Make the buttons more visible */
 }

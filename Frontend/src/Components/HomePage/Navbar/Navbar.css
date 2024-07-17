@@ -15,6 +15,10 @@ nav {
 
 }
 
+#myCheckboxMenu {
+    display: none;
+}
+
 .logo {
     margin: 0px 15px;
 }
@@ -62,9 +66,115 @@ nav {
 }
 
 
-@media (max-width:629px) {
+@media (min-width:577px) {
+    .links-menu {
+        display: none;
+    }
+
+    .menu-bar {
+        display: none;
+    }
+}
+
+@media (max-width:576px) {
+    .links {
+        display: none;
+    }
+
     nav {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: rgb(0, 0, 0);
+    }
+
+    .logo {
+        margin: 15px 15px;
+    }
+
+    .menu-bar {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    .menu-bar svg {
+        font-size: 34px;
+        cursor: pointer;
+        fill: rgba(122, 122, 122, 0.986);
+    }
+
+    .menu-bar svg:hover {
+        font-size: 35px;
+        fill: white;
+    }
+
+    .links-menu {
+        transform: translateX(100%);
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 60vw;
+        max-width: 300px;
+        background-color: rgba(0, 0, 0, 0.938);
+        transition: transform 0.4s ease-in-out;
+        z-index: 101;
+        overflow-y: auto;
+
+    }
+
+    .links-menu ul {
+        position: relative;
+        top: 60px;
+        list-style: none;
+        display: flex;
         flex-direction: column;
-        gap: 4px;
+    }
+
+    .menu-cross {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        margin-bottom: 30px;
+    }
+
+    .menu-cross svg {
+        fill: rgba(122, 122, 122, 0.986);
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .menu-cross svg:hover {
+        font-size: 32px;
+        fill: white;
+    }
+
+    .links-menu ul li {
+        height: 50px;
+        padding: 0px 15px;
+        margin-top: .1rem;
+    }
+
+    .links-menu ul li svg {
+        position: relative;
+        top: 5px;
+        padding-right: 15px;
+    }
+
+    .links-menu ul li:hover {
+        border: 2px;
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    }
+
+    #myCheckboxMenu:checked~.links-menu {
+        transform: translateX(0);
+    }
+
+    #myCheckboxMenu:checked~.menu-bar {
+        opacity: 0;
     }
 }
