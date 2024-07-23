@@ -135,6 +135,7 @@ const Planets = () => {
             }
 
             window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top on click
+
         };
 
         cards.forEach(card => {
@@ -166,13 +167,13 @@ const Planets = () => {
                         {planetDetails && (
                             <>
                                 <div className='heads'>
-                                    <h1>{planetDetails.title}</h1>
+                                    <h1 className='title'>{planetDetails.title}</h1>
                                     <p>{planetDetails.description}</p>
                                 </div>
                                 <div className="details">
                                     {planetDetails.details.map((detail, index) => (
                                         <div key={index} className="detail">
-                                            <h2>{detail.split(":")[0]}</h2>
+                                            <h2 className='title'>{detail.split(":")[0]}</h2>
                                             <p>{detail.split(":")[1]}</p>
                                         </div>
                                     ))}

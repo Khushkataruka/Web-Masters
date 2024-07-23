@@ -2,12 +2,11 @@ import React from 'react';
 import './Footer.css';
 import { FacebookRounded, Twitter, X, YouTube, Instagram, LinkedIn } from '@mui/icons-material';
 
-
 const Footer = () => {
     return (
         <div>
             <footer>
-                <div class="footer-content">
+                <div className="footer-content">
                     <div className="footer-child">
                         <div className="footer-title">
                             <h3 className='logo'><span id="Cosmic">Cosmic</span>
@@ -19,23 +18,23 @@ const Footer = () => {
                                 <div className="footer-links">
                                     <ul>
                                         <li className="tags"><a href="/">Home</a></li>
-                                        <li className="tags"><a href="#">About</a></li>
+                                        <li className="tags"><a href="/about">About</a></li>
                                         <li className="tags"><a href="/news">News</a></li>
-                                        <li className="tags"><a href="#">Contact Us</a></li>
+                                        <li className="tags"><a href="/contact">Contact Us</a></li>
                                     </ul>
                                 </div>
                                 <div className="footer-links">
                                     <ul >
-                                        <li className="links"><a href="/planets">Planets</a></li>
-                                        <li className="links"><a href="#">Stars</a></li>
-                                        <li className="links"><a href="#">Galaxies</a></li>
-                                        <li className="links"><a href="#">Constellations</a></li>
+                                        <li className="tags"><a href="/planets">Planets</a></li>
+                                        <li className="tags"><a href="#">Stars</a></li>
+                                        <li className="tags"><a href="#">Galaxies</a></li>
+                                        <li className="tags"><a href="#">Constellations</a></li>
                                     </ul>
                                 </div>
                                 <div className="footer-links">
                                     <ul>
-                                        <li className="links"><a href="/center">Space Centers</a></li>
-                                        <li className="links"><a href="/login">Sign up / Log in</a></li>
+                                        <li className="tags"><a href="/center">Space Centers</a></li>
+                                        <li className="tags"><a href="/login">Sign up / Log in</a></li>
                                     </ul>
                                 </div>
                                 <div className="symbols">
@@ -51,14 +50,13 @@ const Footer = () => {
                                         </ul>
                                     </div>
                                     <div className="email-subscription">
-                                        <from className="subscription-form">
-                                            <lable for="email">Subscribe</lable> <br /> <br /> <br />
+                                        <form className="subscription-form">
+                                            <label htmlFor="email">Subscribe</label> <br /> <br /> <br />
                                             <div className='email-button'>
-                                                <input type="email" placeholder="E-Mail Adress" id="email">
-                                                </input>
+                                                <input type="email" placeholder="E-Mail Address" id="email" />
                                                 <button type="submit">Send</button>
                                             </div>
-                                        </from>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -70,8 +68,7 @@ const Footer = () => {
                 </div>
             </footer>
         </div>
-
     )
 }
 
-export default Footer
+export default Footer;

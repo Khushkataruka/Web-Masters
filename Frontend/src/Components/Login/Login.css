@@ -80,7 +80,19 @@ body {
   cursor: pointer;
   color: #ff6b6b;
   font-size: 1rem;
+
 }
+
+.toggle-text a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+.toggle-text a:hover {
+  text-decoration: underline;
+}
+
 
 #check {
   width: 90%;

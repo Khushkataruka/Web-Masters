@@ -80,7 +80,7 @@ const Stars = () => {
                     <div className="image-container">
                         <img src={currentPhase.image} alt={currentPhase.title} className='photo' />
                     </div>
-                    <div className="content">
+                    <div className="info">
                         {currentPhase && (
                             <>
                                 <div className='heads'>

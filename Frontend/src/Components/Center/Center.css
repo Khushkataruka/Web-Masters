@@ -125,7 +125,6 @@
 
 .sc-box-content {
     display: flex;
-    /* flex-direction: row-reverse; */
 }
 
 .sc-topic {
@@ -284,8 +283,8 @@
     background: url("CenterImage/jsc.jpg") center no-repeat;
     position: relative;
     width: 100%;
-    background-size: contain;
     height: 40vh;
+    background-size: contain;
 }
 
 .jpl-img {

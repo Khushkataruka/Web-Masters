@@ -99,23 +99,26 @@ const News = () => {
                     <h1 className="checklogin">Login To Watch News</h1>
                 )}
             </div>
-
-            <nav className='pages'>
-                <ul className="pagination">
-                    <li className={`page-item ${page <= 1 ? 'disabled' : ''}`} onClick={() => page > 1 && handlePageChange(page - 1)}>
-                        <a id='pre' className="page-link" href="#">Previous</a>
-                    </li>
-                    {[1, 2, 3].map((pageNumber) => (
-                        <li className="page-item" key={pageNumber} onClick={() => handlePageChange(pageNumber)}>
-                            <a className="page-link" href="#">{pageNumber}</a>
-                        </li>
-                    ))}
-                    <li className="page-item" onClick={() => handlePageChange(page + 1)}>
-                        <a id='next' className="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+            {localStorage.getItem("isLogged") === "true" &&
+                (
+                    < nav className='pages'>
+                        <ul className="pagination">
+                            <li className={`page-item ${page <= 1 ? 'disabled' : ''}`} onClick={() => page > 1 && handlePageChange(page - 1)}>
+                                <a id='pre' className="page-link" href="#">Previous</a>
+                            </li>
+                            {[1, 2, 3].map((pageNumber) => (
+                                <li className="page-item" key={pageNumber} onClick={() => handlePageChange(pageNumber)}>
+                                    <a className="page-link" href="#">{pageNumber}</a>
+                                </li>
+                            ))}
+                            <li className="page-item" onClick={() => handlePageChange(page + 1)}>
+                                <a id='next' className="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                )
+            }
+        </div >
     );
 };
 

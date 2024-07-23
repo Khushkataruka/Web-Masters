@@ -43,9 +43,9 @@
 
 }
 
-.box {
+#entity {
   position: absolute;
-  bottom: 30vh;
+  bottom: 20vh;
   left: 5vh;
 }
 
@@ -140,4 +140,14 @@
   cursor: pointer;
   color: white;
   /* Make the buttons more visible */
+}
+
+.b1 a {
+  text-decoration: none;
+}
+
+@media (max-width:350px){
+#entity{
+  left: 3vh;
+}
 }

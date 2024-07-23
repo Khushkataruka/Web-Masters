@@ -19,6 +19,10 @@ body {
 .voyage {
     color: white;
 }
+a{
+    text-decoration: none;
+    color: white;
+}
 
 .Container {
     width: 100%;

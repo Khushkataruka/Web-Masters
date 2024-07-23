@@ -3,6 +3,7 @@ import './Login.css';
 import Navbar from '../HomePage/Navbar/Navbar';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Login() {
     const [isRegister, setIsRegister] = useState(false);
@@ -59,14 +60,16 @@ function Login() {
                     <h2 className="login-title">{isRegister ? 'Register' : 'Login'}</h2>
 
                     {isRegister && (
-                        <div className="input-group">
-                            <label htmlFor="name">Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                {...register("name", { required: true })}
-                            />
-                        </div>
+                        <>
+                            <div className="input-group">
+                                <label htmlFor="name">Username</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    {...register("name", { required: true })}
+                                />
+                            </div>
+                        </>
                     )}
 
                     <div className="input-group">
@@ -104,6 +107,9 @@ function Login() {
 
                     <p className="toggle-text" onClick={toggleForm}>
                         {isRegister ? 'Already have an account? Login' : "Don't have an account? Register"}
+                    </p>
+                    <p className="toggle-text">
+                        {!isRegister ? <Link to={"/forget"}>Forget Password</Link> : ""}
                     </p>
                     <p id="check">{res}</p>
                 </form>

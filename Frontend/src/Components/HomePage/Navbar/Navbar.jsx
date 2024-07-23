@@ -28,7 +28,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav>
+            <nav className='navbar'>
                 <input type='checkbox' id='myCheckboxMenu'></input>
                 <div className="links-menu">
                     <div className="menu-cross"><label htmlFor='myCheckboxMenu'><CloseRoundedIcon /></label></div>
@@ -55,8 +55,8 @@ const Navbar = () => {
                 <div className="links">
                     <ul>
                         <li onClick={() => { window.location.reload() }}><Link to="/">Home</Link></li>
-                        <li onClick={() => { window.location.reload }}><Link to="/about">About</Link></li>
-                        <li onClick={() => { window.location.reload }}><Link to="/news">News</Link></li>
+                        <li onClick={() => { window.location.reload() }}><Link to="/about">About</Link></li>
+                        <li onClick={() => { window.location.reload() }}><Link to="/news">News</Link></li>
                         <li>
                             {isLogged ? (
                                 <a href="/" onClick={handleLogout}>Logout</a>

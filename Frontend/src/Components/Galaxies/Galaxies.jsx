@@ -41,78 +41,6 @@ const galaxyPhases = [
         ]
     }
 ];
-//  const topstars= [
-//     {
-//        id:1,
-//        title:"",
-//        className:"",
-//        description:"",
-//        image:"",
-//     },
-//     {
-//         id:2,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:3,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:4,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:5,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:6,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:7,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:8,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:9,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      },
-//      {
-//         id:10,
-//         title:"",
-//         className:"",
-//         description:"",
-//         image:"",
-//      }
-//  ];
 
 const Galaxies = () => {
     const [learnMore, setLearnMore] = useState(false);
@@ -143,10 +71,6 @@ const Galaxies = () => {
         setLearnMore(!learnMore);
     };
 
-    // const topstars =() => {
-    //     const[currentPhase, setCurrentPhase] = useState(galaxyPhases[0]);
-    // }
-
     return (
         <>
             <Navbar />
@@ -155,7 +79,7 @@ const Galaxies = () => {
                     <div className="image-container">
                         <img src={currentPhase.image} alt={currentPhase.title} className='photo' />
                     </div>
-                    <div className="content">
+                    <div className="content info">
                         {currentPhase && (
                             <>
                                 <div className='heads'>
@@ -165,14 +89,16 @@ const Galaxies = () => {
                                         {learnMore ? "Show Less" : "Learn More"}
                                     </button>
                                 </div>
-                                <div className="details">
-                                    {currentPhase.details.map((detail, index) => (
-                                        <div key={index} className="detail">
-                                            <h2>{detail.split(":")[0]}</h2>
-                                            <p>{detail.split(":")[1]}</p>
-                                        </div>
-                                    ))}
-                                </div>
+                                {learnMore && (
+                                    <div className="details">
+                                        {currentPhase.details.map((detail, index) => (
+                                            <div key={index} className="detail">
+                                                <h2>{detail.split(":")[0]}</h2>
+                                                <p>{detail.split(":")[1]}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </>
                         )}
                     </div>

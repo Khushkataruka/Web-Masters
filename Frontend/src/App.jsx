@@ -10,6 +10,11 @@ import Login from "./Components/Login/Login";
 import Sc from "./Components/HomePage/Sc/Sc";
 import Center from "./Components/Center/Center";
 import Footer from "./Components/Footer/Footer";
+import About from "./Components/About/About";
+import Contact from "./Components/Contact/Contact";
+import Constellation from "./Components/Constellations/Constellation";
+import Forgot from "./Components/Forgot/Forgot";
+import ResetPassword from "./Components/ResetPassword/Resetpassword";
 
 function App() {
   useEffect(() => {
@@ -23,6 +28,8 @@ function App() {
         paragraph.style.opacity = "1";
       }
     }
+
+
   }, []);
 
   const router = createBrowserRouter([
@@ -31,7 +38,7 @@ function App() {
       element: (
         <div className="Container">
           <Navbar />
-        
+
           <div className="ct">
             <h1>
               <span className="cosmic">Cosmic</span> <span className="voyage">Voyage</span>
@@ -84,11 +91,39 @@ function App() {
       </>
     },
     {
+      path: "/about",
+      element: <>
+        <About />
+        <Footer />
+      </>
+    },
+    {
+      path: "/contact",
+      element: <>
+        <Contact />
+        <Footer />
+      </>
+    },
+    {
       path: "/center",
       element: <>
         <Center />
         <Footer />
       </>
+    },
+    {
+      path: "/constellation",
+      element: <><Constellation />
+        <Solarsystem />
+        <Footer /></>
+    },
+    {
+      path: "/forget",
+      element: <><Forgot /></>
+    },
+    {
+      path: "/reset-password/:id/:token",
+      element: <><ResetPassword /></>
     }
   ]);
 

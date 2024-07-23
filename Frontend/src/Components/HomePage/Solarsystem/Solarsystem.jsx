@@ -40,27 +40,27 @@ const Solarsystem = () => {
         <div className="scroll-container">
             <div className="scroll-content-container" ref={scrollContainerRef}>
                 <div className="scroll-content" id="scroll-content1">
-                    <div className='box'>
+                    <div className='box' id='entity'>
                         <div className="text"><h2>Planets</h2></div>
                         <div className="b1"> <Link to="/planets" className="link">Learn more</Link></div>
                     </div>
                 </div>
                 <div className="scroll-content" id="scroll-content2">
-                    <div className='box'>
+                    <div className='box' id='entity'>
                         <div className="text"><h2>Stars</h2></div>
-                        <div className="b1"> <Link to="/center" className="link">Learn more</Link></div>
+                        <div className="b1"> <Link to="/stars" className="link">Learn more</Link></div>
                     </div>
                 </div>
                 <div className="scroll-content" id="scroll-content3">
-                    <div className='box'>
+                    <div className='box' id='entity'>
                         <div className="text"><h2>Galaxies</h2></div>
-                        <div className="b1"> <Link to="/center" className="link">Learn more</Link></div>
+                        <div className="b1"> <Link to="/galaxies" className="link">Learn more</Link></div>
                     </div>
                 </div>
                 <div className="scroll-content" id="scroll-content4">
-                    <div className='box'>
+                    <div className='box' id="entity">
                         <div className="text"><h2>Constellation</h2></div>
-                        <div className="b1"> <Link to="/center" className="link">Learn more</Link></div>
+                        <div className="b1"> <Link to="/constellation" className="link">Learn more</Link></div>
                     </div>
                 </div>
             </div>

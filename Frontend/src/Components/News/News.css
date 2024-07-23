@@ -1,4 +1,3 @@
-
 .news-content {
     margin: 23px;
     color: black;
@@ -41,7 +40,8 @@
 .abt-news p {
     font-size: 1.02rem;
 }
-.abt-news a{
+
+.abt-news a {
     color: black;
 }
 
@@ -59,31 +59,37 @@
         padding: 0px;
     }
 }
-.pagination{
-    background-color: black;
+
+.pagination {
     display: flex;
     align-items: center;
     list-style: none;
     gap: 5px;
 }
-.pages{
+
+.pages {
     width: fit-content;
-    margin:  10px auto;
+    margin: 10px auto;
     background-color: white
 }
-.pages ul li a{
+
+.pages ul li a {
     width: fit-content;
     padding: 5px;
-    border: 1px solid black;
     border-radius: 2px;
     color: rgb(102, 105, 107);
     font-weight: 200;
+    text-decoration: none;
+    transition: all 0.4s;
 }
-.pages ul li a:hover{
-    color: #f3f3f3;
+
+.pages ul li a:hover {
+    color: black;
+    font-weight: bold;
     font-weight: 500;
 }
-.checklogin{
+
+.checklogin {
     width: 100%;
     text-align: center;
     margin: 20px 0px 30px 0px;
@@ -97,8 +103,10 @@
 }
 
 .spinner {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -106,6 +114,11 @@
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
