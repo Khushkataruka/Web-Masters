@@ -3,6 +3,63 @@
     position: relative;
 }
 
+.sc-hero {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    z-index: 30;
+    color: white;
+    top: 80%;
+    opacity: 0;
+    transition: all 1s ease-in;
+}
+
+.sc-hero h1 {
+    font-size: 3em;
+}
+
+.sc-hero p {
+    font-size: 1.0em;
+}
+
+@media(max-width:450px) {
+    .sc-hero h1 {
+        font-size: 1.5em;
+    }
+
+    .sc-hero p {
+        font-size: 0.8em;
+    }
+}
+
+@media(max-width:665px) {
+
+
+
+    .sc-hero h1 {
+        font-size: 2em;
+    }
+
+    .sc-hero p {
+        font-size: 0.8em;
+    }
+}
+
+.video {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+video {
+    position: relative;
+    width: 100vw;
+}
+
 .nasa {
     position: relative;
     width: 100%;

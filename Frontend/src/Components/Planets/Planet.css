@@ -54,7 +54,7 @@ body {
     animation: rotate 10s linear infinite;
     background-repeat: repeat;
     background-size: 200% 100%;
-    z-index: 30;
+    z-index: 10;
     margin: auto;
 }
 
@@ -158,7 +158,7 @@ body {
     gap: 23px;
     justify-content: center;
     margin: 15px;
-    height: fit-content;
+    height: 200px;
     width: 300px;
     padding: 10px;
     border-radius: 7px;
@@ -166,12 +166,10 @@ body {
     position: relative;
     cursor: pointer;
     background-color: #242424a8;
-    transition: all 0.5s;
+    transition: all 0.5s ease-in-out;
 }
 
-.card:hover {
-    transform: scale(1.05);
-}
+
 
 .card img {
     opacity: 0;
@@ -348,5 +346,27 @@ body {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
         justify-items: center;
+    }
+}
+
+.hover-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 30;
+    background-color: rgb(43, 43, 43);
+    /* margin: 0px; */
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.card:hover {
+    .hover-card {
+        width: 320px;
+        opacity: 0.8;
     }
 }

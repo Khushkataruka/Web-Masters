@@ -21,17 +21,21 @@ const News = () => {
     const [news, setNews] = useState([]);
     const [page, setPage] = useState(parseInt(searchParams.get('page')) || 1);
     const [query, setQuery] = useState(searchParams.get('query') || "NASA and SpaceX");
+    const [searchInput, setSearchInput] = useState(query); // Separate state for input
     const [loading, setLoading] = useState(false); // Loader state
+    const [error, setError] = useState(null); // Error state
 
     // Fetch news whenever the query or page changes
     useEffect(() => {
         const getNews = async () => {
             setLoading(true); // Start loading
+            setError(null); // Reset error
             try {
                 const data = await fetchNews(query, page);
                 setNews(data);
             } catch (error) {
                 console.error("Error fetching news:", error);
+                setError("Failed to fetch news. Please try again later.");
             }
             setLoading(false); // End loading
         };
@@ -40,19 +44,22 @@ const News = () => {
     }, [query, page]);
 
     useEffect(() => {
-        if (window.location.pathname == "/news") {
-            document.body.style.backgroundColor = "white"
+        if (window.location.pathname === "/news") {
+            document.body.style.backgroundColor = "white";
         }
+    }, []);
 
-    }, [])
+    // Handle changes in the search input
+    const handleSearchInputChange = (e) => {
+        setSearchInput(e.target.value);
+    };
 
-
-    // Handle changes in the search query
-    const handleQueryChange = (e) => {
-        const newQuery = e.target.value;
-        setQuery(newQuery);
+    // Handle search form submission
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        setQuery(searchInput); // Update query with the search input value
         setPage(1); // Reset to first page whenever the query changes
-        setSearchParams({ query: newQuery, page: 1 });
+        setSearchParams({ query: searchInput, page: 1 });
     };
 
     // Handle pagination changes
@@ -70,6 +77,21 @@ const News = () => {
                     <h1>Latest Space News</h1>
                     <p>Stay up-to-date with the latest content from NASA as we explore the universe and discover more about our home planet.</p>
                 </div>
+
+                <div className="search-bar">
+                    <form onSubmit={handleSearchSubmit}>
+                        <input
+                            type="text"
+                            value={searchInput}
+                            onChange={handleSearchInputChange}
+                            placeholder="Search for news..."
+                        />
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+
+                {error && <p className="error-message">{error}</p>}
+
                 {localStorage.getItem("isLogged") === "true" ? (
                     <div className="news-cards">
                         {loading ? (
@@ -99,26 +121,27 @@ const News = () => {
                     <h1 className="checklogin">Login To Watch News</h1>
                 )}
             </div>
+
             {localStorage.getItem("isLogged") === "true" &&
                 (
-                    < nav className='pages'>
+                    <nav className='pages'>
                         <ul className="pagination">
                             <li className={`page-item ${page <= 1 ? 'disabled' : ''}`} onClick={() => page > 1 && handlePageChange(page - 1)}>
-                                <a id='pre' className="page-link" href="#">Previous</a>
+                                <a id='pre' className="page-link" href="#" aria-label="Previous Page">Previous</a>
                             </li>
                             {[1, 2, 3].map((pageNumber) => (
-                                <li className="page-item" key={pageNumber} onClick={() => handlePageChange(pageNumber)}>
+                                <li className={`page-item ${page === pageNumber ? 'active' : ''}`} key={`page-${pageNumber}`} onClick={() => handlePageChange(pageNumber)}>
                                     <a className="page-link" href="#">{pageNumber}</a>
                                 </li>
                             ))}
                             <li className="page-item" onClick={() => handlePageChange(page + 1)}>
-                                <a id='next' className="page-link" href="#">Next</a>
+                                <a id='next' className="page-link" href="#" aria-label="Next Page">Next</a>
                             </li>
                         </ul>
                     </nav>
                 )
             }
-        </div >
+        </div>
     );
 };
 

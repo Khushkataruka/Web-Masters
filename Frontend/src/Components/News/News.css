@@ -122,3 +122,58 @@
         transform: rotate(360deg);
     }
 }
+
+/* Styling for the search bar container */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Styling for the search form */
+.search-bar form {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Styling for the search input */
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* Styling for the search input on focus */
+.search-bar input[type="text"]:focus {
+    border-color: #007bff; /* Change to your theme color */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle shadow on focus */
+}
+
+/* Styling for the search button */
+.search-bar button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff; /* Change to your theme color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Styling for the search button on hover */
+.search-bar button:hover {
+    background-color: #0056b3; /* Change to a darker shade of your theme color */
+}
+
+/* Optional: Add a focus style for the button */
+.search-bar button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Add a subtle focus outline */
+}

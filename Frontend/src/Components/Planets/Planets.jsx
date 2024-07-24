@@ -185,7 +185,7 @@ const Planets = () => {
                 <div className="pt">
                     {planets.map((planet) => (
                         <div key={planet.id} className="card" data-id={planet.id}>
-                            <h2>{planet.title}</h2>
+                            <div className="hover-card"><h1>{planet.title}</h1></div>
                             <div className={`planet ${planet.className}`}>
                                 {planet.className === 'saturn' && (
                                     <div className="ring-container">

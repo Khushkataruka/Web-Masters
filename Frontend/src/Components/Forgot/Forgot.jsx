@@ -25,7 +25,7 @@ function Forgot() {
             setRes(responseData.message);
             console.log(responseData);
             if (responseData.status === 200) {
-                alert("Email sent Succesfully")
+                alert("Your email has been sent successfully! Please check your inbox and click on the link provided to reset your password. ")
                 navigate("/login"); // Use navigate for redirection
             }
         } catch (error) {

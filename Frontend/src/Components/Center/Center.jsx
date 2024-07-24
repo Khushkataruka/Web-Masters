@@ -13,6 +13,9 @@ const Center = () => {
 
     useEffect(() => {
         // Scroll to the top of the page when the component mounts
+        document.querySelector(".sc-hero").style.top="40%"
+        document.querySelector(".sc-hero").style.opacity="1"
+
         window.scrollTo(0, 0);
     }, []);
 
@@ -32,6 +35,16 @@ const Center = () => {
         <>
             <Navbar />
             <div className='space-centers'>
+                <div className="video"> <video autoPlay muted playsInline loop src="https://videos.pexels.com/video-files/854239/854239-hd_1280_720_30fps.mp4">
+                    Unable to Play video</video>
+                    <div className="sc-hero">
+                    <h1>Space Centres</h1>
+                    <p>"Space exploration is a force of nature unto itself that no other force in society can rival."
+
+                        — Neil deGrasse Tyson</p>
+                        </div>
+                </div>
+
                 <div className="nasa">
                     <div className="i1">
                         <div className="parent">

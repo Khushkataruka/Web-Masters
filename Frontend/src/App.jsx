@@ -55,6 +55,7 @@ function App() {
       path: "/planets",
       element: <>
         <Planets />
+        <Solarsystem />
         <Footer />
       </>
     },

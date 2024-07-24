@@ -57,6 +57,7 @@ const Navbar = () => {
                         <li onClick={() => { window.location.reload() }}><Link to="/">Home</Link></li>
                         <li onClick={() => { window.location.reload() }}><Link to="/about">About</Link></li>
                         <li onClick={() => { window.location.reload() }}><Link to="/news">News</Link></li>
+                        <li onClick={() => { window.location.reload() }}><Link to="/contact">Contact us</Link></li>
                         <li>
                             {isLogged ? (
                                 <a href="/" onClick={handleLogout}>Logout</a>
