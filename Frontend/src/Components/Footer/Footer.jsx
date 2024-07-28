@@ -26,9 +26,9 @@ const Footer = () => {
                                 <div className="footer-links">
                                     <ul >
                                         <li className="tags"><a href="/planets">Planets</a></li>
-                                        <li className="tags"><a href="#">Stars</a></li>
-                                        <li className="tags"><a href="#">Galaxies</a></li>
-                                        <li className="tags"><a href="#">Constellations</a></li>
+                                        <li className="tags"><a href="/stars">Stars</a></li>
+                                        <li className="tags"><a href="/galaxies">Galaxies</a></li>
+                                        <li className="tags"><a href="/constellation">Constellations</a></li>
                                     </ul>
                                 </div>
                                 <div className="footer-links">

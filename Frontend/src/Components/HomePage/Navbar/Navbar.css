@@ -46,6 +46,7 @@
     padding: 5px;
     display: flex;
     list-style: none;
+    align-items: center;
     gap: 20px;
 }
 
@@ -59,6 +60,7 @@
     font-size: 20px;
     text-decoration: none;
     color: rgb(150, 158, 175);
+    transition: color 0.3s ease;
 }
 
 .links ul li a:hover {
@@ -105,6 +107,7 @@
         font-size: 34px;
         cursor: pointer;
         fill: rgba(122, 122, 122, 0.986);
+        transition: all 0.3s ease;
     }
 
     .menu-bar svg:hover {
@@ -178,4 +181,49 @@
     #myCheckboxMenu:checked~.menu-bar {
         opacity: 0;
     }
+}
+
+/* Add your existing CSS here */
+
+.navbar .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #24262b;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.navbar .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #38393b;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+.nav-more{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: black;
+    border: none;
+    color: rgb(150, 158, 175);
+    font-size: 20px;
 }

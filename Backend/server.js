@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const parser = require('body-parser');
 const bcrypt = require('bcrypt');
 const Login_model = require('./models/login');
+const Feedback_model = require('./models/Feedback')
 const nodemailer = require('nodemailer');
 const jwt = require('jsonwebtoken');
 
@@ -18,6 +19,8 @@ mongoose.connect("mongodb://localhost:27017/LoginSpaceData");
 app.get('/', (req, res) => {
     res.send('Hello World!');//response
 });
+
+
 
 app.post('/register', async (req, res) => {
     const user = await Login_model.findOne({ email: req.body.email });
@@ -179,6 +182,33 @@ app.post("/reset-password/:id/:token", async (req, res) => {
         });
     }
 });
+
+app.post('/connect', async (req, res) => {
+
+    try {
+        const user = await Login_model.findOne({ email: req.body.email });
+        if (!user) {
+            return res.send({
+                message: "Register  with given email to connect",
+                status: 104
+            });
+        }
+        else {
+            Feedback_model.create(req.body)
+            return res.send({
+                message: "Your Message Was recieved successfully",
+                staus: 208
+            })
+
+        }
+    }
+    catch (e) {
+        res.status(500).send({
+            message: e.message,
+            status: 500
+        })
+    }
+})
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
