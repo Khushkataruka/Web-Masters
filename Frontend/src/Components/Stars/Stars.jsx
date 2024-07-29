@@ -112,7 +112,6 @@ const Stars = () => {
                     ))}
                 </div>
             </div>
-            <Solarsystem />
         </>
     );
 };

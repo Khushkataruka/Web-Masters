@@ -55,7 +55,6 @@ function App() {
       path: "/planets",
       element: <>
         <Planets />
-        <Solarsystem />
         <Footer />
       </>
     },
@@ -81,7 +80,6 @@ function App() {
       path: "/news",
       element: <>
         <News />
-        {/* <Footer /> */}
       </>
     },
     {
@@ -115,7 +113,6 @@ function App() {
     {
       path: "/constellation",
       element: <><Constellation />
-        <Solarsystem />
         <Footer /></>
     },
     {

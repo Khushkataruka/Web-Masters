@@ -111,7 +111,6 @@ const Galaxies = () => {
                     ))}
                 </div>
             </div>
-            <Solarsystem />
         </>
     );
 };

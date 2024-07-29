@@ -4,7 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 .navbar {
-
     width: 100%;
     margin: auto;
     display: flex;
@@ -24,7 +23,6 @@
 }
 
 .logo h1 {
-
     font-size: 24px;
     font-family: 'Orbitron', sans-serif;
 }
@@ -46,7 +44,6 @@
     padding: 5px;
     display: flex;
     list-style: none;
-    align-items: center;
     gap: 20px;
 }
 
@@ -60,15 +57,66 @@
     font-size: 20px;
     text-decoration: none;
     color: rgb(150, 158, 175);
-    transition: color 0.3s ease;
 }
 
 .links ul li a:hover {
     color: white;
 }
 
+.dropdown {
+    position: relative;
+}
 
-@media (min-width:577px) {
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: -3;
+    opacity: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    z-index: 1;
+    opacity: 1;
+}
+
+.dropdown-menu li {
+    padding: 8px 12px;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a {
+    font-size: 16px;
+    color: rgb(150, 158, 175);
+}
+
+.dropdown-menu li a:hover {
+    color: white;
+}
+
+.more-text {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(150, 158, 175);
+}
+
+.more-text:hover {
+    color: white;
+}
+
+.more-icon {
+    margin-left: 5px;
+}
+
+@media (min-width: 817px) {
     .links-menu {
         display: none;
     }
@@ -78,7 +126,7 @@
     }
 }
 
-@media (max-width:576px) {
+@media (max-width:817px) {
     .links {
         display: none;
     }
@@ -107,7 +155,6 @@
         font-size: 34px;
         cursor: pointer;
         fill: rgba(122, 122, 122, 0.986);
-        transition: all 0.3s ease;
     }
 
     .menu-bar svg:hover {
@@ -121,109 +168,85 @@
         top: 0;
         right: 0;
         bottom: 0;
-        width: 60vw;
-        max-width: 300px;
-        background-color: rgba(0, 0, 0, 0.938);
-        transition: transform 0.4s ease-in-out;
-        z-index: 101;
-        overflow-y: auto;
+        z-index: 10;
+        width: 80%;
+        background-color: rgba(8, 8, 8, 0.986);
+        backdrop-filter: blur(4px);
+        transition: transform 0.5s ease-in-out;
+        padding-top: 10px;
+        overflow: scroll;
+    }
 
+    .more-text {
+        font-size: 25px
     }
 
     .links-menu ul {
-        position: relative;
-        top: 60px;
         list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
+        padding: 0px;
     }
 
-    .menu-cross {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        margin-bottom: 30px;
-    }
-
-    .menu-cross svg {
-        fill: rgba(122, 122, 122, 0.986);
-        font-size: 30px;
+    .links-menu li {
+        padding: 15px;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-size: 25px;
+        color: rgb(150, 158, 175);
     }
 
-    .menu-cross svg:hover {
-        font-size: 32px;
-        fill: white;
+    .links-menu li:hover {
+        background-color: rgba(52, 52, 52, 0.986);
     }
 
-    .links-menu ul li {
-        height: 50px;
-        padding: 0px 15px;
-        margin-top: .1rem;
+    .links-menu a {
+        text-decoration: none;
+        color: rgb(150, 158, 175);
     }
 
-    .links-menu ul li svg {
-        position: relative;
-        top: 5px;
-        padding-right: 15px;
+    .links-menu li:hover a {
+        color: white;
     }
 
-    .links-menu ul li:hover {
-        border: 2px;
-        box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    .links-menu li svg {
+        vertical-align: middle;
+        margin-right: 10px;
     }
 
-    #myCheckboxMenu:checked~.links-menu {
+    #myCheckboxMenu:checked+.links-menu {
         transform: translateX(0);
     }
 
-    #myCheckboxMenu:checked~.menu-bar {
-        opacity: 0;
+    .dropdown-menu {
+        display: block;
+        position: static;
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
     }
-}
 
-/* Add your existing CSS here */
+    .dropdown-menu li {
+        padding: 5px 0;
+    }
 
-.navbar .dropdown {
-    position: relative;
-    display: inline-block;
-}
+    .dropdown-menu li a {
+        font-size: 20px;
+    }
 
-.navbar .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #24262b;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
+    .menu-cross {
+        display: flex;
+        justify-content: flex-end;
+        padding: 15px;
+    }
 
-.navbar .dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
+    .menu-cross svg {
+        font-size: 34px;
+        cursor: pointer;
+        fill: rgba(122, 122, 122, 0.986);
+    }
 
-.navbar .dropdown-content a:hover {
-    background-color: #38393b;
-}
-
-.navbar .dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.navbar .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
-.nav-more{
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    background-color: black;
-    border: none;
-    color: rgb(150, 158, 175);
-    font-size: 20px;
+    .menu-cross svg:hover {
+        font-size: 35px;
+        fill: white;
+    }
 }

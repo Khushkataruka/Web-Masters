@@ -5,8 +5,8 @@ import Navbar from '../HomePage/Navbar/Navbar';
 const Constellation = () => {
     return (
         <div>
-            <main>
             <Navbar />
+            <main>
                 <section className="cont-hero" style={{ height: '100vh' }}>
                     <h1 style={{ marginTop: '25vh' }}>Dark Matter &</h1>
                     <h1>Dark Energy</h1>
