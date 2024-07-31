@@ -40,7 +40,9 @@ const Navbar = () => {
                 <div className="links-menu">
                     <div className="menu-cross"><label htmlFor='myCheckboxMenu'><CloseRoundedIcon /></label></div>
                     <ul>
-                        <li onClick={() => { window.location.reload() }}><HomeRounded /><Link to="/">Home</Link></li>
+                        <li onClick={() => { window.location.reload() }}><HomeRounded /><Link to="/">Home</Link>
+                        </li>
+
                         <li onClick={() => { window.location.reload() }}><PersonRounded /><Link to="/about">About</Link></li>
 
                         <li onClick={() => { window.location.reload() }}><LocalPhoneRounded /><Link to="/contact">Contact Us</Link></li>
@@ -63,7 +65,9 @@ const Navbar = () => {
                                 <a href="/" onClick={handleLogout}>Logout</a>
                             ) : (
                                 <Link to="/login">Login</Link>
+
                             )}
+                            <hr className='underline' />
                         </li>
 
                     </ul>
@@ -76,10 +80,11 @@ const Navbar = () => {
                 </div>
                 <div className="links">
                     <ul>
-                        <li onClick={() => { window.location.reload() }}><Link to="/">Home</Link></li>
-                        <li onClick={() => { window.location.reload() }}><Link to="/about">About</Link></li>
-                        <li onClick={() => { window.location.reload() }}><Link to="/news">News</Link></li>
-                        <li onClick={() => { window.location.reload() }}><Link to="/contact">Contact us</Link></li>
+                        <li onClick={() => { window.location.reload() }}><Link to="/">Home</Link>
+                            <hr className='underline' /></li>
+                        <li onClick={() => { window.location.reload() }}><Link to="/about">About</Link>  <hr className='underline' /></li>
+                        <li onClick={() => { window.location.reload() }}><Link to="/news">News</Link>  <hr className='underline' /></li>
+                        <li onClick={() => { window.location.reload() }}><Link to="/contact">Contact us</Link>  <hr className='underline' /></li>
                         <li className="dropdown">
                             <span className="more-text">More <ExpandMoreIcon className="more-icon" /></span>
                             <ul className="dropdown-menu">
@@ -88,6 +93,7 @@ const Navbar = () => {
                                 <li onClick={() => { window.location.reload() }}><Link to="/Galaxies">Galaxies</Link></li>
                                 <li onClick={() => { window.location.reload() }}><Link to="/constellation">Constellations</Link></li>
                                 <li onClick={() => { window.location.reload() }}><Link to="/center">Space Center</Link></li>
+                                <li onClick={() => { window.location.reload() }}><Link to="/quiz">Quiz</Link></li>
                             </ul>
                         </li>
                         <li>
@@ -96,6 +102,7 @@ const Navbar = () => {
                             ) : (
                                 <Link to="/login">Login</Link>
                             )}
+                            <hr className='underline' />
                         </li>
                     </ul>
                 </div>

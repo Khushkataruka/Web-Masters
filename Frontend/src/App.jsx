@@ -15,6 +15,7 @@ import Contact from "./Components/Contact/Contact";
 import Constellation from "./Components/Constellations/Constellation";
 import Forgot from "./Components/Forgot/Forgot";
 import ResetPassword from "./Components/ResetPassword/Resetpassword";
+import Quiz from "./Components/Quiz/Quiz";
 
 function App() {
   useEffect(() => {
@@ -122,6 +123,12 @@ function App() {
     {
       path: "/reset-password/:id/:token",
       element: <><ResetPassword /></>
+    },
+    {
+      path: "/quiz",
+      element: <>
+        <Navbar />
+        <Quiz /></>
     }
   ]);
 
