@@ -11,9 +11,10 @@
     color: white;
     background-color: rgb(0, 0, 0);
     z-index: 2;
-    font-family: "Roboto Condensed", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+}
+
+#myCheckboxMenu {
+    display: none;
 }
 
 .logo {
@@ -28,20 +29,22 @@
 /* Links Styles */
 .links {
     margin: 10px 15px;
-    position: relative; /* Required for absolute positioning of underline */
+    position: relative;
+    /* Required for absolute positioning of underline */
 }
 
 .links ul:not(.dropdown-menu) {
     margin: 5px;
-    padding: 5px;
+    padding-top: 8px;
     display: flex;
     list-style: none;
     gap: 20px;
 }
 
 .links ul li {
-    position: relative; /* Required for absolute positioning of underline */
+    position: relative;
     display: flex;
+    /* padding-top: 5px; */
     align-items: center;
 }
 
@@ -49,7 +52,8 @@
     font-size: 20px;
     text-decoration: none;
     color: rgb(150, 158, 175);
-    display: inline-block; /* Allows padding and positioning of underline */
+    display: inline-block;
+    /* Allows padding and positioning of underline */
     padding: 0px 10px;
 }
 
@@ -58,14 +62,15 @@
     bottom: 0;
     left: 10px;
     width: 80%;
-    background-color: white; /* Color of the underline */
+    background-color: white;
+    /* Color of the underline */
     transform: scaleX(0);
     transform-origin: bottom left;
     transition: transform 0.3s ease;
 }
 
 .links ul li:hover .underline,
-.links ul li a:focus + .underline {
+.links ul li a:focus+.underline {
     transform: scaleX(1);
 }
 
@@ -107,7 +112,8 @@
     font-size: 20px;
     text-decoration: none;
     color: rgb(150, 158, 175);
-    position: relative; /* Required for absolute positioning of underline */
+    position: relative;
+    /* Required for absolute positioning of underline */
     display: inline-block;
     padding: 5px 0;
 }
@@ -117,7 +123,8 @@
     display: block;
     width: 0;
     height: 2px;
-    background: white; /* Color of the underline */
+    background: white;
+    /* Color of the underline */
     position: absolute;
     bottom: 0;
     left: 0;
@@ -157,7 +164,7 @@
 }
 
 /* Responsive Styles */
-@media (min-width: 817px) {
+@media (min-width: 818px) {
     .links-menu {
         display: none;
     }
@@ -215,6 +222,8 @@
         backdrop-filter: blur(4px);
         padding-top: 10px;
         overflow-y: auto;
+        transition: transform 0.5s ease-in-out;
+
         transition: transform 0.3s ease;
     }
 
@@ -249,7 +258,7 @@
         margin-right: 10px;
     }
 
-    #myCheckboxMenu:checked + .links-menu {
+    #myCheckboxMenu:checked+.links-menu {
         transform: translateX(0);
     }
 

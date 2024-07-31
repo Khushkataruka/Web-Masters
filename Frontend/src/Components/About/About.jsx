@@ -17,7 +17,7 @@ const About = () => {
 
                 <section className="about-us">
                     <div className="a-container">
-                        <video autoPlay muted playsInline loop src="https://videos.pexels.com/video-files/1851190/1851190-uhd_2560_1440_25fps.mp4"></video>
+                        <video autoPlay muted playsInline loop src='cosmic-vi.mp4'></video>
                         <div className="abt-background">
                             <div className="hero-content">
                                 <h2>Exploring the Cosmos</h2>

@@ -123,7 +123,7 @@ main .about-us .feature {
 
 main .about-us .feature-background {
     width: 100%;
-    height: 200px;
+    height: 285px;
     background-size: cover;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -146,7 +146,7 @@ main .about-us .feature-bg3 {
 
 main .about-us .feature-bg4 {
     background: url('sed.jpg') no-repeat center;
-    background-size: cover;
+    background-size: contain;
     height: 500px;
     width: 95vw;
 }
@@ -221,7 +221,7 @@ main .hero-content {
 }
 
 .a-container video {
-    width: 98vw;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;

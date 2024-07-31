@@ -56,6 +56,7 @@ const Navbar = () => {
                                     <li onClick={() => { window.location.reload() }}><Link to="/Galaxies">Galaxies</Link></li>
                                     <li onClick={() => { window.location.reload() }}><Link to="/constellation">Constellations</Link></li>
                                     <li onClick={() => { window.location.reload() }}><Link to="/center">Space Center</Link></li>
+                                    <li onClick={() => { window.location.reload() }}><Link to="/quiz">Quiz</Link></li>
                                 </ul>
                             )}
                         </li>

@@ -35,7 +35,7 @@ const Center = () => {
         <>
             <Navbar />
             <div className='space-centers'>
-                <div className="video"> <video  src="https://videos.pexels.com/video-files/854239/854239-hd_1280_720_30fps.mp4" autoPlay muted playsInline loop>
+                <div className="video"> <video  src='c-video.mp4' autoPlay muted playsInline loop>
                     Unable to Play video</video>
                     <div className="sc-hero">
                     <h1>Space Centres</h1>

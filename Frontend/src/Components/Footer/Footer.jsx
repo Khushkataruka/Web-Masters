@@ -34,6 +34,7 @@ const Footer = () => {
                                 </div>
                                 <div className="footer-links">
                                     <ul>
+                                        <li className="tags"><a href="/quiz">Quiz</a></li>
                                         <li className="tags"><a href="/center">Space Centers</a></li>
                                         <li className="tags"><a href="/login">Sign up / Log in</a></li>
                                     </ul>
