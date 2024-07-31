@@ -56,63 +56,69 @@ function Login() {
         <>
             <Navbar isLogged={isLogged} /> {/* Pass islogged state to Navbar */}
             <div className="login-container">
-                <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-                    <h2 className="login-title">{isRegister ? 'Register' : 'Login'}</h2>
+                <video autoPlay muted loop id="login-video">
+                    <source src="https://cdn.pixabay.com/video/2016/02/10/2118-155244104_large.mp4" type="video/mp4" />
+                    Your browser does not support HTML5 video.
+                </video>
+                <div className="login-form-container">
+                    <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
+                        <h2 className="login-title">{isRegister ? 'Register' : 'Login'}</h2>
 
-                    {isRegister && (
-                        <>
-                            <div className="input-group">
-                                <label htmlFor="name">Username</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    {...register("name", { required: true })}
-                                />
-                            </div>
-                        </>
-                    )}
+                        {isRegister && (
+                            <>
+                                <div className="input-group">
+                                    <label htmlFor="name">Username</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        {...register("name", { required: true })}
+                                    />
+                                </div>
+                            </>
+                        )}
 
-                    <div className="input-group">
-                        <label htmlFor="email">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            {...register("email", { required: true })}
-                        />
-                    </div>
-
-                    <div className="input-group">
-                        <label htmlFor="password">Password</label>
-                        <input
-                            type="password"
-                            id="password"
-                            {...register("password", { required: true })}
-                        />
-                    </div>
-
-                    {isRegister && (
                         <div className="input-group">
-                            <label htmlFor="confirmPassword">Confirm Password</label>
+                            <label htmlFor="email">Email</label>
                             <input
-                                type="password"
-                                id="confirmPassword"
-                                {...register("confirmPassword", { required: true })}
+                                type="email"
+                                id="email"
+                                {...register("email", { required: true })}
                             />
                         </div>
-                    )}
 
-                    <button type="submit" className="login-button">
-                        {isRegister ? 'Register' : 'Login'}
-                    </button>
+                        <div className="input-group">
+                            <label htmlFor="password">Password</label>
+                            <input
+                                type="password"
+                                id="password"
+                                {...register("password", { required: true })}
+                            />
+                        </div>
 
-                    <p className="toggle-text" onClick={toggleForm}>
-                        {isRegister ? 'Already have an account? Login' : "Don't have an account? Register"}
-                    </p>
-                    <p className="toggle-text">
-                        {!isRegister ? <Link to={"/forget"}>Forget Password</Link> : ""}
-                    </p>
-                    <p id="check">{res}</p>
-                </form>
+                        {isRegister && (
+                            <div className="input-group">
+                                <label htmlFor="confirmPassword">Confirm Password</label>
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    {...register("confirmPassword", { required: true })}
+                                />
+                            </div>
+                        )}
+
+                        <button type="submit" className="login-button">
+                            {isRegister ? 'Register' : 'Login'}
+                        </button>
+
+                        <p className="toggle-text" onClick={toggleForm}>
+                            {isRegister ? 'Already have an account? Login' : "Don't have an account? Register"}
+                        </p>
+                        <p className="toggle-text">
+                            {!isRegister ? <Link to={"/forget"}>Forget Password</Link> : ""}
+                        </p>
+                        <p id="check">{res}</p>
+                    </form>
+                </div>
             </div>
         </>
     );
