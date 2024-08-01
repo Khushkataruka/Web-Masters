@@ -25,53 +25,67 @@ body {
 }
 
 .login-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   position: relative;
   z-index: 1;
 }
 
 .login-form {
   color: white;
-  background-color: #000000cc;
-  padding: 3rem; /* Increased padding */
+  background-color: #07060668;
+  padding: 2.5rem;
+  /* Increased padding */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.839);
-  width: 400px; /* Increased width */
+  box-shadow: 0 4px 8px rgba(144, 135, 135, 0.839);
+  width: 340px;
+  /* Increased width */
 }
 
 .login-title {
-  margin-bottom: 1.5rem; /* Increased margin-bottom */
+  margin-bottom: 1.5rem;
+  /* Increased margin-bottom */
   text-align: center;
-  font-size: 2rem; /* Increased font size */
+  font-size: 2rem;
+  /* Increased font size */
 }
 
 .input-group {
-  margin-bottom: 1.5rem; /* Increased margin-bottom */
+  margin-bottom: 1.5rem;
+  /* Increased margin-bottom */
 }
 
 .input-group label {
   display: block;
-  margin-bottom: 0.75rem; /* Increased margin-bottom */
-  font-size: 1.1rem; /* Increased font size */
+  margin-bottom: 0.75rem;
+  /* Increased margin-bottom */
+  font-size: 1.1rem;
+  /* Increased font size */
 }
 
 .input-group input {
   width: 94%;
-  padding: 0.75rem; /* Increased padding */
+  padding: 0.75rem;
+  /* Increased padding */
   border-radius: 4px;
   border: 1px solid #444;
   background-color: #2a2a2a;
   color: #fff;
-  font-size: 1rem; /* Increased font size */
+  font-size: 1rem;
+  /* Increased font size */
 }
 
 .login-button {
   width: 100%;
-  padding: 1rem; /* Increased padding */
+  padding: 1rem;
+  /* Increased padding */
   border: none;
   border-radius: 4px;
   background-color: #ff6b6b;
   color: #fff;
-  font-size: 1.2rem; /* Increased font size */
+  font-size: 1.2rem;
+  /* Increased font size */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

@@ -9,16 +9,38 @@ import LocalPhoneRounded from '@mui/icons-material/LocalPhoneRounded';
 import Article from '@mui/icons-material/Article';
 import Login from '@mui/icons-material/Login';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Navbar = () => {
     const [isLogged, setIsLogged] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [scrollDirection, setScrollDirection] = useState('up');
+    const [lastScrollTop, setLastScrollTop] = useState(0);
+    const [threshold] = useState(500); // Threshold for scroll
 
     useEffect(() => {
         const loggedInStatus = localStorage.getItem("isLogged") === "true";
         setIsLogged(loggedInStatus);
-    }, []);
+
+        const handleScroll = () => {
+            const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (Math.abs(currentScrollTop - lastScrollTop) > threshold) {
+                if (currentScrollTop > lastScrollTop) {
+                    setScrollDirection('down');
+                } else {
+                    setScrollDirection('up');
+                }
+                setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [lastScrollTop, threshold]);
 
     const handleLogout = () => {
         alert("Logout Successfully");
@@ -35,16 +57,13 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav className='navbar'>
+            <nav className={`navbar ${scrollDirection === 'down' ? 'hide' : 'show'}`}>
                 <input type='checkbox' id='myCheckboxMenu' />
                 <div className="links-menu">
                     <div className="menu-cross"><label htmlFor='myCheckboxMenu'><CloseRoundedIcon /></label></div>
                     <ul>
-                        <li onClick={() => { window.location.reload() }}><HomeRounded /><Link to="/">Home</Link>
-                        </li>
-
+                        <li onClick={() => { window.location.reload() }}><HomeRounded /><Link to="/">Home</Link></li>
                         <li onClick={() => { window.location.reload() }}><PersonRounded /><Link to="/about">About</Link></li>
-
                         <li onClick={() => { window.location.reload() }}><LocalPhoneRounded /><Link to="/contact">Contact Us</Link></li>
                         <li onClick={() => { window.location.reload() }}><Article /><Link to="/news">News</Link></li>
                         <li className="dropdown" onClick={toggleDropdown}>
@@ -56,7 +75,6 @@ const Navbar = () => {
                                     <li onClick={() => { window.location.reload() }}><Link to="/Galaxies">Galaxies</Link></li>
                                     <li onClick={() => { window.location.reload() }}><Link to="/constellation">Constellations</Link></li>
                                     <li onClick={() => { window.location.reload() }}><Link to="/center">Space Center</Link></li>
-                                    <li onClick={() => { window.location.reload() }}><Link to="/quiz">Quiz</Link></li>
                                 </ul>
                             )}
                         </li>
@@ -66,11 +84,9 @@ const Navbar = () => {
                                 <a href="/" onClick={handleLogout}>Logout</a>
                             ) : (
                                 <Link to="/login">Login</Link>
-
                             )}
                             <hr className='underline' />
                         </li>
-
                     </ul>
                 </div>
                 <div className="logo">
@@ -83,9 +99,12 @@ const Navbar = () => {
                     <ul>
                         <li onClick={() => { window.location.reload() }}><Link to="/">Home</Link>
                             <hr className='underline' /></li>
-                        <li onClick={() => { window.location.reload() }}><Link to="/about">About</Link>  <hr className='underline' /></li>
-                        <li onClick={() => { window.location.reload() }}><Link to="/news">News</Link>  <hr className='underline' /></li>
-                        <li onClick={() => { window.location.reload() }}><Link to="/contact">Contact us</Link>  <hr className='underline' /></li>
+                        <li onClick={() => { window.location.reload() }}><Link to="/about">About</Link>
+                            <hr className='underline' /></li>
+                        <li onClick={() => { window.location.reload() }}><Link to="/news">News</Link>
+                            <hr className='underline' /></li>
+                        <li onClick={() => { window.location.reload() }}><Link to="/contact">Contact us</Link>
+                            <hr className='underline' /></li>
                         <li className="dropdown">
                             <span className="more-text">More <ExpandMoreIcon className="more-icon" /></span>
                             <ul className="dropdown-menu">
