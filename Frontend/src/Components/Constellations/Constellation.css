@@ -171,7 +171,6 @@ header {
 /* Image styling */
 img {
     display: block;
-    max-width: 60vw;
     height: auto;
 }
 

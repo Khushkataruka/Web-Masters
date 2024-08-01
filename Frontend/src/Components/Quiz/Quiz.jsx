@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Quiz.css';
 
 // Define the questions and answers
@@ -59,35 +60,70 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
   const [score, setScore] = useState(0);
+  const [showAnswer, setShowAnswer] = useState(false);
 
   const handleAnswer = (answer) => {
+    setUserAnswer(answer);
+    setShowAnswer(true);
     if (answer === questions[currentQuestion].answer) {
       setScore(score + 1);
     }
+  };
+
+  const handleNextQuestion = () => {
+    setShowAnswer(false);
     setUserAnswer('');
     setCurrentQuestion(currentQuestion + 1);
   };
 
+  const handleRetakeQuiz = () => {
+    setCurrentQuestion(0);
+    setUserAnswer('');
+    setScore(0);
+    setShowAnswer(false);
+  };
+
   return (
     <div className='quiz-container'>
-      <h1>Quiz App</h1>
-      <hr />
-      {currentQuestion < questions.length ? (
-        <div>
-          <h2>{questions[currentQuestion].question}</h2>
-          <ul>
-            {questions[currentQuestion].options.map((option, index) => (
-              <li key={index} onClick={() => handleAnswer(option)}>
-                {option}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <div>
-          <h2>Your Score: {score} / {questions.length}</h2>
-        </div>
-      )}
+      <div className="q-container">
+        <h1>Quiz App</h1>
+        <hr />
+        {currentQuestion < questions.length ? (
+          <>
+            <h2>{questions[currentQuestion].question}</h2>
+            <ul>
+              {questions[currentQuestion].options.map((option, index) => (
+                <li
+                  key={index}
+                  onClick={() => !showAnswer && handleAnswer(option)}
+                  className={
+                    showAnswer
+                      ? option === questions[currentQuestion].answer
+                        ? 'correct'
+                        : option === userAnswer
+                          ? 'wrong'
+                          : ''
+                      : ''
+                  }
+                >
+                  {option}
+                </li>
+              ))}
+            </ul>
+            {showAnswer && (
+              <button className="quiz-next" onClick={handleNextQuestion}>
+                Next
+              </button>
+            )}
+            <div className="quiz-index">{currentQuestion + 1} of {questions.length} questions</div>
+          </>
+        ) : (
+          <div className="quiz-result">
+            <h2>Your Score: {score} / {questions.length}</h2>
+            <button className="quiz-next" onClick={handleRetakeQuiz}>Retake quiz</button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

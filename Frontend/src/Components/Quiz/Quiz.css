@@ -1,61 +1,106 @@
-/* quiz.css */
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
-/* Container for the entire quiz */
+
 .quiz-container {
-    max-width: 800px;
-    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
+}
+
+.q-container {
+    width: 100%;
+    max-width: 640px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 40px 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
 }
 
-.quiz-container h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 36px;
+.q-container hr {
+    height: 2px;
+    border: none;
+    background: #707070;
+}
+
+.q-container h1 {
+    font-size: 30px;
+    font-weight: 700;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-.quiz-container h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    margin-bottom: 15px;
+.q-container h2 {
+    font-size: 27px;
+    font-weight: 500;
 }
 
-.quiz-container hr {
-    margin: 20px 0;
-    border: 0;
-    border-top: 1px solid #ccc;
-}
-
-/* Styling for the list of options */
-.quiz-container ul {
+.q-container ul {
     list-style-type: none;
     padding: 0;
 }
 
-.quiz-container li {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #fff;
-    border-radius: 4px;
+.q-container ul li {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding-left: 15px;
+    border: 1px solid #686868;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s, opacity 0.3s;
 }
 
-.quiz-container li:hover {
-    background-color: #ddd;
-    color: #333;
+.q-container ul li.correct {
+    background-color: green;
+    opacity: 0.8;
 }
 
-/* Styling for the score display */
-.quiz-container .score {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
+.q-container ul li.wrong {
+    background-color:red;
+    opacity: 0.8;
+}
+
+.q-container ul li:hover:not(.correct):not(.wrong) {
+    background-color: #f0f0f0;
+}
+
+.quiz-next {
+    margin: auto;
+    width: 250px;
+    height: 65px;
+    background-color: rgba(5, 5, 5, 0.8);
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quiz-next:hover {
+    background-color: rgba(5, 5, 5, 1);
+}
+
+.q-container .quiz-index {
+    margin: auto;
+    font-size: 18px;
     text-align: center;
-    margin-top: 20px;
-    color: #333;
+}
+
+.quiz-result {
+    text-align: center;
+}
+
+.quiz-result h2 {
+    font-size: 24px;
+    font-weight: 600;
 }
