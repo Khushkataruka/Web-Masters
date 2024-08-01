@@ -1,0 +1,250 @@
+main .hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+main .hero .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .hero-content {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    top: 200px;
+    transition: all 0.9s;
+    opacity: 0;
+}
+.a-container video{
+    width: 100vw;
+    position: absolute;
+}
+
+main .hero-content h2 {
+    font-size: 3em;
+    margin: 0;
+}
+
+main .hero-content p {
+    font-size: 1.5em;
+    margin: 20px 0 0;
+}
+
+main .about-us {
+    background: #000000de;
+    position: relative;
+}
+
+main .about-us .a-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+main .about-us .about-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 600px;
+    background: url(se.jpg) no-repeat center center;
+    background-size: cover;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.abt-background{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 10px 30px;
+}
+
+main .about-us .about-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+main .about-us .about-content h3 {
+    font-size: 2em;
+    margin-top: 30px;
+}
+
+main .about-us .about-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+main .about-us .features {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+main .about-us .feature {
+    flex: 1;
+    min-width: 220px;
+    text-align: center;
+    position: relative;
+}
+
+main .about-us .feature-background {
+    width: 100%;
+    height: 285px;
+    background-size: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+main .about-us .feature-bg1 {
+    background: url('se1.jpg') no-repeat center;
+    background-size: cover;
+}
+
+main .about-us .feature-bg2 {
+    background: url('sr.jpg') no-repeat center;
+    background-size: cover;
+}
+
+main .about-us .feature-bg3 {
+    background: url('si.jpg') no-repeat center;
+    background-size: cover;
+}
+
+main .about-us .feature-bg4 {
+    background: url('sed.jpg') no-repeat center;
+    background-size: contain;
+    height: 500px;
+    width: 95vw;
+}
+
+main .about-us .feature h4 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+main .about-us .feature p {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+@media (max-width: 968px) {
+    main .about-us .features,.three-features {
+        flex-direction: column;
+        align-items: center;
+    }
+    main{
+        text-align: center;
+    }
+}
+
+.three-features {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+main .hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+main .hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+main .hero .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .hero-content {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    top: 200px;
+    transition: all 0.9s;
+    opacity: 0;
+    z-index: 1; /* Ensure the content is above the video */
+}
+
+.a-container video {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 590px;
+    object-fit: cover;
+    z-index: 0; /* Ensure the video is behind the content */
+}
+.some-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    gap: 20px;
+    text-align: center;
+    flex-direction: column;
+    color:rgb(30, 29, 29);
+    position: relative;
+}
+.some-content h1{
+    font-size: 40px;
+    
+}
+.some-content{
+    font-size: 24px;
+}

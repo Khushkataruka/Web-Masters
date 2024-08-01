@@ -1,0 +1,72 @@
+/* Dark theme for the forgot password page */
+body {
+    background-color: #121212;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .forgot-password-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e1e1e 25%, #333 100%);
+  }
+  
+  .forgot-password-form {
+    color: white;
+    background-color: #1e1e1e;
+    padding: 3rem; /* Increased padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Increased width */
+  }
+  
+  .forgot-password-title {
+    margin-bottom: 1.5rem; /* Increased margin-bottom */
+    text-align: center;
+    font-size: 2rem; /* Increased font size */
+  }
+  
+  .input-group {
+    margin-bottom: 1.5rem; /* Increased margin-bottom */
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 0.75rem; /* Increased margin-bottom */
+    font-size: 1.1rem; /* Increased font size */
+  }
+  
+  .input-group input {
+    width: 94%;
+    padding: 0.75rem; /* Increased padding */
+    border-radius: 4px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: #fff;
+    font-size: 1rem; /* Increased font size */
+  }
+  
+  .forgot-password-button {
+    width: 100%;
+    padding: 1rem; /* Increased padding */
+    border: none;
+    border-radius: 4px;
+    background-color: #ff6b6b;
+    color: #fff;
+    font-size: 1.2rem; /* Increased font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .forgot-password-button:hover {
+    background-color: #ff4757;
+  }
+  
+  #check {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    color: rebeccapurple;
+  }
+  
