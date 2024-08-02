@@ -66,7 +66,7 @@ function Login() {
 
                         {isRegister && (
                             <>
-                                <div className="input-group">
+                                <div className="ip">
                                     <label htmlFor="name">Username</label>
                                     <input
                                         type="text"
@@ -77,7 +77,7 @@ function Login() {
                             </>
                         )}
 
-                        <div className="input-group">
+                        <div className="ip">
                             <label htmlFor="email">Email</label>
                             <input
                                 type="email"
@@ -86,7 +86,7 @@ function Login() {
                             />
                         </div>
 
-                        <div className="input-group">
+                        <div className="ip">
                             <label htmlFor="password">Password</label>
                             <input
                                 type="password"
@@ -96,7 +96,7 @@ function Login() {
                         </div>
 
                         {isRegister && (
-                            <div className="input-group">
+                            <div className="ip">
                                 <label htmlFor="confirmPassword">Confirm Password</label>
                                 <input
                                     type="password"

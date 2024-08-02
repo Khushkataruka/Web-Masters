@@ -15,7 +15,12 @@ import Contact from "./Components/Contact/Contact";
 import Constellation from "./Components/Constellations/Constellation";
 import Forgot from "./Components/Forgot/Forgot";
 import ResetPassword from "./Components/ResetPassword/Resetpassword";
-import Quiz from "./Components/Quiz/Quiz";
+import GeneralQuiz from './Components/Quiz/GeneralQuiz';
+import Type_quiz from "./Components/Quiz/Type_quiz";
+import GalaxyQuiz from "./Components/Quiz/GalaxyQuiz";
+import PlanetsQuiz from "./Components/Quiz/PlanetsQuiz";
+import Constellationquiz from "./Components/Quiz/Constellationquiz";
+
 
 function App() {
   useEffect(() => {
@@ -128,7 +133,35 @@ function App() {
       path: "/quiz",
       element: <>
         <Navbar />
-        <Quiz /></>
+        <Type_quiz /></>
+    },
+    {
+      path: "/quiz-general",
+      element: <>
+        <Navbar />
+        <GeneralQuiz />
+      </>
+    },
+    {
+      path: "/quiz-galaxies",
+      element: <>
+        <Navbar />
+        <GalaxyQuiz />
+      </>
+    },
+    {
+      path: "/quiz-planets",
+      element: <>
+        <Navbar />
+        <PlanetsQuiz />
+      </>
+    },
+    {
+      path: "/quiz-constellation",
+      element: <>
+        <Navbar />
+        <Constellationquiz />
+      </>
     }
   ]);
 

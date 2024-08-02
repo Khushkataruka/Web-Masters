@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Quiz.css';
 
@@ -6,12 +6,12 @@ import './Quiz.css';
 const questions = [
   {
     question: "What is the largest planet in our solar system?",
-    options: ["Earth", "Jupiter", "Saturn", "Mars"],
+    options: ["Jupiter", "Earth" , "Saturn", "Mars"],
     answer: "Jupiter"
   },
   {
     question: "What is the closest star to Earth?",
-    options: ["Alpha Centauri", "Proxima Centauri", "Sirius", "Betelgeuse"],
+    options: ["Alpha Centauri", "Sirius", "Betelgeuse","Proxima Centauri"],
     answer: "Proxima Centauri"
   },
   {
@@ -56,11 +56,18 @@ const questions = [
   }
 ];
 
-const Quiz = () => {
+const GeneralQuiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswer, setUserAnswer] = useState('');
   const [score, setScore] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+
+  }, [])
+
+
 
   const handleAnswer = (answer) => {
     setUserAnswer(answer);
@@ -71,6 +78,7 @@ const Quiz = () => {
   };
 
   const handleNextQuestion = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setShowAnswer(false);
     setUserAnswer('');
     setCurrentQuestion(currentQuestion + 1);
@@ -128,4 +136,4 @@ const Quiz = () => {
   );
 };
 
-export default Quiz;
+export default GeneralQuiz;
