@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'Space Age';
     src: url('src/Components/Stars/space_age/space age.woff') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: normal; 
+    font-style: normal; 
 }
 
 * {
@@ -10,49 +10,64 @@
     padding: 0;
 }
 
-/* body {
+body {
     background-color: black;
-    font-family: 'Space Age', sans-serif;
-} */
+    font-family: 'Space Age', sans-serif; 
+    overflow-x: hidden; 
+}
 
-.container2 {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: black;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+.container2, .container3 {
+    max-width: 100%; 
+    overflow-x: hidden; 
     box-sizing: border-box;
 }
 
+.container2 {
+    width: 100%;
+    display: block;
+    background-color: black;
+    /* background: url("https://cdn.pixabay.com/photo/2012/11/28/10/16/stars-67616_1280.jpg") no-repeat center center; */
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container2-child {
+    max-width: 125rem;
+    height: 100%;
+    padding: 0rem 2rem;
+    margin: auto;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .image-container {
-    width: 90%;
+    position: relative;
+    width: 88%;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
 
-.photo {
-    width: 100%;
-    height: 500px;
+.photo1 {
+    position: relative;
+    left: 7%;
+    width: 10%;
+    height: 100%;
     border-radius: 25px;
-    /* margin-left: 40px;
-    margin-right: -60px; */
 }
 
+/* Text styling */
 .phase-content {
     width: 100%;
-    border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
 }
 
-.info {
-    width: 92%;
-    margin-left: 20px;
+.content1 {
+    width: 100%;
+    color: #fdfde6;
 }
 
 .heads h1 {
@@ -61,20 +76,9 @@
 }
 
 .heads p {
+    font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
     line-height: 1.5;
-}
-
-.heads button {
-    color: white;
-    background-color: #181515;
-    border: none;
-    width: fit-content;
-    margin: 5px;
-}
-.heads button:hover{
-    text-decoration: underline;
-    font-weight: bold;
 }
 
 .details .detail {
@@ -86,46 +90,74 @@
 }
 
 .details p {
+    font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 16px;
 }
 
-.phases {
+.phases1 {
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 6%;
 }
 
-@media(max-width: 390px) {
-    .phases {
-        gap: 14px;
-    }
-}
-
-.phase-link {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 30px;
-    padding: 0px;
+.phase-link1 {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0px;
+    width: 110px;
+    height: 25px;
+    padding: 8px;
     cursor: pointer;
-    transition: background-color red 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-.phase-link:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    color: whitesmoke;
-    text-shadow: 15px 20px 25px rgb(49, 180, 224), 10px 15px 20px rgb(210, 81, 81);
+.phase-link1:hover {
+    background-color: rgba(255, 255, 255, 0);
 }
-
-@media (max-width: 1500px) {
-    .photo {
-        width: 100%;
-        margin-left: 90px;
-        height: 10%;
+@media (min-width: 1000px) {
+    .phase-content .image-container img.photo1 {
+        width: 920px;
+        height: 700px;
+    }
+}
+@media(max-width: 10000px) {
+    .heads h1 {
+        font-size: 28px;
+    }
+    .photo1 {
+        width: 90%;
+        height: auto;
+    }
+    .heads p {
+        font-size: 20px;
     }
 
+    .details h2 {
+        font-size: 18px;
+    }
+
+    .details p {
+        font-size: 16px;
+    }
+
+    .phase-link1 {
+        padding: 8px;
+        width: 200px;
+        height: 30px;
+        font-size: 25px;
+    }
+}
+
+@media(max-width: 1500px) {
     .heads h1 {
         font-size: 24px;
     }
-
+    .photo1 {
+        width: 100%;
+        height: auto;
+    }
     .heads p {
         font-size: 16px;
     }
@@ -138,22 +170,22 @@
         font-size: 14px;
     }
 
-    .phase-link {
+    .phase-link1 {
         padding: 8px;
+        width: 200px;
+        height: 30px;
+        font-size: 25px;
     }
 }
 
-@media (max-width: 1024px) {
-    .photo {
-        width: 100%;
-        margin-left: 90px;
-        height: 10%;
-    }
-
+@media(max-width: 1024px) {
     .heads h1 {
         font-size: 24px;
     }
-
+    .photo1 {
+        width: 100%;
+        height: auto;
+    }
     .heads p {
         font-size: 16px;
     }
@@ -166,22 +198,22 @@
         font-size: 14px;
     }
 
-    .phase-link {
+    .phase-link1 {
         padding: 8px;
+        width: 170px;
+        height: 25px;
+        font-size: 20px;
     }
 }
 
-@media (max-width: 768px) {
-    .photo {
-        width: 100%;
-        margin-left: 70px;
-        height: 10%;
-    }
-
+@media(max-width: 768px) {
     .heads h1 {
         font-size: 24px;
     }
-
+    .photo1 {
+        width: 100%;
+        height: auto;
+    }
     .heads p {
         font-size: 16px;
     }
@@ -194,22 +226,22 @@
         font-size: 14px;
     }
 
-    .phase-link {
+    .phase-link1 {
         padding: 8px;
+        width: 150px;
+        height: 20px;
+        font-size: 20px;
     }
 }
 
 @media(max-width: 480px) {
-    .photo {
-        margin-left: 40px;
-        width: 100%;
-        height: 10%;
-    }
-
     .heads h1 {
         font-size: 24px;
     }
-
+    .photo1 {
+        width: 120%;
+        height: auto;
+    }
     .heads p {
         font-size: 16px;
     }
@@ -222,9 +254,204 @@
         font-size: 14px;
     }
 
-    .phase-link {
+    .phase-link1 {
         padding: 8px;
-        width: 82px;
-        font-size: 13px;
+        width: 100px;
+        height: 14px;
+        font-size: 15px;
     }
+}
+.container3 {
+    width: 100%;
+    display: block;
+    background: 
+      url('https://www.transparenttextures.com/patterns/dark-denim.png') no-repeat center center,
+      linear-gradient(to bottom, #1a1a1a, #400000, #b22222);
+    background-size: auto, cover;
+    color: white;
+}
+
+.container3-child {
+    max-width: 85rem;
+    height: 100%;
+    padding: 4.5rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.container3-child-set {
+    display: block;
+    padding: 3rem;
+    text-align: center;
+}
+
+.heading1 {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.heading1 h2 {
+    text-decoration: underline;
+    font-size: 2.6rem;
+    color: black;
+}
+
+.container3-child-set h2 {
+    text-decoration: underline;
+    padding-bottom: 2rem;
+}
+
+.container3-child-set p {
+    text-align: left;
+}
+
+.star-topic {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.star-topic h2 {
+    text-decoration: underline;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.star-head {
+    padding-top: 1.5rem;
+}
+
+.star-data p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 2rem;
+    font-size: 1rem;
+    margin: 3rem 0rem;
+    color: rgb(255, 255, 255);
+}
+
+.star-img-m {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding-bottom: 2rem;
+}
+
+.star-img {
+    position: relative;
+    width: 100%;
+    background-size: contain;
+    height: 53vh;
+}
+
+.out {
+    position: relative;
+    justify-items: center;
+    text-align: center;
+    height: 15%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.star-navigation{
+    position: absolute;
+    margin-top: 48%;
+}
+.star-img-m, .star-navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left, .right {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    opacity: 0.5;
+    border-radius: 50%;
+}
+
+.star-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container3 .star-img img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+@media (max-width: 1000px) {
+    .star-img img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .star-img img {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .star-img img {
+        width: 100%;
+    }
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+}
+
+.footer a {
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    background-color: #0056b3;
+}
+.pages a{
+    font-size: 18px;
+    text-decoration: none;
+    background-color: black;
+    /* color:red; */
+}
+.pages a:hover{
+   background-color: red;
+   
+}
+.left-button .right-button{
+    position:relative;
+    width:10px;
+    height: 10px;
+    opacity: 0.2;
+}
+.left-button{
+    transform: rotate(180deg);
+}
+.more{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    left: 45%;
+    top: -1.46%;
+    background-color: #000000;
+}
+.phase-more{
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
 }
