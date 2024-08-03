@@ -11,8 +11,7 @@
     position: absolute;
     z-index: 30;
     color: white;
-    top: 80%;
-    opacity: 0;
+    opacity: 1;
     transition: all 1s ease-in;
 }
 
@@ -58,7 +57,7 @@
 
 video {
     position: relative;
-    width: 100vw;
+    width: 100%;
 }
 
 .nasa {

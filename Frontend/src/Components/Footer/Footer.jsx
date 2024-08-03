@@ -19,7 +19,7 @@ const Footer = () => {
                                     <ul>
                                         <li className="tags"><a href="/">Home</a>
                                         </li>
-                                        <li className="tags"><a href="/about">About</a></li>
+                                        <li className="tags"><a href="/about">About Us</a></li>
                                         <li className="tags"><a href="/news">News</a></li>
                                         <li className="tags"><a href="/contact">Contact Us</a></li>
                                     </ul>

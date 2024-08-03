@@ -206,7 +206,7 @@ svg:hover {
     }
 }
 
-@media(max-width:681px) {
+@media(max-width:789px) {
     .temp-child {
         display: grid;
         grid-template-rows: auto auto;

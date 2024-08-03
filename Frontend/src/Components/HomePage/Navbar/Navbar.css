@@ -176,7 +176,7 @@
 }
 
 /* Responsive Styles */
-@media (min-width: 817px) {
+@media (min-width: 814px) {
     .links-menu {
         display: none;
     }
@@ -186,7 +186,7 @@
     }
 }
 
-@media (max-width: 817px) {
+@media (max-width: 813px) {
     .links {
         display: none;
     }
