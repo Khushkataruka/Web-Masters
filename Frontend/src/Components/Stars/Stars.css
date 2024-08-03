@@ -43,6 +43,7 @@ body {
 }
 
 .image-container {
+    margin-top: 100px;
     position: relative;
     width: 88%;
     display: flex;
@@ -100,6 +101,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 6%;
+    margin-bottom: 10%;
 }
 
 .phase-link1 {
@@ -108,7 +110,7 @@ body {
     border-radius: 0px;
     width: 110px;
     height: 25px;
-    padding: 8px;
+    /* padding: 8px; */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -143,9 +145,9 @@ body {
     }
 
     .phase-link1 {
-        padding: 8px;
+        /* padding: 8px; */
         width: 200px;
-        height: 30px;
+        height: 70px;
         font-size: 25px;
     }
 }
@@ -171,9 +173,9 @@ body {
     }
 
     .phase-link1 {
-        padding: 8px;
+        /* padding: 8px; */
         width: 200px;
-        height: 30px;
+        height: 60px;
         font-size: 25px;
     }
 }
@@ -199,9 +201,9 @@ body {
     }
 
     .phase-link1 {
-        padding: 8px;
+        /* padding: 8px; */
         width: 170px;
-        height: 25px;
+        height: 45px;
         font-size: 20px;
     }
 }
@@ -227,9 +229,9 @@ body {
     }
 
     .phase-link1 {
-        padding: 8px;
+        /* padding: 8px; */
         width: 150px;
-        height: 20px;
+        height: 45px;
         font-size: 20px;
     }
 }
@@ -255,9 +257,8 @@ body {
     }
 
     .phase-link1 {
-        padding: 8px;
-        width: 100px;
-        height: 14px;
+        width: 105px;
+        height: 34px;
         font-size: 15px;
     }
 }
@@ -422,13 +423,17 @@ body {
 .footer a:hover {
     background-color: #0056b3;
 }
-.pages a{
-    font-size: 18px;
-    text-decoration: none;
+.pages-s{
+    margin-left:4%;
+    height: 50%;  
+}
+.pages-s a{
+    font-size: 20px;
+    text-decoration: underline;
     background-color: black;
     /* color:red; */
 }
-.pages a:hover{
+.pages-s a:hover{
    background-color: red;
    
 }
@@ -443,15 +448,20 @@ body {
 }
 .more{
     width: 100px;
-    height: 100px;
+    height: 30px;
     border-radius: 50%;
     position: relative;
     left: 45%;
     top: -1.46%;
     background-color: #000000;
+    margin-bottom: 5%;
+    margin-top: 5%;
 }
 .phase-more{
     width: 100px;
     height: 30px;
     border-radius: 25px;
+}
+.data-s{
+    text-decoration: underline;
 }

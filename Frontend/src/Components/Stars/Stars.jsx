@@ -223,7 +223,7 @@ const Stars = () => {
                                         </button>
                                     )}
                                     </div>
-                                    <div className="pages">
+                                    <div className="pages-s">
                                         <a href="https://hubblesite.org/mission-and-telescope/hubble-30th-anniversary/hubbles-exciting-universe/beholding-the-birth-and-death-of-stars#:~:text=The%20ring%2C%20about%20a%20light,nebulas%20had%20simple%2C%20spherical%20shapes." target="_blank" rel="noopener noreferrer">learn more about stars life</a>
                                     </div>
                                 </>
@@ -269,7 +269,7 @@ const Stars = () => {
                             </div>
                             <div className='star-data'>
                                 <p>{biggestStars[currentStarIndex].description}</p>
-                                <a href={biggestStars[currentStarIndex].link} target="_blank" rel="noopener noreferrer">Learn more about {biggestStars[currentStarIndex].name}</a>
+                                <div className="data-s"><a href={biggestStars[currentStarIndex].link} target="_blank" rel="noopener noreferrer" >Learn more about {biggestStars[currentStarIndex].name}</a></div>
                             </div>
                         </div>
                     </div>
