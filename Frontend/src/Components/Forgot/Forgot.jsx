@@ -33,9 +33,7 @@ function Forgot() {
             setRes("A network error occurred. Please try again.");
         }
         finally {
-
             setloader(false);
-
         }
     };
 
@@ -43,12 +41,13 @@ function Forgot() {
         <>
             <Navbar />
             <div className="forgot-password-container">
-                {loader ? (<div className="spinner-container">
-                    <div className="spinner"></div>
-                </div>) :
-                    (<form className="forgot-password-form" onSubmit={handleSubmit(onSubmit)}>
+                {loader ? (
+                    <div className="spinner-container">
+                        <div className="spinner"></div>
+                    </div>
+                ) : (
+                    <form className="forgot-password-form" onSubmit={handleSubmit(onSubmit)}>
                         <h2 className="forgot-password-title">Forgot Password</h2>
-
                         <div className="input-group">
                             <label htmlFor="email">Email</label>
                             <input
@@ -57,15 +56,17 @@ function Forgot() {
                                 {...register("email", { required: true })}
                             />
                         </div>
-
                         <button type="submit" className="forgot-password-button">
                             Reset Password
                         </button>
-
                         <p id="check">{res}</p>
-                    </form>)
-                }
+                    </form>
+                )}
             </div>
+            <video className="background-video" autoPlay loop muted>
+                <source src="Forgot-video.mp4"/>
+                Your browser does not support the video tag.
+            </video>
         </>
     );
 }

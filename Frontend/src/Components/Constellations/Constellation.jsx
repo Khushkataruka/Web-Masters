@@ -17,8 +17,7 @@ const Constellation = () => {
                 </div>
                 <main>
                     <section className="cont-hero" style={{ height: '100vh' }}>
-                        <h1 style={{ marginTop: '25vh' }}>Dark Matter &</h1>
-                        <h1>Dark Energy</h1>
+                        <h1 style={{ marginTop: '25vh' }}>Dark Matter & Dark Energy</h1>
                         <p>Discover the universe's building blocks – matter, dark matter, and dark energy.</p>
                     </section>
                 </main>

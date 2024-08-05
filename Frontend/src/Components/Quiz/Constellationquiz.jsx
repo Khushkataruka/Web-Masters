@@ -89,7 +89,11 @@ const Constellationquiz = () => {
     };
 
     return (
-        <div className='quiz-container'>
+        <div className="quiz-video-container">
+        <video src='https://videos.pexels.com/video-files/856309/856309-hd_1920_1080_30fps.mp4' autoPlay muted playsInline loop className="background-video">
+            Unable to Play video
+        </video>
+        <div className="quiz-container">
             <div className="q-container">
                 <h1>Quiz App</h1>
                 <hr />
@@ -130,6 +134,7 @@ const Constellationquiz = () => {
                 )}
             </div>
         </div>
+    </div>
     );
 };
 

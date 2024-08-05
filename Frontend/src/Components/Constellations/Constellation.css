@@ -8,6 +8,10 @@
 }
 
 .cont-hero {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
     background: url('DarkSpace.jpg');
     background-size: cover;
     color: #ffffff;
@@ -15,11 +19,11 @@
 }
 
 .cont-hero h1 {
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 .cont-hero p {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 /* Content styles */
@@ -50,6 +54,11 @@
     padding: 1.5rem;
     border: 1px solid #ff6f61;
     border-radius: 8px;
+    transition: all 0.3s ease-in;
+}
+
+.cont-fieldset:hover {
+    transform: scale(1.03);
 }
 
 .cont-fieldset legend img {
@@ -83,6 +92,11 @@
     margin-bottom: 1rem;
     font-size: 1.1rem;
     line-height: 1.8;
+    transition: all 0.3s ease-in;
+}
+
+.cont-main p:hover {
+    transform: scale(1.03);
 }
 
 .cont-main img {
@@ -100,6 +114,11 @@
     padding: 1rem 2rem;
     background-color: rgba(255, 111, 97, 0.1);
     border-radius: 8px;
+    transition: all 0.3s ease-in;
+}
+
+.cont-small:hover {
+    transform: scale(1.03);
 }
 
 .cont-small p {

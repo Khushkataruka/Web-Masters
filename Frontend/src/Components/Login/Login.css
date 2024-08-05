@@ -72,7 +72,6 @@ body {
   border-radius: 4px;
   border: 1px solid #444;
   background-color: white;
-  color: #fff;
   font-size: 1rem;
 }
 
@@ -82,34 +81,36 @@ body {
   /* Increased padding */
   border: none;
   border-radius: 4px;
-  background-color: #ff6b6b;
+  background-color: #2890ff61;
   color: #fff;
   font-size: 1.2rem;
   /* Increased font size */
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in;
+  font-weight: 400;
 }
 
 .login-button:hover {
-  background-color: #ff4757;
+  background-color: #1a5da5c2;
+  font-weight: 700;
 }
 
 .toggle-text {
   margin-top: 1rem;
   text-align: center;
   cursor: pointer;
-  color: #ff6b6b;
+  color: #29b0e3;
   font-size: 1rem;
+  transition: all 0.2s ease-in;
 }
 
 .toggle-text a {
-  color: white;
   text-decoration: none;
   transition: all 0.4s;
 }
 
-.toggle-text a:hover {
-  text-decoration: underline;
+.toggle-text:hover {
+  transform: scale(1.04);
 }
 
 #check {
