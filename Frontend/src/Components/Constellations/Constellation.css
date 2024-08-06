@@ -1,3 +1,4 @@
+/* Basic styling */
 .cont-real {
     position: relative;
     background-color: #121212;
@@ -7,29 +8,35 @@
     width: 100%;
 }
 
+/* Hero section */
 .cont-hero {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+    /* display: flex;
     flex-direction: column;
-    background: url('DarkSpace.jpg');
+    align-items: center; */
+    justify-content: center;
+    background: url('mainimg.jpg');
     background-size: cover;
     color: #ffffff;
-    padding: 5rem 2rem;
+    padding: 0.1rem 2rem;
+    animation: fadeIn 2s ease-in-out;
+    height: 700px;
 }
 
 .cont-hero h1 {
     font-size: 3rem;
+    animation: slideInDown 1s ease-in-out;
 }
 
 .cont-hero p {
     font-size: 1rem;
+    animation: slideInUp 1s ease-in-out;
 }
 
 /* Content styles */
 .cont-know {
     margin: 2rem auto;
     padding: 0 2rem;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .cont-know h1 {
@@ -46,6 +53,7 @@
 .cont-know img {
     width: 100%;
     margin: 2rem auto;
+    animation: zoomIn 1s ease-in-out;
 }
 
 /* Fieldset styles */
@@ -57,7 +65,7 @@
     transition: all 0.3s ease-in;
 }
 
-.cont-fieldset:hover {
+.newAnimated:hover {
     transform: scale(1.03);
 }
 
@@ -76,11 +84,13 @@
     line-height: 1.6;
 }
 
+/* Main content styles */
 .cont-main {
     margin-top: 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
     padding: 1rem 2rem;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .cont-main h1 {
@@ -95,13 +105,14 @@
     transition: all 0.3s ease-in;
 }
 
-.cont-main p:hover {
+.newAnimated:hover {
     transform: scale(1.03);
 }
 
 .cont-main img {
     min-width: 50vw;
     margin: 2rem auto;
+    animation: zoomIn 1s ease-in-out;
 }
 
 .cont-highlight {
@@ -117,7 +128,7 @@
     transition: all 0.3s ease-in;
 }
 
-.cont-small:hover {
+.newAnimated:hover {
     transform: scale(1.03);
 }
 
@@ -144,17 +155,29 @@
     height: auto;
 }
 
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideInDown {
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+    0% { transform: translateY(100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
-    .cont-nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cont-nav ul li {
-        margin-bottom: 1rem;
-    }
-
     .cont-hero h1 {
         font-size: 2rem;
     }

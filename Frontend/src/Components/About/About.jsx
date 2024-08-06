@@ -58,9 +58,9 @@ const About = () => {
                                         <p>We leverage the latest technological advancements to develop innovative spacecraft and instruments that can withstand the harsh conditions of space.</p>
                                     </div>
                                 </div>
-                                <div className="feature">
+                                {/* <div className="feature">
                                     <div className="feature-background feature-bg4"></div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
