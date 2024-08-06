@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Galaxies.css';
 import Navbar from '../HomePage/Navbar/Navbar';
-import ArrowCircleRightTwoToneIcon from '@mui/icons-material/ArrowCircleRightTwoTone';
-import ArrowCircleLeftTwoToneIcon from '@mui/icons-material/ArrowCircleLeftTwoTone';
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import img1 from "./images/milky.jpg"
@@ -25,6 +23,9 @@ import img17 from "./images/antanne.jpg"
 import img18 from "./images/hoags.jpg"
 import img19 from "./images/spindle.jpg"
 import img20 from "./images/ngc4921.jpg"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const galaxyPhases = [
     {
@@ -32,7 +33,7 @@ const galaxyPhases = [
         title: "Formation",
         className: "formation",
         description: "The formation of a galaxy is a complex and lengthy process that begins with vast clouds of gas, dust, and dark matter. This process, known as hierarchical clustering, involves the gravitational collapse of these components into denser regions, eventually forming protogalaxies. Over billions of years, these protogalaxies merge and grow into mature galaxies. The presence of dark matter is crucial, as it provides the necessary gravitational pull to bring together and hold the galaxy's components. As the gas collapses, it cools and forms stars, leading to the creation of star clusters and the initial structure of the galaxy. This phase sets the stage for the galaxy's future evolution and interactions.",
-        image: "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "for.jpg",
         details: [
             "Initial Conditions: The universe's early conditions provided the necessary ingredients for galaxy formation. After the Big Bang, the universe was filled with hot plasma, gradually cooling to allow for the formation of neutral hydrogen. Tiny density fluctuations in the universe's matter distribution grew under gravity's influence, leading to the formation of the first dark matter halos.",
             "Dark Matter Halos: Dark matter, which interacts only through gravity, plays a pivotal role in galaxy formation. It forms large, invisible halos that provide the gravitational potential wells for baryonic (normal) matter to fall into. These halos are the scaffolding on which galaxies are built.",
@@ -50,7 +51,7 @@ const galaxyPhases = [
         title: "Evolution",
         className: "evolution",
         description: "Galaxies evolve over billions of years through a combination of internal processes and external influences. Internal processes include star formation, supernova explosions, and the activity of supermassive black holes. External influences, such as interactions with other galaxies, play a significant role in shaping a galaxy's structure and star formation rate. Mergers and acquisitions of smaller galaxies, known as galactic cannibalism, contribute to the growth and morphological transformation of galaxies. These evolutionary processes are responsible for the diversity of galaxy types observed in the universe today, including spiral, elliptical, and irregular galaxies.",
-        image: "https://cdn.esahubble.org/archives/images/screen/opo0328a.jpg",
+        image: "eve.jpg",
         details: [
             "Star Formation and Stellar Evolution: Star formation rates vary over a galaxy's lifetime, influenced by the availability of gas and feedback from previous generations of stars. The life cycle of stars, from their formation to supernova explosions, contributes to the chemical enrichment of the galaxy and the dynamics of the interstellar medium.",
             "Galaxy Morphology and Classification: Galaxies evolve in morphology, transitioning between types such as spiral, elliptical, and irregular. This classification depends on factors like the galaxy's history of mergers, star formation activity, and the presence of a bulge and disk structure. Spiral galaxies, like the Milky Way, have well-defined spiral arms, while elliptical galaxies are more featureless and contain older stellar populations.",
@@ -70,7 +71,7 @@ const galaxyPhases = [
         title: "Interaction",
         className: "interaction",
         description: "Galaxies interact with one another through gravitational forces, leading to a wide range of phenomena that can dramatically alter their structure and evolution. These interactions can be as minor as gravitational tugs or as major as full-scale collisions and mergers. Such events play a significant role in the lifecycle of galaxies, influencing star formation rates, triggering galactic mergers, and leading to the formation of new structures like tidal tails and ring galaxies. The environment in which a galaxy resides, such as being part of a galaxy cluster or a smaller group, also affects its interactions and overall evolution.",
-        image: "https://cdn.esahubble.org/archives/images/screen/heic0206b.jpg",
+        image: "inter.jpg",
         details: ["Gravitational Interactions and Tidal Forces: When galaxies pass close to one another, gravitational forces can cause tidal distortions, pulling stars and gas into elongated structures. These tidal interactions can lead to the formation of tidal tails, bridges, and other features, often seen in interacting galaxy pairs.",
             "Galaxy Collisions and Mergers: Collisions between galaxies are common in the universe. When galaxies collide, their stars rarely collide directly due to the vast distances between them. However, the gravitational forces during these events can dramatically alter the galaxies' structures, triggering star formation bursts, disrupting orbits, and sometimes leading to the formation of new galaxy types, such as elliptical galaxies from spiral galaxy mergers.",
             "Starburst Galaxies: Galaxy collisions can trigger intense star formation activity, creating what are known as starburst galaxies. These galaxies form stars at rates much higher than average, often exhausting their gas supplies quickly. The intense radiation and stellar winds from newly formed stars can blow out the remaining gas, quenching further star formation.",
@@ -105,7 +106,7 @@ const galaxies = [
         id: 3,
         name: "Triangulum Galaxy (M33)",
         description: "The Triangulum Galaxy, also known as M33, is a spiral galaxy approximately 2.73 million light-years away from Earth in the constellation Triangulum. It is the third-largest galaxy in the Local Group, after the Milky Way and Andromeda. M33 contains about 40 billion stars, significantly less than the Milky Way and Andromeda, but it is rich in star-forming regions.",
-        starImage: img3,  
+        starImage: img3,
         link: "https://en.wikipedia.org/wiki/Triangulum_Galaxy"
     },
     {
@@ -229,28 +230,28 @@ const galaxies = [
     }
 ];
 
-// const galaxyBackgrounds = {
-//     1: "url('https://www.transparenttextures.com/patterns/dark-denim.png'), linear-gradient(to bottom, #1a1a1a, #400000, #b22222)",
-//     2: "url('https://www.transparenttextures.com/patterns/diamond.png'), linear-gradient(to bottom, #0a0a0a, #3f0c0c, #a83f3f)",
-//     3: "url('https://www.transparenttextures.com/patterns/abstract.png'), linear-gradient(to bottom, #1a1a1a, #4c1d1d, #b56c6c)",
-//     4: "url('https://www.transparenttextures.com/patterns/old-map.png'), linear-gradient(to bottom, #2a2a2a, #6c1616, #d84d4d)",
-//     5: "url('https://www.transparenttextures.com/patterns/mosaic.png'), linear-gradient(to bottom, #1a1a1a, #6f1d1d, #b95e5e)",
-//     6: "url('https://www.transparenttextures.com/patterns/snow.png'), linear-gradient(to bottom, #0a0a0a, #1f1f1f, #404040)",
-//     7: "url('https://www.transparenttextures.com/patterns/coffee.png'), linear-gradient(to bottom, #2e2e2e, #4e4e4e, #6c6c6c)",
-//     8: "url('https://www.transparenttextures.com/patterns/wood.png'), linear-gradient(to bottom, #1e1e1e, #3b3b3b, #585858)",
-//     9: "url('https://www.transparenttextures.com/patterns/paper.png'), linear-gradient(to bottom, #2c2c2c, #4a4a4a, #6d6d6d)",
-//     10: "url('https://www.transparenttextures.com/patterns/tile.png'), linear-gradient(to bottom, #1d1d1d, #3a3a3a, #595959)",
-//     11: "url('https://www.transparenttextures.com/patterns/asfalt-light.png'), linear-gradient(to bottom, #2a2a2a, #3c3c3c, #4e4e4e)",
-//     12: "url('https://www.transparenttextures.com/patterns/climpek.png'), linear-gradient(to bottom, #1f1f1f, #3f3f3f, #5f5f5f)",
-//     13: "url('https://www.transparenttextures.com/patterns/corrugation.png'), linear-gradient(to bottom, #262626, #484848, #6a6a6a)",
-//     14: "url('https://www.transparenttextures.com/patterns/dark-fish-skin.png'), linear-gradient(to bottom, #1b1b1b, #353535, #4f4f4f)",
-//     15: "url('https://www.transparenttextures.com/patterns/dark-matter.png'), linear-gradient(to bottom, #2d2d2d, #4d4d4d, #6d6d6d)",
-//     16: "url('https://www.transparenttextures.com/patterns/dark-wall.png'), linear-gradient(to bottom, #1c1c1c, #3c3c3c, #5c5c5c)",
-//     17: "url('https://www.transparenttextures.com/patterns/dimension.png'), linear-gradient(to bottom, #292929, #4b4b4b, #6d6d6d)",
-//     18: "url('https://www.transparenttextures.com/patterns/ep_naturalblack.png'), linear-gradient(to bottom, #191919, #383838, #575757)",
-//     19: "url('https://www.transparenttextures.com/patterns/escheresque.png'), linear-gradient(to bottom, #2e2e2e, #4e4e4e, #6e6e6e)",
-//     20: "url('https://www.transparenttextures.com/patterns/gplay.png'), linear-gradient(to bottom, #1a1a1a, #3a3a3a, #5a5a5a)"
-// };
+const galaxyBackgrounds = {
+    1: "url('https://www.transparenttextures.com/patterns/dark-denim.png'), linear-gradient(to bottom, #1a1a1a, #400000, #b22222)",
+    2: "url('https://www.transparenttextures.com/patterns/diamond.png'), linear-gradient(to bottom, #0a0a0a, #3f0c0c, #a83f3f)",
+    3: "url('https://www.transparenttextures.com/patterns/abstract.png'), linear-gradient(to bottom, #1a1a1a, #4c1d1d, #b56c6c)",
+    4: "url('https://www.transparenttextures.com/patterns/old-map.png'), linear-gradient(to bottom, #2a2a2a, #6c1616, #d84d4d)",
+    5: "url('https://www.transparenttextures.com/patterns/mosaic.png'), linear-gradient(to bottom, #1a1a1a, #6f1d1d, #b95e5e)",
+    6: "url('https://www.transparenttextures.com/patterns/snow.png'), linear-gradient(to bottom, #0a0a0a, #1f1f1f, #404040)",
+    7: "url('https://www.transparenttextures.com/patterns/coffee.png'), linear-gradient(to bottom, #2e2e2e, #4e4e4e, #6c6c6c)",
+    8: "url('https://www.transparenttextures.com/patterns/wood.png'), linear-gradient(to bottom, #1e1e1e, #3b3b3b, #585858)",
+    9: "url('https://www.transparenttextures.com/patterns/paper.png'), linear-gradient(to bottom, #2c2c2c, #4a4a4a, #6d6d6d)",
+    10: "url('https://www.transparenttextures.com/patterns/tile.png'), linear-gradient(to bottom, #1d1d1d, #3a3a3a, #595959)",
+    11: "url('https://www.transparenttextures.com/patterns/asfalt-light.png'), linear-gradient(to bottom, #2a2a2a, #3c3c3c, #4e4e4e)",
+    12: "url('https://www.transparenttextures.com/patterns/climpek.png'), linear-gradient(to bottom, #1f1f1f, #3f3f3f, #5f5f5f)",
+    13: "url('https://www.transparenttextures.com/patterns/corrugation.png'), linear-gradient(to bottom, #262626, #484848, #6a6a6a)",
+    14: "url('https://www.transparenttextures.com/patterns/dark-fish-skin.png'), linear-gradient(to bottom, #1b1b1b, #353535, #4f4f4f)",
+    15: "url('https://www.transparenttextures.com/patterns/dark-matter.png'), linear-gradient(to bottom, #2d2d2d, #4d4d4d, #6d6d6d)",
+    16: "url('https://www.transparenttextures.com/patterns/dark-wall.png'), linear-gradient(to bottom, #1c1c1c, #3c3c3c, #5c5c5c)",
+    17: "url('https://www.transparenttextures.com/patterns/dimension.png'), linear-gradient(to bottom, #292929, #4b4b4b, #6d6d6d)",
+    18: "url('https://www.transparenttextures.com/patterns/ep_naturalblack.png'), linear-gradient(to bottom, #191919, #383838, #575757)",
+    19: "url('https://www.transparenttextures.com/patterns/escheresque.png'), linear-gradient(to bottom, #2e2e2e, #4e4e4e, #6e6e6e)",
+    20: "url('https://www.transparenttextures.com/patterns/gplay.png'), linear-gradient(to bottom, #1a1a1a, #3a3a3a, #5a5a5a)"
+};
 
 const Galaxies = () => {
     const [currentPhase, setCurrentPhase] = useState(galaxyPhases[0]);
@@ -258,6 +259,13 @@ const Galaxies = () => {
     const [expandedPhases, setExpandedPhases] = useState({});
 
     useEffect(() => {
+        AOS.init({
+            duration: 800,
+            offset: 200,
+            easing: 'ease-in-out',
+            once: false, // Set this to false to allow animation every time you scroll
+            mirror: true, // Set this to true to allow elements to animate out while scrolling past them
+        });
         window.scrollTo({ top: 0, behavior: 'instant' });
         const links = document.querySelectorAll(".phase-link1-g");
 
@@ -298,13 +306,13 @@ const Galaxies = () => {
         <>
             <Navbar />
             <div className='cont-real'>
-            <div className="video cont-video">
-                <video src='galaxyvid.mp4' autoPlay muted playsInline loop>Unable to Play video</video>
-                 <div className="sc-hero galaxy-cont">
-                   <h1 className='video-h'>Galaxies</h1>
-                   <p>"Explore the grandeur of galaxies, cosmic islands of stars, gas, and dark matter. Each galaxy, with its unique structure and beauty, tells a story of the universe's evolution and the mysteries of space. From spiral wonders to elliptical giants, these celestial formations capture the imagination and curiosity of all who gaze upon them."</p>
-                 </div>
-            </div>
+                <div className="video cont-video">
+                    <video src='galaxyvid.mp4' autoPlay muted playsInline loop>Unable to Play video</video>
+                    <div className="sc-hero galaxy-cont" data-aos='fade-up'>
+                        <h1 className='video-h'>Galaxies</h1>
+                        <p>"Explore the grandeur of galaxies, cosmic islands of stars, gas, and dark matter. Each galaxy, with its unique structure and beauty, tells a story of the universe's evolution and the mysteries of space. From spiral wonders to elliptical giants, these celestial formations capture the imagination and curiosity of all who gaze upon them."</p>
+                    </div>
+                </div>
             </div>
             <div className="star-real">
                 <div className="container2">
@@ -312,7 +320,7 @@ const Galaxies = () => {
                         <div className="star-phase-content">
                             <div className="star-image-container">
                                 <img src={currentPhase.image} alt={currentPhase.title} className='photo1' />
-                                <div className="phases1-g">
+                                <div className="phases1-g" data-aos='fade-up'>
                                     {galaxyPhases.map((phase) => (
                                         <div key={phase.id} className="phase-link1-g" data-id={phase.id}>
                                             <h2>{phase.title}</h2>
@@ -320,7 +328,7 @@ const Galaxies = () => {
                                     ))}
                                 </div>
                             </div>
-                            <div className="content1">
+                            <div className="content1" data-aos='fade-up'>
                                 {currentPhase && (
                                     <>
                                         <div className='star-heads'>
@@ -355,43 +363,37 @@ const Galaxies = () => {
                 </div>
                 <div
                     className='container3'
-                    // style={{
-                    //     background: galaxyBackgrounds[galaxies[currentgalaxyIndex].id]
-                    // }}
+                    style={{
+                        background: galaxyBackgrounds[galaxies[currentgalaxyIndex].id]
+                    }}
                 >
                     <div className='out'>
                         <div className="heading1">
-                            <h2>Biggest Stars in the Universe</h2>
+                            <h2>Biggest Galaxies in the Universe</h2>
                         </div>
                     </div>
                     <div className='container3-child'>
                         <div className='star-topic'>
                             <h2>{galaxies[currentgalaxyIndex].name}</h2>
                             <div className="star">
-                                <div className='star-img'>
-                                <div className="star-navigation">
-                                        <div className="scroll-controls">
-                                            <button id='but-left' onClick={prevStar}><ArrowCircleLeftOutlinedIcon /></button>
-                                            <button id='but-right' onClick={nextStar}><ArrowCircleRightOutlinedIcon /></button>
+                                <div className="star">
+                                    <div className='star-img'>
+
+                                        <div className='present'  data-aos='zoom-in' style={{ backgroundImage: `url(${galaxies[currentgalaxyIndex].starImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                                            <div className="star-navigation">
+                                                <button onClick={prevStar} className='star-left-button'>
+                                                    <ArrowCircleLeftOutlinedIcon />
+                                                </button>
+                                                <button onClick={nextStar} className='star-right-button'>
+                                                    <ArrowCircleRightOutlinedIcon />
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                    {/* <div className="star-navigation">
-                                        <button onClick={prevStar} className='star-left-button'>
-                                            <ArrowCircleLeftOutlinedIcon />
-                                            {/* <img src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/next-button-icon.png" alt="<--" className='left-button' /> */}
-                                       {/*</button>*/}
-                                       {/* <button onClick={nextStar} className='star-right-button'>*/}
-                                            {/* <ArrowCircleRightOutlinedIcon />*/}
-                                            {/* <img src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/next-button-icon.png" alt="-->" className='t-button' /> */}
-                                            {/* </button>*/}
-                                   {/* </div> */}
-                                    <div className='present'>
-                                        <img src={galaxies[currentgalaxyIndex].starImage} alt={galaxies[currentgalaxyIndex].name} />
+                                    <div className='star-data'>
+                                        <p>{galaxies[currentgalaxyIndex].description}</p>
+                                        <div className="data-s"><a href={galaxies[currentgalaxyIndex].link} target="_blank" rel="noopener noreferrer">Learn more about {galaxies[currentgalaxyIndex].name}</a></div>
                                     </div>
-                                </div>
-                                <div className='star-data'>
-                                    <p>{galaxies[currentgalaxyIndex].description}</p>
-                                    <div className="data-s"><a href={galaxies[currentgalaxyIndex].link} target="_blank" rel="noopener noreferrer">Learn more about {galaxies[currentgalaxyIndex].name}</a></div>
                                 </div>
                             </div>
                         </div>

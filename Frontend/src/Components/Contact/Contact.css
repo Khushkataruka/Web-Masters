@@ -25,18 +25,27 @@
     border: 1px solid #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-    transition: box-shadow 0.3s ease;
+    transition: all  0.3s ease;
 }
 
 .team-member:hover {
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
+    transform: scale(1.03);
 }
 
 .team-member h3,
 .team-member p {
     margin: 10px 0;
 }
-
+.mem-social-media ul{
+    padding:5px 0px;
+    margin-bottom: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+}
 .img-container {
     position: relative;
     width: 100%;
@@ -46,26 +55,40 @@
     overflow: hidden;
 }
 
-.co-img1,
-.co-img2,
-.co-img3,
-.co-img4 {
-    background: url("cat.jpg") center no-repeat;
+
+.co-img1{
+    background: url("khush.jpeg") center no-repeat;
     width: 100%;
     height: 100%;
     background-size: cover;
 }
-
-
+.co-img2{
+    background: url("loki.jpeg") center no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+.co-img3{
+    background: url("muzz.jpeg") center no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+.co-img4{
+    background: url("sahil.jpeg") center no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
 section {
     color: #d1d1d1;
     background-color: black;
 }
 
 .contact-hero {
-    background: url('https://t3.ftcdn.net/jpg/08/09/64/00/360_F_809640041_3SBVSF9hIUU1x96bMK0jV2CqffpujJOg.webp') no-repeat center;
+    background: url('con-img.jpeg') no-repeat center;
     background-size: cover;
-    color: #383636;
+    color: black;
     text-align: center;
     padding: 100px 20px;
     height: 40vh;

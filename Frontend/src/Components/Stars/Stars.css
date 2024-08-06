@@ -1,3 +1,10 @@
+.star-real {
+    background-color: #121212;
+   font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden;
+    /* margin-top: 63px; */
+}
+
 .cont-real {
     position: relative;
     background-color: #121212;
@@ -5,12 +12,6 @@
     font-family: Arial, sans-serif;
     line-height: 1.6;
     width: 100%;
-}
-.star-real {
-    background-color: #121212;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    overflow-x: hidden;
-    /* margin-top: 63px; */
 }
 
 .container2,
@@ -62,36 +63,44 @@
 
 .star-heads h1 {
     font-size: 32px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+   font-family: 'Ubuntu', sans-serif;
     margin-bottom: 10px;
     color: white;
 }
 
 .star-heads p {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+   font-family: 'Ubuntu', sans-serif;
     font-size: 1.2rem;
 }
 
 .star-details .star-detail {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+   font-family: 'Ubuntu', sans-serif;
     margin-top: 10px;
 }
 
 .star-details h2 {
     color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+   font-family: 'Ubuntu', sans-serif;
     font-size: 1.3rem;
 }
 
 .star-details p {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+   font-family: 'Ubuntu', sans-serif;
     font-size: 1.18rem;
+}
+
+.present {
+    width: inherit;
+    height: 45vw;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .phases1 {
     border-radius: 60px;
     margin-bottom: 8px;
     position: absolute;
+    bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -198,11 +207,10 @@
 .container3 {
     width: 100%;
     display: block;
-    background-color: #000000;
-    /* background:
+    background:
         url('https://www.transparenttextures.com/patterns/dark-denim.png') no-repeat center center,
         linear-gradient(to bottom, #1a1a1a, #400000, #b22222);
-    background-size: auto, cover; */
+    background-size: auto, cover;
     color: white;
 }
 
@@ -256,14 +264,14 @@
 }
 
 .star-data p {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+   font-family: 'Ubuntu', sans-serif;
     line-height: 2rem;
     font-size: 1rem;
     margin: 3rem 0rem;
     color: rgb(255, 255, 255);
 }
 
-.str-image-m {
+.star-img-m {
     width: 100%;
     position: relative;
     display: flex;
@@ -272,12 +280,11 @@
     padding-bottom: 2rem;
 }
 
-.str-image {
+.star-img {
     position: relative;
     width: 100%;
     background-size: contain;
     height: 53vh;
-    border-radius: 50px;
 }
 
 .out {
@@ -294,26 +301,31 @@
     background-color: transparent;
 }
 
-.str-image-m,
+.star-img-m,
 .star-navigation {
-    width: 100%;
+    width: inherit;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
 }
 
-.left,
-.right {
-    position: relative;
-    width: 25px;
-    height: 25px;
+.star-left-button {
+    position: absolute;
     cursor: pointer;
-    opacity: 0.5;
-    border-radius: 50%;
+    left: 30px;
+    border-color: black;
+    bottom: 0;
+}
+
+.star-right-button {
+    position: absolute;
+    cursor: pointer;
+    right: 45px;
+    bottom: 0;
     border-color: black;
 }
 
-.str-image {
+.star-img {
     position: relative;
     width: 100%;
     height: auto;
@@ -322,24 +334,26 @@
     background-repeat: no-repeat;
 }
 
-
+.container3 .star-img img {
+    width: 100%;
+    height: 80vh;
+    max-width: 100%;
+}
 
 @media (max-width: 1000px) {
-    .str-image img {
+    .star-img img {
         width: 90%;
     }
 }
 
 @media (max-width: 768px) {
-    .str-image img {
-        width: 100%;
-        height: 400px;
+    .star-img img {
+        width: 80%;
     }
-    
 }
 
 @media (max-width: 480px) {
-    .str-image img {
+    .star-img img {
         width: 100%;
     }
 }
@@ -362,16 +376,21 @@
     color: white;
     transform: scale(1.02);
 }
-.star-left-button, .star-right-button{
+
+.star-left-button,
+.star-right-button {
     background-color: transparent;
     box-shadow: none;
     border: 2px solid transparent;
 }
-.star-left-button svg,.star-right-button svg{
+
+.star-left-button svg,
+.star-right-button svg {
     fill: #d1d1d1;
     font-size: 28px;
     transform: scale(1.02);
 }
+
 .star-more {
     width: 100px;
     height: 20px;
@@ -391,11 +410,4 @@
 
 .data-s {
     text-decoration: underline;
-}
-
-.container3 .str-image img {
-    width: 100%;
-    height: 530px;
-    max-width: 100%;
-    border-radius: 50Px;
 }

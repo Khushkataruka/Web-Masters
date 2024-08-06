@@ -31,11 +31,7 @@ const Footer = () => {
 
     return (
         <div>
-            {loader && (
-                <div className="spinner-container">
-                    <div className="spinner"></div>
-                </div>
-            )}
+
             <footer>
                 <div className="footer-content">
                     <div className="footer-child">
@@ -86,10 +82,18 @@ const Footer = () => {
                                     <div className="email-subscription">
                                         <form className="subscription-form" onSubmit={handleSubmit(onSubmit)}>
                                             <label htmlFor="email">Subscribe</label> <br /> <br /> <br />
-                                            <div className='email-button'>
-                                                <input type="email" placeholder="E-Mail Address" {...register("Email")} />
-                                                <button type="submit">Send</button>
+                                            <div className="loader-sub">
+                                                <div className='email-button'>
+                                                    <input type="email" placeholder="E-Mail Address" {...register("Email")} />
+                                                    <button type="submit">Send</button>
+                                                    {loader && (
+                                                        <div className="foot-spinner">
+                                                            <div className="footspinner"></div>
+                                                        </div>
+                                                    )}
+                                                </div>
                                             </div>
+
                                         </form>
                                     </div>
                                 </div>
@@ -100,6 +104,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+
             </footer>
         </div>
     );

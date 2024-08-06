@@ -3,6 +3,10 @@ import "./Contact.css";
 import Navbar from "../HomePage/Navbar/Navbar";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
 
 const Contact = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -39,33 +43,51 @@ const Contact = () => {
                                 <div className="co-img1"></div>
                             </div>
                             <h3>Khush Kataruka</h3>
-                            <p>Team leader</p>
-                            <p>Subscribe Cosmic Voyage</p>
+                            <div className="mem-social-media">
+                                <ul>
+                                    <li id='facebook'><a href='https://github.com/Khushkataruka/'><GitHubIcon /></a></li>
+                                    <li id='instagram'><a href='https://www.instagram.com/katarukakhush/'><InstagramIcon /></a></li>
+                                    <li id='linkedin'><a href='https://www.linkedin.com/in/khush-kataruka-7194822a8/;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;'><LinkedInIcon /></a></li>
+                                </ul>
+                            </div>
                         </div>
                         <div className="team-member">
                             <div className="img-container">
                                 <div className="co-img2"></div>
                             </div>
                             <h3>Makam Lokesh</h3>
-                            <p>Business Head</p>
-                            <p>Subscribe Cosmic Voyage</p>
+                            <div className="mem-social-media">
+                                <ul>
+                                    <li id='facebook'><a href='https://github.com/lokesh-makam'><GitHubIcon /></a></li>
+                                    <li id='instagram'><a href='https://www.instagram.com/loke_19181/'><InstagramIcon /></a></li>
+                                    <li id='linkedin'><a href='https://www.linkedin.com/in/makam-lokesh-343468321/'><LinkedInIcon /></a></li>
+                                </ul>
+                            </div>
                         </div>
                         <div className="team-member">
                             <div className="img-container">
                                 <div className="co-img3"></div>
                             </div>
                             <h3>Mohammad Muzammil</h3>
-                            <p>Marketing Head</p>
-                            <p>Subscribe Cosmic Voyage</p>
-                        </div>
+                            <div className="mem-social-media">
+                                <ul>
+                                    <li id='facebook'><a href='https://github.com/u23ai105'><GitHubIcon /></a></li>
+                                    <li id='instagram'><a href='https://www.instagram.com/_muzammil1008/'><InstagramIcon /></a></li>
+                                    <li id='linkedin'><a href='https://www.linkedin.com/in/muzammil-mohammad-48722229b/'><LinkedInIcon /></a></li>
+                                </ul>
+                            </div>                        </div>
                         <div className="team-member">
                             <div className="img-container">
                                 <div className="co-img4"></div>
                             </div>
                             <h3>Sahil Nagwani</h3>
-                            <p>UI Design</p>
-                            <p>Subscribe Cosmic Voyage</p>
-                        </div>
+                            <div className="mem-social-media">
+                                <ul>
+                                    <li id='facebook'><a href='https://github.com/Sahilnagwani-18'><GitHubIcon /></a></li>
+                                    <li id='instagram'><a href='https://www.instagram.com/sahil.nagwani_18/'><InstagramIcon /></a></li>
+                                    <li id='linkedin'><a href='https://www.linkedin.com/in/sahil-nagwani-a465ba290/'><LinkedInIcon /></a></li>
+                                </ul>
+                            </div>                        </div>
                     </div>
                 </div>
 

@@ -53,6 +53,7 @@ main .hero-content p {
 main .about-us {
     background: #000000de;
     position: relative;
+    padding-bottom: 30px;
 }
 
 main .about-us .a-container {

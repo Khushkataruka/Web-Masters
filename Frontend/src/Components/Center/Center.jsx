@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import "./Center.css";
 import Navbar from '../HomePage/Navbar/Navbar';
 import CloseIcon from '@mui/icons-material/Close';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Ensure this import is correct
 
 const Center = () => {
     const [isExpandedNASA, setIsExpandedNASA] = useState(false);
@@ -12,11 +14,24 @@ const Center = () => {
     const slideBoxRefISRO = useRef(null);
 
     useEffect(() => {
+        AOS.init({
+            duration: 800,
+            offset: 200,
+            easing: 'ease-in-out',
+            once: false, // Set this to false to allow animation every time you scroll
+            mirror: true, // Set this to true to allow elements to animate out while scrolling past them
+        });
+
         // Scroll to the top of the page when the component mounts
-        document.querySelector(".sc-hero").style.top = "40%"
-        document.querySelector(".sc-hero").style.opacity = "1"
+        document.querySelector(".sc-hero").style.top = "40%";
+        document.querySelector(".sc-hero").style.opacity = "1";
         window.scrollTo(0, 0);
     }, []);
+
+    // Reinitialize AOS when state changes affect layout
+    useEffect(() => {
+        AOS.refresh();
+    }, [isExpandedNASA, isExpandedSpaceX, isExpandedISRO]);
 
     const handleCheckboxChangeNASA = () => {
         setIsExpandedNASA(!isExpandedNASA);
@@ -24,25 +39,23 @@ const Center = () => {
 
     const handleCheckboxChangeSpaceX = () => {
         setIsExpandedSpaceX(!isExpandedSpaceX);
-        
     };
 
     const handleCheckboxChangeISRO = () => {
         setIsExpandedISRO(!isExpandedISRO);
-       
     };
 
     return (
         <>
             <Navbar />
             <div className='space-centers'>
-                <div className="video"> <video src='c-video.mp4' autoPlay muted playsInline loop>
-                    Unable to Play video</video>
-                    <div className="sc-hero">
+                <div className="video">
+                    <video src='c-video.mp4' autoPlay muted playsInline loop>
+                        Unable to Play video
+                    </video>
+                    <div className="sc-hero" data-aos="zoom-in">
                         <h1>Space Centres</h1>
-                        <p>"Space exploration is a force of nature unto itself that no other force in society can rival."
-
-                            — Neil deGrasse Tyson</p>
+                        <p>"Space exploration is a force of nature unto itself that no other force in society can rival." — Neil deGrasse Tyson</p>
                     </div>
                 </div>
 
@@ -52,15 +65,9 @@ const Center = () => {
                             <div className="grid">
                                 <div className="details1">
                                     <div className="row1">
-                                        <div className="row-content">
-                                            <h2>
-                                                NASA
-                                            </h2>
-                                            <p>Exploring the Cosmos and Pioneering Space Innovation. NASA is at the forefront of space exploration, dedicated
-                                                to advancing human understanding of the universe. From groundbreaking research to revolutionary space missions,
-                                                NASA continues to push the boundaries of what's possible.
-
-                                            </p>
+                                        <div className="row-content" data-aos="fade-right">
+                                            <h2>NASA</h2>
+                                            <p>Exploring the Cosmos and Pioneering Space Innovation. NASA is at the forefront of space exploration, dedicated to advancing human understanding of the universe. From groundbreaking research to revolutionary space missions, NASA continues to push the boundaries of what's possible.</p>
                                         </div>
                                     </div>
                                     <div className='empty'></div>
@@ -72,19 +79,15 @@ const Center = () => {
                 </div>
                 <div className='tt'>
                     <input type="checkbox" id="myCheckboxNASA" checked={isExpandedNASA} onChange={handleCheckboxChangeNASA} />
-                    <div className="sc-box">
-                        <div className="sc-box-child">
+                    <div className="sc-box" >
+                        <div className="sc-box-child" data-aos="zoom-in-up">
                             <div className="sc-box-content">
                                 <div className="sc-topic">
                                     <div className="topic-heading">
                                         <h3>Hubs of Innovation</h3>
                                     </div>
                                     <div className="topic-main"><p>
-                                        NASA's Space Research Centers are the beating heart of space exploration and innovation.
-                                        Each center specializes in different aspects of space science, technology development,
-                                        and mission planning, playing a crucial role in advancing our understanding of the universe
-                                        and enhancing our capabilities to explore it. Here's a closer look at some
-                                        of the key research centers and their contributions to space exploration:</p></div>
+                                        NASA's Space Research Centers are the beating heart of space exploration and innovation. Each center specializes in different aspects of space science, technology development, and mission planning, playing a crucial role in advancing our understanding of the universe and enhancing our capabilities to explore it. Here's a closer look at some of the key research centers and their contributions to space exploration:</p></div>
                                     <div className="topic-footer">
                                         <label htmlFor="myCheckboxNASA" style={{ cursor: 'pointer' }}>
                                             More Info
@@ -99,7 +102,6 @@ const Center = () => {
                         </div>
                     </div>
                     <div
-
                         className={`sc-slide-box ${isExpandedNASA ? 'expanded' : ''}`}
                         ref={slideBoxRefNASA}
                         style={{
@@ -107,31 +109,24 @@ const Center = () => {
                         }}
                     >
                         <div className='cross'>
-
                             <label className='wrong' htmlFor="myCheckboxNASA" style={{ cursor: 'pointer' }}>
                                 <CloseIcon />
                             </label>
                         </div>
                         <div className="sc-slide-child">
                             <div className="sc-slide-main">
-                                <div className="ksc">
-                                    <div className="sc-box-child">
+                                <div className="ksc" data-aos="zoom-in">
+                                    <div className="sc-box-child" >
                                         <div className="sc-box-content flex">
                                             <div className="sc-img">
-                                                <div className="ksc-img">
-                                                </div>
+                                                <div className="ksc-img"></div>
                                             </div>
                                             <div className="sc-topic">
                                                 <div className="topic-heading">
                                                     <h3 className='color'>Kennedy Space Center</h3>
                                                 </div>
                                                 <div className="topic-main colorp"><p>
-                                                    <b>Kennedy Space Center</b>, one of 10 NASA field centers, is a premier multiuser spaceport
-                                                    with more than 90 private-sector partners and nearly 250 partnership agreements. The presence of commercial
-                                                    companies at NASA’s Kennedy Space Center is larger than ever before, enabling us to embark on a new era of
-                                                    space exploration. Although Kennedy is the agency’s main launch site, the center also is home to facilities
-                                                    that research and develop innovative solutions that government and commercial
-                                                    space ventures need for working and living on the surfaces of the Moon and other bodies in our solar system.</p></div>
+                                                    <b>Kennedy Space Center</b>, one of 10 NASA field centers, is a premier multiuser spaceport with more than 90 private-sector partners and nearly 250 partnership agreements. The presence of commercial companies at NASA’s Kennedy Space Center is larger than ever before, enabling us to embark on a new era of space exploration. Although Kennedy is the agency’s main launch site, the center also is home to facilities that research and develop innovative solutions that government and commercial space ventures need for working and living on the surfaces of the Moon and other bodies in our solar system.</p></div>
                                                 <div className="topic-footer">
                                                     <a className='colorp' href='https://www.nasa.gov/kennedy/'>Learn More</a>
                                                 </div>
@@ -139,7 +134,7 @@ const Center = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="jsc">
+                                <div className="jsc" data-aos="zoom-in">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex1">
                                             <div className="sc-img">
@@ -163,7 +158,7 @@ const Center = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="jpl">
+                                <div className="jpl" data-aos="zoom-in">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex">
                                             <div className="sc-img">
@@ -197,7 +192,7 @@ const Center = () => {
                             <div className="grid">
                                 <div className="details1">
                                     <div className="row1">
-                                        <div className="row-content">
+                                        <div className="row-content" data-aos="fade-right">
                                             <h2 >
                                                 SPACE X
                                             </h2>
@@ -216,8 +211,8 @@ const Center = () => {
                 </div>
                 <div className='tt'>
                     <input type="checkbox" id="myCheckboxSpaceX" checked={isExpandedSpaceX} onChange={handleCheckboxChangeSpaceX} />
-                    <div className="sc-box">
-                        <div className="sc-box-child">
+                    <div className="sc-box" >
+                        <div className="sc-box-child" data-aos="zoom-in-up">
                             <div className="sc-box-content">
                                 <div className="sc-topic">
                                     <div className="topic-heading">
@@ -259,7 +254,7 @@ const Center = () => {
                         </div>
                         <div className="sc-slide-child">
                             <div className="sc-slide-main">
-                                <div className="falcon">
+                                <div className="falcon" data-aos="zoom-in">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex">
                                             <div className="sc-img">
@@ -285,7 +280,7 @@ const Center = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="dragon">
+                                <div className="dragon" data-aos="zoom-in">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex1">
                                             <div className="sc-img">
@@ -310,7 +305,7 @@ const Center = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="starship">
+                                <div className="starship" data-aos="zoom-in">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex">
                                             <div className="sc-img">
@@ -344,7 +339,7 @@ const Center = () => {
                             <div className="grid">
                                 <div className="details1">
                                     <div className="row1">
-                                        <div className="row-content">
+                                        <div className="row-content" data-aos="fade-right">
                                             <h2>
                                                 ISRO
                                             </h2>
@@ -364,8 +359,8 @@ const Center = () => {
                 </div>
                 <div className='tt'>
                     <input type="checkbox" id="myCheckboxISRO" checked={isExpandedISRO} onChange={handleCheckboxChangeISRO} />
-                    <div className="sc-box">
-                        <div className="sc-box-child">
+                    <div className="sc-box" >
+                        <div className="sc-box-child" data-aos="zoom-in-up">
                             <div className="sc-box-content">
                                 <div className="sc-topic">
                                     <div className="topic-heading">
@@ -406,7 +401,7 @@ const Center = () => {
                         </div>
                         <div className="sc-slide-child">
                             <div className="sc-slide-main">
-                                <div className="chandrayaan">
+                                <div className="chandrayaan" data-aos="zoom-in">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex">
                                             <div className="sc-img">
@@ -431,7 +426,7 @@ const Center = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mangalyaan">
+                                <div className="mangalyaan" data-aos="zoom-in">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex1">
                                             <div className="sc-img">
@@ -454,7 +449,7 @@ const Center = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="aditya">
+                                <div className="aditya" data-aos="zoom-in">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex">
                                             <div className="sc-img">

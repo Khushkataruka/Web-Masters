@@ -11,8 +11,7 @@
     position: absolute;
     z-index: 30;
     color: white;
-    opacity: 0;
-    top: 100%;
+    opacity: 1;
     transition: all 1s ease-in;
 }
 
@@ -163,6 +162,7 @@ video {
 
 .sc-box {
     width: 100%;
+    display: block;
     background-color: white;
 }
 
@@ -173,12 +173,11 @@ video {
 }
 
 .sc-box-child {
-    display: flex;
-    gap:12px;
-    align-items: center;
-    justify-content: center;
     height: 100%;
-    padding: 4.0rem 2rem;
+    max-width: 85rem;
+    padding: 4.5rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sc-box-content {
@@ -186,12 +185,7 @@ video {
 }
 
 .sc-topic {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     width: 50%;
-    margin-right: 20px;
-    padding-top: 5px;
 }
 
 .topic-heading h3 {
@@ -199,12 +193,6 @@ video {
     font-weight: 700;
     font-size: 3rem;
     line-height: 1.05em;
-}
-@media (max-width:545px)
-{
-    .topic-heading h3{
-        font-size: 2rem;
-    }
 }
 
 .topic-main p {
@@ -224,11 +212,9 @@ video {
 
 .topic-footer label {
     color: black;
+    text-decoration: underline;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
-    text-decoration: underline;
-    padding: 6px;
-    border-radius: 10px;
 }
 
 .topic-footer label:hover {
