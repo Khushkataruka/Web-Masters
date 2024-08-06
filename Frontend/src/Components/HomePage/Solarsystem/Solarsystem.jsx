@@ -7,7 +7,7 @@ import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRound
 const Solarsystem = () => {
     const scrollContainerRef = useRef(null);
     const [currentSlide, setCurrentSlide] = useState(0);
-    const totalSlides = 4; // Number of slides
+    const totalSlides = 5; // Number of slides
 
     const scroll = (direction) => {
         const container = scrollContainerRef.current;
@@ -58,6 +58,12 @@ const Solarsystem = () => {
                     </div>
                 </div>
                 <div className="scroll-content" id="scroll-content4">
+                    <div className='box' id='entity'>
+                        <div className="text"><h2>Blackholes</h2></div>
+                        <div className="b1"> <Link to="/blackhole" className="link">Learn more</Link></div>
+                    </div>
+                </div>
+                <div className="scroll-content" id="scroll-content5">
                     <div className='box' id="entity">
                         <div className="text"><h2>Constellation</h2></div>
                         <div className="b1"> <Link to="/constellation" className="link">Learn more</Link></div>

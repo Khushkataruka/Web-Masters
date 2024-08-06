@@ -1,8 +1,16 @@
+.cont-real {
+    position: relative;
+    background-color: #121212;
+    color: #d1d1d1;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    width: 100%;
+}
 .star-real {
     background-color: #121212;
     font-family: Georgia, 'Times New Roman', Times, serif;
     overflow-x: hidden;
-    margin-top: 63px;
+    /* margin-top: 63px; */
 }
 
 .container2,
@@ -190,10 +198,11 @@
 .container3 {
     width: 100%;
     display: block;
-    background:
+    background-color: #000000;
+    /* background:
         url('https://www.transparenttextures.com/patterns/dark-denim.png') no-repeat center center,
         linear-gradient(to bottom, #1a1a1a, #400000, #b22222);
-    background-size: auto, cover;
+    background-size: auto, cover; */
     color: white;
 }
 
@@ -268,6 +277,7 @@
     width: 100%;
     background-size: contain;
     height: 53vh;
+    border-radius: 50px;
 }
 
 .out {
@@ -316,6 +326,7 @@
     width: 100%;
     height: 80vh;
     max-width: 100%;
+    border-radius: 50Px;
 }
 
 @media (max-width: 1000px) {
