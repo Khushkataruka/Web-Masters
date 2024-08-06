@@ -11,7 +11,8 @@
     position: absolute;
     z-index: 30;
     color: white;
-    opacity: 1;
+    opacity: 0;
+    top: 100%;
     transition: all 1s ease-in;
 }
 
@@ -162,7 +163,6 @@ video {
 
 .sc-box {
     width: 100%;
-    display: block;
     background-color: white;
 }
 
@@ -173,11 +173,12 @@ video {
 }
 
 .sc-box-child {
+    display: flex;
+    gap:12px;
+    align-items: center;
+    justify-content: center;
     height: 100%;
-    max-width: 85rem;
-    padding: 4.5rem 2rem;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 4.0rem 2rem;
 }
 
 .sc-box-content {
@@ -185,7 +186,12 @@ video {
 }
 
 .sc-topic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 50%;
+    margin-right: 20px;
+    padding-top: 5px;
 }
 
 .topic-heading h3 {
@@ -193,6 +199,12 @@ video {
     font-weight: 700;
     font-size: 3rem;
     line-height: 1.05em;
+}
+@media (max-width:545px)
+{
+    .topic-heading h3{
+        font-size: 2rem;
+    }
 }
 
 .topic-main p {
@@ -212,9 +224,11 @@ video {
 
 .topic-footer label {
     color: black;
-    text-decoration: underline;
     font-family: 'Ubuntu', sans-serif;
-    font-weight: 100;
+    font-weight: bold;
+    text-decoration: underline;
+    padding: 6px;
+    border-radius: 10px;
 }
 
 .topic-footer label:hover {
@@ -255,7 +269,7 @@ video {
     position: relative;
     width: 100%;
     background-size: contain;
-    height: 40vh;
+    height: 400px;
 }
 
 .sc-slide-box {
@@ -358,7 +372,7 @@ video {
     position: relative;
     width: 100%;
     background-size: contain;
-    height: 40vh;
+    height: 400px;
 }
 
 .isro-img-child {
@@ -366,7 +380,7 @@ video {
     position: relative;
     width: 100%;
     background-size: contain;
-    height: 40vh;
+    height: 400px;
 }
 
 .falcon-img {

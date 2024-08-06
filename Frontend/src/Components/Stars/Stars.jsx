@@ -282,7 +282,7 @@ const Stars = () => {
                         <div className='star-topic'>
                             <h2>{biggestStars[currentStarIndex].name}</h2>
                             <div className="star">
-                                <div className='star-img'>
+                                <div className='star-img str-img'>
                                     <div className="star-navigation">
 
                                         <div className="scroll-controls">

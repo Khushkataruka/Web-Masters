@@ -74,6 +74,22 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.3rem;
 }
+.galaxy-cont{
+    font-family: "Roboto Condensed", sans-serif;;
+}
+.galaxy-cont p{
+    width: 70%;
+    margin: auto;
+}
+@media (max-width:950px)
+{
+    .galaxy-cont {
+        font-family: "Roboto Condensed", sans-serif;
+    }
+    .galaxy-cont p{
+        display: none;
+    }
+}
 
 .star-details p {
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -82,15 +98,14 @@
 
 .phases1-g{
     border-radius: 60px;
-    margin-bottom: 8px;
+    margin: 18px;
+    padding: 18px;
     position: absolute;
-    bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 6%;
-    background-color: #1b1b1bc0;
 }
 
 .phase-link1-g {
@@ -107,6 +122,9 @@
 
 .phase-link1-g h2 {
     font-size: 38px;
+    padding: 10px;
+    background-color: antiquewhite;
+    border-radius: 20px;
 }
 
 .phase-link1-g:hover {
@@ -247,7 +265,6 @@
 }
 
 .star-topic h2 {
-    text-decoration: underline;
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -322,11 +339,6 @@
     background-repeat: no-repeat;
 }
 
-.container3 .star-img img {
-    width: 100%;
-    height: 80vh;
-    max-width: 100%;
-}
 
 @media (max-width: 1000px) {
     .star-img img {

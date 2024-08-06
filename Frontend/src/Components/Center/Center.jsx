@@ -13,9 +13,8 @@ const Center = () => {
 
     useEffect(() => {
         // Scroll to the top of the page when the component mounts
-        document.querySelector(".sc-hero").style.top="40%"
-        document.querySelector(".sc-hero").style.opacity="1"
-
+        document.querySelector(".sc-hero").style.top = "40%"
+        document.querySelector(".sc-hero").style.opacity = "1"
         window.scrollTo(0, 0);
     }, []);
 
@@ -25,24 +24,26 @@ const Center = () => {
 
     const handleCheckboxChangeSpaceX = () => {
         setIsExpandedSpaceX(!isExpandedSpaceX);
+        
     };
 
     const handleCheckboxChangeISRO = () => {
         setIsExpandedISRO(!isExpandedISRO);
+       
     };
 
     return (
         <>
             <Navbar />
             <div className='space-centers'>
-                <div className="video"> <video  src='c-video.mp4' autoPlay muted playsInline loop>
+                <div className="video"> <video src='c-video.mp4' autoPlay muted playsInline loop>
                     Unable to Play video</video>
                     <div className="sc-hero">
-                    <h1>Space Centres</h1>
-                    <p>"Space exploration is a force of nature unto itself that no other force in society can rival."
+                        <h1>Space Centres</h1>
+                        <p>"Space exploration is a force of nature unto itself that no other force in society can rival."
 
-                        — Neil deGrasse Tyson</p>
-                        </div>
+                            — Neil deGrasse Tyson</p>
+                    </div>
                 </div>
 
                 <div className="nasa">
@@ -220,7 +221,7 @@ const Center = () => {
                             <div className="sc-box-content">
                                 <div className="sc-topic">
                                     <div className="topic-heading">
-                                        <h3>Pioneering the Future of Space Travel</h3>
+                                        <h3>Future of Space Travel</h3>
                                     </div>
                                     <div className="topic-main"><p>
                                         SpaceX, founded by Elon Musk, is a private aerospace manufacturer and space transportation company that has revolutionized the space industry.

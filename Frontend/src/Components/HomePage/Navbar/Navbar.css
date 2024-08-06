@@ -76,7 +76,7 @@
 .underline {
     position: absolute;
     bottom: 0;
-    left: 10px;
+    left: 8px;
     width: 80%;
     background-color: white;
     transform: scaleX(0);
@@ -87,6 +87,9 @@
 .links ul li:hover .underline,
 .links ul li a:focus+.underline {
     transform: scaleX(1);
+}
+.links ul li a:hover{
+    color: white;
 }
 
 /* Dropdown Menu Styles */
@@ -306,3 +309,4 @@
         fill: white;
     }
 }
+

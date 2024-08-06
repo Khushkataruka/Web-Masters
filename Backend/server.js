@@ -209,6 +209,60 @@ app.post('/connect', async (req, res) => {
         })
     }
 })
+app.post("/subscribe", async (req, res) => {
+    const email = req.body.Email; // Extract email from request body
+    console.log('Received email:', email); // For debugging
+
+    if (!email) {
+        return res.status(400).send({
+            message: "Email is required",
+            status: 400
+        });
+    }
+
+    try {
+        // Check if user exists
+        const user = await Login_model.findOne({ email });
+        if (!user) {
+            return res.status(401).send({
+                message: "Please login to subscribe",
+                status: 401
+            });
+        }
+
+        // Set up email transporter
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'cosmicvoyage001@gmail.com',
+                pass: 'rqwp ovqn qkbo svnb'
+            }
+        });
+
+        const mailOptions = {
+            from: 'cosmicvoyage001@gmail.com',
+            to: email,
+            subject: 'Subscription Confirmation',
+            text: 'You have successfully subscribed to Cosmic Voyage. Thank you for subscribing!'
+        };
+
+        // Send email
+        await transporter.sendMail(mailOptions);
+
+        res.status(200).send({
+            message: "Subscribed successfully",
+            status: 200
+        });
+    } catch (error) {
+        console.error('Error sending email:', error); // Log the error for debugging
+        res.status(500).send({
+            message: "Failed to subscribe. Please try again later.",
+            status: 500,
+            error: error.message
+        });
+    }
+});
+
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);

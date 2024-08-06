@@ -266,7 +266,7 @@ const Galaxies = () => {
             const selectedPhase = galaxyPhases.find(phase => phase.id === id);
             setCurrentPhase(selectedPhase);
             setExpandedPhases(prev => ({ ...prev, [id]: false }));
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // window.scrollTo({ top: 0, behavior: 'smooth' });
         };
 
         links.forEach(link => {
@@ -300,7 +300,7 @@ const Galaxies = () => {
             <div className='cont-real'>
             <div className="video cont-video">
                 <video src='galaxyvid.mp4' autoPlay muted playsInline loop>Unable to Play video</video>
-                 <div className="sc-hero">
+                 <div className="sc-hero galaxy-cont">
                    <h1 className='video-h'>Galaxies</h1>
                    <p>"Explore the grandeur of galaxies, cosmic islands of stars, gas, and dark matter. Each galaxy, with its unique structure and beauty, tells a story of the universe's evolution and the mysteries of space. From spiral wonders to elliptical giants, these celestial formations capture the imagination and curiosity of all who gaze upon them."</p>
                  </div>
