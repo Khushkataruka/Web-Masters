@@ -71,7 +71,7 @@ const Solarsystem = () => {
                 </div>
                 <div className="scroll-content" id="scroll-content4">
                     <div className='box' id='entity'>
-                        <div className="text"><h2>Blackholes</h2></div>
+                        <div className="text"><h2>Constellations</h2></div>
                         <div className="b1"> <Link to="/blackhole" className="link">Learn more</Link></div>
                     </div>
                 </div>
