@@ -222,6 +222,7 @@
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
+    border-radius: 30px;
 }
 
 .container3-child-set {
@@ -338,6 +339,7 @@
     width: 100%;
     height: 80vh;
     max-width: 100%;
+    border-radius: 50px;
 }
 
 @media (max-width: 1000px) {

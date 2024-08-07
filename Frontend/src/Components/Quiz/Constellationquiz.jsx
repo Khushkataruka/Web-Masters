@@ -81,12 +81,6 @@ const Constellationquiz = () => {
         setCurrentQuestion(currentQuestion + 1);
     };
 
-    const handleRetakeQuiz = () => {
-        setCurrentQuestion(0);
-        setUserAnswer('');
-        setScore(0);
-        setShowAnswer(false);
-    };
 
     return (
         <div className="quiz-video-container">
@@ -129,7 +123,7 @@ const Constellationquiz = () => {
                     ) : (
                         <div className="quiz-result">
                             <h2>Your Score: {score} / {questions.length}</h2>
-                            <button className="quiz-next" onClick={handleRetakeQuiz}>Retake quiz</button>
+                            <Link to={"/quiz"}><button className="quiz-next" onClick={handleRetakeQuiz}>Retake quiz</button></Link>
                         </div>
                     )}
                 </div>

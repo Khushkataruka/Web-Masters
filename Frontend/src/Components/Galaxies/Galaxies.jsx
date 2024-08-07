@@ -253,11 +253,20 @@ const galaxyBackgrounds = {
     20: "url('https://www.transparenttextures.com/patterns/gplay.png'), linear-gradient(to bottom, #1a1a1a, #3a3a3a, #5a5a5a)"
 };
 
+
 const Galaxies = () => {
     const [currentPhase, setCurrentPhase] = useState(galaxyPhases[0]);
     const [currentgalaxyIndex, setCurrentgalaxyIndex] = useState(0);
     const [expandedPhases, setExpandedPhases] = useState({});
 
+
+    const handleClick = (event) => {
+        const id = parseInt(event.currentTarget.dataset.id);
+        const selectedPhase = galaxyPhases.find(phase => phase.id === id);
+        setCurrentPhase(selectedPhase);
+        setExpandedPhases(prev => ({ ...prev, [id]: false }));
+        window.scrollTo({ top: 800, behavior: 'smooth' });
+    };
     useEffect(() => {
         AOS.init({
             duration: 800,
@@ -269,23 +278,12 @@ const Galaxies = () => {
         window.scrollTo({ top: 0, behavior: 'instant' });
         const links = document.querySelectorAll(".phase-link1-g");
 
-        const handleClick = (event) => {
-            const id = parseInt(event.currentTarget.dataset.id);
-            const selectedPhase = galaxyPhases.find(phase => phase.id === id);
-            setCurrentPhase(selectedPhase);
-            setExpandedPhases(prev => ({ ...prev, [id]: false }));
-            // window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
+
 
         links.forEach(link => {
             link.addEventListener("click", handleClick);
         });
 
-        return () => {
-            links.forEach(link => {
-                link.removeEventListener("click", handleClick);
-            });
-        };
     }, []);
 
     const nextStar = () => {
@@ -308,7 +306,7 @@ const Galaxies = () => {
             <div className='cont-real'>
                 <div className="video cont-video">
                     <video src='galaxyvid.mp4' autoPlay muted playsInline loop>Unable to Play video</video>
-                    <div className="sc-hero galaxy-cont" data-aos='fade-up'>
+                    <div className="sc-hero galaxy-cont gal-par" data-aos='fade-up'>
                         <h1 className='video-h'>Galaxies</h1>
                         <p>"Explore the grandeur of galaxies, cosmic islands of stars, gas, and dark matter. Each galaxy, with its unique structure and beauty, tells a story of the universe's evolution and the mysteries of space. From spiral wonders to elliptical giants, these celestial formations capture the imagination and curiosity of all who gaze upon them."</p>
                     </div>
@@ -320,7 +318,7 @@ const Galaxies = () => {
                         <div className="star-phase-content">
                             <div className="star-image-container">
                                 <img src={currentPhase.image} alt={currentPhase.title} className='photo1' />
-                                <div className="phases1-g" data-aos='fade-up'>
+                                <div className="phases1-g">
                                     {galaxyPhases.map((phase) => (
                                         <div key={phase.id} className="phase-link1-g" data-id={phase.id}>
                                             <h2>{phase.title}</h2>
@@ -328,14 +326,14 @@ const Galaxies = () => {
                                     ))}
                                 </div>
                             </div>
-                            <div className="content1" data-aos='fade-up'>
+                            <div className="content1" data-aos='zoom-out'>
                                 {currentPhase && (
                                     <>
                                         <div className='star-heads'>
-                                            <h1>{currentPhase.title}</h1>
+                                            <h1  data-aos='fade-right'>{currentPhase.title}</h1>
                                             <p>{currentPhase.description}</p>
                                         </div>
-                                        <div className="star-details">
+                                        <div className="star-details"  data-aos='fade-left'>
                                             {currentPhase.details.slice(0, expandedPhases[currentPhase.id] ? undefined : 2).map((detail, index) => (
                                                 <div key={index} className="star-detail">
                                                     <h2>{detail.split(":")[0]}</h2>
@@ -379,7 +377,7 @@ const Galaxies = () => {
                                 <div className="star">
                                     <div className='star-img'>
 
-                                        <div className='present'  data-aos='zoom-in' style={{ backgroundImage: `url(${galaxies[currentgalaxyIndex].starImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                                        <div className='present' data-aos='flip-left' style={{ backgroundImage: `url(${galaxies[currentgalaxyIndex].starImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
                                             <div className="star-navigation">
                                                 <button onClick={prevStar} className='star-left-button'>
                                                     <ArrowCircleLeftOutlinedIcon />

@@ -143,9 +143,6 @@ const News = () => {
                         </nav>
                     )
                 }
-                <div className="news-real-foot">
-                    <Footer />
-                </div>
             </div>
         </div>
     );

@@ -5,6 +5,8 @@ import ArrowCircleRightTwoToneIcon from '@mui/icons-material/ArrowCircleRightTwo
 import ArrowCircleLeftTwoToneIcon from '@mui/icons-material/ArrowCircleLeftTwoTone';
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const starPhases = [
@@ -169,12 +171,20 @@ const Stars = () => {
             const selectedPhase = starPhases.find(phase => phase.id === id);
             setCurrentPhase(selectedPhase);
             setExpandedPhases(prev => ({ ...prev, [id]: false }));
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 800, behavior: 'smooth' });
         };
 
         links.forEach(link => {
             link.addEventListener("click", handleClick);
         });
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: true
+        });
+
 
         return () => {
             links.forEach(link => {
@@ -201,19 +211,19 @@ const Stars = () => {
         <>
             <Navbar />
             <div className='cont-real'>
-                <div className="video cont-video">
+                <div className="video cont-video"  >
                     <video src='starsvid.mp4' autoPlay muted playsInline loop>Unable to Play video</video>
-                    <div className="sc-hero">
+                    <div className="sc-hero" data-aos='fade-up'>
                         <h1 className='video-h'>Stars</h1>
                         <p>Witness the brilliance of the stars, each one a luminous beacon in the vast tapestry of the universe. The night sky, a celestial canvas, inspires awe and wonder in every observer.</p>
                     </div>
                 </div>
             </div>
-            <div className="star-real">
+            <div className="star-real" >
                 <div className="container2">
                     <div className="container2-child">
                         <div className="star-phase-content">
-                            <div className="star-image-container">
+                            <div className="star-image-container" data-aos='fade-down'>
                                 <img src={currentPhase.image} alt={currentPhase.title} className='photo1' />
                                 <div className="phases1">
                                     {starPhases.map((phase) => (
@@ -223,14 +233,14 @@ const Stars = () => {
                                     ))}
                                 </div>
                             </div>
-                            <div className="content1">
+                            <div className="content1" data-aos='zoom-out'>
                                 {currentPhase && (
                                     <>
                                         <div className='star-heads'>
-                                            <h1>{currentPhase.title}</h1>
+                                            <h1 data-aos='fade-left'>{currentPhase.title}</h1>
                                             <p>{currentPhase.description}</p>
                                         </div>
-                                        <div className="star-details">
+                                        <div className="star-details" data-aos='fade-right'>
                                             {currentPhase.details.slice(0, expandedPhases[currentPhase.id] ? undefined : 2).map((detail, index) => (
                                                 <div key={index} className="star-detail">
                                                     <h2>{detail.split(":")[0]}</h2>
@@ -273,7 +283,7 @@ const Stars = () => {
                             <div className="star">
                                 <div className='star-img'>
 
-                                    <div className='present' style={{ backgroundImage: `url(${biggestStars[currentStarIndex].starImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                                    <div className='present' data-aos='flip-right' style={{ backgroundImage: `url(${biggestStars[currentStarIndex].starImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
                                         <div className="star-navigation">
                                             <button onClick={prevStar} className='star-left-button'>
                                                 <ArrowCircleLeftOutlinedIcon />

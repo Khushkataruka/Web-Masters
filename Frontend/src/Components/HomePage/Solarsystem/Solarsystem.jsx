@@ -3,7 +3,8 @@ import './Solarsystem.css'; // Import your CSS file
 import { Link } from 'react-router-dom';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Solarsystem = () => {
     const scrollContainerRef = useRef(null);
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,17 +31,28 @@ const Solarsystem = () => {
             container.scrollTo({ left: currentSlide * container.clientWidth, behavior: 'smooth' });
         };
 
+
+
+
         window.addEventListener('resize', handleResize);
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, [currentSlide]);
+    useEffect(() => {
+        AOS.init({
+            duration: 800,
+            offset: 200,
+            easing: 'ease-in-out',
+            once: false,
+        });
+    }, []);
 
     return (
         <div className="scroll-container">
             <div className="scroll-content-container" ref={scrollContainerRef}>
                 <div className="scroll-content" id="scroll-content1">
-                    <div className='box' id='entity'>
+                    <div className='box' id='entity' data-aos='fade-up'>
                         <div className="text"><h2>Planets</h2></div>
                         <div className="b1"> <Link to="/planets" className="link">Learn more</Link></div>
                     </div>
