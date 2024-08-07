@@ -28,7 +28,24 @@
     background-size: cover;
     overflow: hidden;
 }
-
+.galaxy-cont {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    gap: 20px;
+    z-index: 30;
+    opacity: 1;
+    transition: all 1s ease-in;
+    color: rgb(250, 245, 245);
+}
+.galaxy-cont p{
+    color: rgb(249, 245, 245);
+    width: 50%;
+    margin: auto;
+    font-weight: 800;
+}
 .container2-child {
     border-radius: 15px;
 }
@@ -242,7 +259,7 @@
 }
 
 .container3-child-set h2 {
-    text-decoration: underline;
+ 
     padding-bottom: 2rem;
 }
 
@@ -256,7 +273,7 @@
 }
 
 .star-topic h2 {
-    text-decoration: underline;
+ 
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -371,7 +388,7 @@
     font-size: 17.5px;
     font-weight: 100;
     color: #d1d1d1;
-    text-decoration: underline;
+ 
 }
 
 .pages-s a:hover {
@@ -422,7 +439,7 @@
 }
 
 .data-s {
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 .data-s:hover{
     transform: scale(1.03);

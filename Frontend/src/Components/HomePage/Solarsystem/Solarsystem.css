@@ -20,25 +20,26 @@
 }
 
 #scroll-content1 {
-  background: linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%), url(planets.jpg) center no-repeat;
+  background: linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%), url('planets.jpg') center no-repeat;
   background-size: cover;
 
 }
 
 #scroll-content2 {
-  background: linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%), url(star.webp) center no-repeat;
+  background: linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%), url('star.webp') center no-repeat;
   background-size: cover;
 
 }
 
 #scroll-content3 {
-  background: linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%), url(galaxy.jpg) center no-repeat;
+  background: linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%), url('galaxy.jpg') center no-repeat;
   background-size: cover;
 
 }
 
+
 #scroll-content4 {
-  background: linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%), url(const.jpeg) center no-repeat;
+  background: linear-gradient(65.99deg, rgba(0, 0, 0, 0.7) 0%, transparent 99.04%), url('const.jpeg') center no-repeat;
   background-size: cover;
 
 }

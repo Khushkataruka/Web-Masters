@@ -306,7 +306,7 @@ const Galaxies = () => {
             <div className='cont-real'>
                 <div className="video cont-video">
                     <video src='galaxyvid.mp4' autoPlay muted playsInline loop>Unable to Play video</video>
-                    <div className="sc-hero galaxy-cont gal-par" data-aos='fade-up'>
+                    <div className="galaxy-cont gal-par" data-aos='fade-up'>
                         <h1 className='video-h'>Galaxies</h1>
                         <p>"Explore the grandeur of galaxies, cosmic islands of stars, gas, and dark matter. Each galaxy, with its unique structure and beauty, tells a story of the universe's evolution and the mysteries of space. From spiral wonders to elliptical giants, these celestial formations capture the imagination and curiosity of all who gaze upon them."</p>
                     </div>
@@ -318,7 +318,7 @@ const Galaxies = () => {
                         <div className="star-phase-content">
                             <div className="star-image-container">
                                 <img src={currentPhase.image} alt={currentPhase.title} className='photo1' />
-                                <div className="phases1-g">
+                                <div className="phases1-g" >
                                     {galaxyPhases.map((phase) => (
                                         <div key={phase.id} className="phase-link1-g" data-id={phase.id}>
                                             <h2>{phase.title}</h2>
@@ -326,7 +326,7 @@ const Galaxies = () => {
                                     ))}
                                 </div>
                             </div>
-                            <div className="content1" data-aos='zoom-out'>
+                            <div className="content1" data-aos='zoom-in'>
                                 {currentPhase && (
                                     <>
                                         <div className='star-heads'>
@@ -377,7 +377,7 @@ const Galaxies = () => {
                                 <div className="star">
                                     <div className='star-img'>
 
-                                        <div className='present' data-aos='flip-left' style={{ backgroundImage: `url(${galaxies[currentgalaxyIndex].starImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                                        <div className='present' data-aos='fade-up' style={{ backgroundImage: `url(${galaxies[currentgalaxyIndex].starImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
                                             <div className="star-navigation">
                                                 <button onClick={prevStar} className='star-left-button'>
                                                     <ArrowCircleLeftOutlinedIcon />

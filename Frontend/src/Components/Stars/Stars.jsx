@@ -223,9 +223,9 @@ const Stars = () => {
                 <div className="container2">
                     <div className="container2-child">
                         <div className="star-phase-content">
-                            <div className="star-image-container" data-aos='fade-down'>
-                                <img src={currentPhase.image} alt={currentPhase.title} className='photo1' />
-                                <div className="phases1">
+                            <div className="star-image-container" >
+                                <img src={currentPhase.image} alt={currentPhase.title} className='photo1'  />
+                                <div className="phases1" >
                                     {starPhases.map((phase) => (
                                         <div key={phase.id} className="phase-link1" data-id={phase.id}>
                                             <h2>{phase.title}</h2>
@@ -233,7 +233,7 @@ const Stars = () => {
                                     ))}
                                 </div>
                             </div>
-                            <div className="content1" data-aos='zoom-out'>
+                            <div className="content1" data-aos='zoom-in'>
                                 {currentPhase && (
                                     <>
                                         <div className='star-heads'>
@@ -283,7 +283,7 @@ const Stars = () => {
                             <div className="star">
                                 <div className='star-img'>
 
-                                    <div className='present' data-aos='flip-right' style={{ backgroundImage: `url(${biggestStars[currentStarIndex].starImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                                    <div className='present' data-aos='fade-up' style={{ backgroundImage: `url(${biggestStars[currentStarIndex].starImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
                                         <div className="star-navigation">
                                             <button onClick={prevStar} className='star-left-button'>
                                                 <ArrowCircleLeftOutlinedIcon />

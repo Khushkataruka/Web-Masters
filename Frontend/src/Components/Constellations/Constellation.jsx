@@ -85,11 +85,11 @@ const Constellation = () => {
                             </ul>
                             <h1>Mythology:</h1>
                             <p>In Greek mythology, Orion was a giant huntsman whom Zeus placed among the stars. Orion is often depicted as facing the charging bull, Taurus, with his club raised and his hunting dog, Canis Major, at his feet.</p>
-                            <img src="src/Components/Constellations/const.jpg" alt="Milky Way" />
+                            <img src="const.jpg" alt="Milky Way" />
                             <p>Orion, known as "The Hunter," is a prominent constellation visible worldwide. It features notable stars like Betelgeuse, a red supergiant, and Rigel, a blue supergiant. Orion's Belt, formed by the stars Mintaka, Alnilam, and Alnitak, is easily recognizable. The constellation hosts the Orion Nebula, a bright star-forming region, and the Horsehead Nebula. In Greek mythology, Orion was a giant huntsman placed among the stars by Zeus. Orion is best observed from January to March and serves as a key reference point for locating other stars and constellations.</p>
                             <h1>Constellations:</h1>
                             <fieldset className="cont-fieldset newAnimated">
-                                <legend><img src="src/Components/Constellations/robot_shortanswer.en.png" alt="robot" /></legend>
+                                <legend><img src="robot_shortanswer.en.png" alt="robot" /></legend>
                                 <h3>The short answer:</h3>
                                 <p>There are a few different definitions of constellations, but many people think of constellations as a group of stars. The constellations you can see at night depend on your location on Earth and the time of year. Constellations were named after objects, animals, and people long ago. Astronomers today still use constellations to name stars and meteor showers.</p>
                             </fieldset>
@@ -98,18 +98,18 @@ const Constellation = () => {
                             <h1>What are Constellations?</h1>
                             <p>There are a few different definitions of constellations, but many people think of constellations as a group of stars. Often, it's a group of stars that looks like a particular shape in the sky and has been given a name. These stars are far away from Earth. They are not connected to each other at all. Some stars in a constellation might be close while others are very far away. But, if you were to draw lines in the sky between the stars like a dot-to-dot puzzle – and use lots of imagination – the picture would look like an object, animal, or person.</p>
                             <p>Over time, cultures around the world have had different names and numbers of constellations depending on what people thought they saw. Today, there are 88 officially recognized constellations.</p>
-                            <img src="src/Components/Constellations/big-dipper.en.jpg" alt="Big Dipper" />
+                            <img src="big-dipper.en.jpg" alt="Big Dipper" />
                             <p className="cont-highlight newAnimated">This group of stars is called the "big dipper." If you trace a line between the stars, it looks like a ladle, or dipper, that you'd use to dip soup from a pot. This photo of the big dipper was taken by an astronaut on the International Space Station, but you can often see this group of stars from the ground, too! Credit: NASA/Donald R. Pettit</p>
                             <h2>What constellations can you see in the night sky?</h2>
                             <p>The constellations you can see at night depend on the time of year. Earth orbits around the Sun once each year. Our view into space through the night sky changes as we orbit. So, the night sky looks slightly different each night because Earth is in a different spot in its orbit. The stars appear each night to move slightly west of where they were the night before.</p>
                             <p>Your location on Earth also determines what stars and constellations you see, and how high they appear to rise in the sky. The Northern Hemisphere is always pointing in a different direction than the Southern Hemisphere. This means that stargazers in Australia, for example, get a slightly different view of the sky and can see a few different constellations than those in the United States.</p>
                             <p>It can be a little confusing to picture how the night sky changes as we orbit the Sun. You can see how it all works in the illustration below.</p>
-                            <img src="src/Components/Constellations/constellations-chart.en.jpg" alt="Constellations Chart" />
+                            <img src="constellations-chart.en.jpg" alt="Constellations Chart" />
                             <p className="cont-highlight newAnimated">A chart showing some of the constellations that are visible from the Northern Hemisphere in different times of year. Credit: NASA/JPL-Caltech</p>
                             <p>For example, say you’re in the Northern Hemisphere looking into the night sky on September 21. You’ll probably be able to see the constellation Pisces. But you won’t see Virgo because that constellation is on the other side of the Sun. During that time of year, Virgo’s stars would only be visible during the daytime – but you’d never see them because of the brightness of our Sun.</p>
                             <p>Want more? Our star finder activity is a great way to have some fun and learn about the constellations visible in our night sky each month.</p>
                             <h3>What’s the difference between astrology and astronomy?</h3>
-                            <img src="src/Components/Constellations/per-img.jpg" alt="Orion Nebula" />
+                            <img src="per-img.jpg" alt="Orion Nebula" />
                             <p className="cont-highlight newAnimated">This image of the Orion nebula was captured by the Hubble Space Telescope. It is located in the constellation Orion, below the three stars that form the hunter's belt. Credit: NASA, ESA, M. Robberto</p>
                             <p>Astronomy is the scientific study of everything in outer space. Astronomers and other scientists study stars and galaxies, most of which are many light-years away from Earth. Studying the scientific properties of these objects in space helps us to understand how the universe was made, what else is out there, and how we fit in.</p>
                             <p>Astrology is not the same thing as astronomy. As a science, astronomy follows the scientific process involving evidence and data. Astrology is based on the belief that the location of certain stars and planets in the sky can predict the future or describe what a person is like. While astrology is important to some cultural traditions, its claims are not based on scientific evidence.</p>
