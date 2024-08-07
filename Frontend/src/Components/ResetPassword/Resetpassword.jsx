@@ -15,7 +15,7 @@ const ResetPassword = () => {
     const onSubmit = async (data) => {
         setLoader(true);
         try {
-            const response = await fetch(`http://localhost:3000/reset-password/${id}/${token}`, {
+            const response = await fetch(`http://localhost:3001/reset-password/${id}/${token}`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

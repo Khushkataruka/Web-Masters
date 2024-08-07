@@ -13,7 +13,7 @@ function Forgot() {
     const onSubmit = async (data) => {
         setloader(true)
         try {
-            const response = await fetch("http://localhost:3000/forgot-password", {
+            const response = await fetch("http://localhost:3001/forgot-password", {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
