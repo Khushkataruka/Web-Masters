@@ -243,7 +243,7 @@ app.post("/subscribe", async (req, res) => {
             from: 'cosmicvoyage001@gmail.com',
             to: email,
             subject: 'Welcome Aboard Your Cosmic Voyage!',
-            text: Congratulations! ${user.name} You’ve just embarked on an extraordinary journey with Cosmic Voyage. Prepare to explore the wonders of the universe and stay tuned for stellar updates, exclusive content, and intergalactic adventures. Thank you for joining our cosmic crew!
+            text: `Congratulations! ${user.name} You’ve just embarked on an extraordinary journey with Cosmic Voyage. Prepare to explore the wonders of the universe and stay tuned for stellar updates, exclusive content, and intergalactic adventures. Thank you for joining our cosmic crew!`
         };
 
         // Send email
