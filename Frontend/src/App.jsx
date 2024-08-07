@@ -133,13 +133,17 @@ function App() {
       path: "/quiz",
       element: <>
         <Navbar />
-        <Type_quiz /></>
+        <Type_quiz />
+        <Footer />
+      </>
     },
     {
       path: "/quiz-general",
       element: <>
         <Navbar />
         <GeneralQuiz />
+        <Footer />
+
       </>
     },
     {
@@ -147,6 +151,8 @@ function App() {
       element: <>
         <Navbar />
         <GalaxyQuiz />
+        <Footer />
+
       </>
     },
     {
@@ -154,6 +160,8 @@ function App() {
       element: <>
         <Navbar />
         <PlanetsQuiz />
+        <Footer />
+
       </>
     },
     {
@@ -161,6 +169,8 @@ function App() {
       element: <>
         <Navbar />
         <Constellationquiz />
+        <Footer />
+
       </>
     }
   ]);

@@ -20,7 +20,11 @@
 .news-card {
     display: flex;
 }
-
+.news-real-foot{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
 .news-card img {
     width: 12rem;
 }

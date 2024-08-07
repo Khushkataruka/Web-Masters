@@ -19,7 +19,6 @@ const Center = () => {
             offset: 200,
             easing: 'ease-in-out',
             once: false, // Set this to false to allow animation every time you scroll
-            mirror: true, // Set this to true to allow elements to animate out while scrolling past them
         });
 
         // Scroll to the top of the page when the component mounts
@@ -28,10 +27,6 @@ const Center = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    // Reinitialize AOS when state changes affect layout
-    useEffect(() => {
-        AOS.refresh();
-    }, [isExpandedNASA, isExpandedSpaceX, isExpandedISRO]);
 
     const handleCheckboxChangeNASA = () => {
         setIsExpandedNASA(!isExpandedNASA);
@@ -53,7 +48,7 @@ const Center = () => {
                     <video src='c-video.mp4' autoPlay muted playsInline loop>
                         Unable to Play video
                     </video>
-                    <div className="sc-hero" data-aos="zoom-in">
+                    <div className="sc-hero" data-aos="zoom-in-up">
                         <h1>Space Centres</h1>
                         <p>"Space exploration is a force of nature unto itself that no other force in society can rival." — Neil deGrasse Tyson</p>
                     </div>
@@ -79,8 +74,8 @@ const Center = () => {
                 </div>
                 <div className='tt'>
                     <input type="checkbox" id="myCheckboxNASA" checked={isExpandedNASA} onChange={handleCheckboxChangeNASA} />
-                    <div className="sc-box" >
-                        <div className="sc-box-child" data-aos="zoom-in-up">
+                    <div className="sc-box">
+                        <div className="sc-box-child" data-aos="zoom-in-up-up">
                             <div className="sc-box-content">
                                 <div className="sc-topic">
                                     <div className="topic-heading">
@@ -95,8 +90,7 @@ const Center = () => {
                                     </div>
                                 </div>
                                 <div className="sc-img">
-                                    <div className="sc-img-child">
-                                    </div>
+                                    <div className="sc-img-child"></div>
                                 </div>
                             </div>
                         </div>
@@ -113,9 +107,9 @@ const Center = () => {
                                 <CloseIcon />
                             </label>
                         </div>
-                        <div className="sc-slide-child">
+                        <div className="sc-slide-child" >
                             <div className="sc-slide-main">
-                                <div className="ksc" data-aos="zoom-in">
+                                <div className="ksc" data-aos="zoom-in-up">
                                     <div className="sc-box-child" >
                                         <div className="sc-box-content flex">
                                             <div className="sc-img">
@@ -134,7 +128,7 @@ const Center = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="jsc" data-aos="zoom-in">
+                                <div className="jsc" data-aos="zoom-in-up">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex1">
                                             <div className="sc-img">
@@ -158,7 +152,7 @@ const Center = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="jpl" data-aos="zoom-in">
+                                <div className="jpl" data-aos="zoom-in-up">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex">
                                             <div className="sc-img">
@@ -212,7 +206,7 @@ const Center = () => {
                 <div className='tt'>
                     <input type="checkbox" id="myCheckboxSpaceX" checked={isExpandedSpaceX} onChange={handleCheckboxChangeSpaceX} />
                     <div className="sc-box" >
-                        <div className="sc-box-child" data-aos="zoom-in-up">
+                        <div className="sc-box-child" data-aos="zoom-in-up-up">
                             <div className="sc-box-content">
                                 <div className="sc-topic">
                                     <div className="topic-heading">
@@ -252,9 +246,9 @@ const Center = () => {
                                 <CloseIcon />
                             </label>
                         </div>
-                        <div className="sc-slide-child">
+                        <div className="sc-slide-child" >
                             <div className="sc-slide-main">
-                                <div className="falcon" data-aos="zoom-in">
+                                <div className="falcon" data-aos="zoom-in-up">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex">
                                             <div className="sc-img">
@@ -280,7 +274,7 @@ const Center = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="dragon" data-aos="zoom-in">
+                                <div className="dragon" data-aos="zoom-in-up">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex1">
                                             <div className="sc-img">
@@ -305,7 +299,7 @@ const Center = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="starship" data-aos="zoom-in">
+                                <div className="starship" data-aos="zoom-in-up">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex">
                                             <div className="sc-img">
@@ -360,7 +354,7 @@ const Center = () => {
                 <div className='tt'>
                     <input type="checkbox" id="myCheckboxISRO" checked={isExpandedISRO} onChange={handleCheckboxChangeISRO} />
                     <div className="sc-box" >
-                        <div className="sc-box-child" data-aos="zoom-in-up">
+                        <div className="sc-box-child" data-aos="zoom-in-up-up">
                             <div className="sc-box-content">
                                 <div className="sc-topic">
                                     <div className="topic-heading">
@@ -399,9 +393,9 @@ const Center = () => {
                                 <CloseIcon />
                             </label>
                         </div>
-                        <div className="sc-slide-child">
+                        <div className="sc-slide-child" >
                             <div className="sc-slide-main">
-                                <div className="chandrayaan" data-aos="zoom-in">
+                                <div className="chandrayaan" data-aos="zoom-in-up">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex">
                                             <div className="sc-img">
@@ -426,8 +420,8 @@ const Center = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mangalyaan" data-aos="zoom-in">
-                                    <div className="sc-box-child">
+                                <div className="mangalyaan" >
+                                    <div className="sc-box-child" data-aos="zoom-in-up">
                                         <div className="sc-box-content flex1">
                                             <div className="sc-img">
                                                 <div className="mangalyaan-img">
@@ -449,7 +443,7 @@ const Center = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="aditya" data-aos="zoom-in">
+                                <div className="aditya" data-aos="zoom-in-up">
                                     <div className="sc-box-child">
                                         <div className="sc-box-content flex">
                                             <div className="sc-img">

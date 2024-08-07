@@ -1,6 +1,6 @@
 .star-real {
     background-color: #121212;
-   font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     overflow-x: hidden;
     /* margin-top: 63px; */
 }
@@ -63,29 +63,29 @@
 
 .star-heads h1 {
     font-size: 32px;
-   font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     margin-bottom: 10px;
     color: white;
 }
 
 .star-heads p {
-   font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 1.2rem;
 }
 
 .star-details .star-detail {
-   font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     margin-top: 10px;
 }
 
 .star-details h2 {
     color: white;
-   font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 1.3rem;
 }
 
 .star-details p {
-   font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 1.18rem;
 }
 
@@ -112,7 +112,7 @@
 
 .phase-link1-g {
     text-align: center;
-    color: #ffffffed;
+    color: #d1d1d1;
     border-radius: 0px;
     width: 185px;
     height: 45px;
@@ -122,9 +122,6 @@
     align-items: center;
 }
 
-.phase-link1-g h2 {
-    font-size: 28px;
-}
 
 .phase-link1-g:hover {
     color: white;
@@ -265,7 +262,7 @@
 }
 
 .star-data p {
-   font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     line-height: 2rem;
     font-size: 1rem;
     margin: 3rem 0rem;
@@ -406,9 +403,24 @@
     width: 100px;
     height: 30px;
     cursor: pointer;
+    border: none;
     border-radius: 25px;
+}
+
+.phase-more:hover {
+    background-color: rgba(46, 46, 46, 0.716);
+    color: white;
+    transform: scale(1.05);
+}
+
+.star-more:hover {
+    transform: scale(1.05);
 }
 
 .data-s {
     text-decoration: underline;
+}
+.data-s:hover{
+    transform: scale(1.03);
+    font-weight: bold;
 }

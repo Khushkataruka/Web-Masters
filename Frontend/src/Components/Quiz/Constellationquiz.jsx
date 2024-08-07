@@ -31,7 +31,7 @@ const questions = [
     },
     {
         question: "Which constellation is known as the Queen, represented by a W-shaped pattern of stars?",
-        options: [ "Andromeda", "Pegasus", "Auriga","Cassiopeia"],
+        options: ["Andromeda", "Pegasus", "Auriga", "Cassiopeia"],
         answer: "Cassiopeia"
     },
     {
@@ -90,51 +90,51 @@ const Constellationquiz = () => {
 
     return (
         <div className="quiz-video-container">
-        <video src='https://videos.pexels.com/video-files/856309/856309-hd_1920_1080_30fps.mp4' autoPlay muted playsInline loop className="background-video">
-            Unable to Play video
-        </video>
-        <div className="quiz-container">
-            <div className="q-container">
-                <h1>Quiz App</h1>
-                <hr />
-                {currentQuestion < questions.length ? (
-                    <>
-                        <h2>{questions[currentQuestion].question}</h2>
-                        <ul>
-                            {questions[currentQuestion].options.map((option, index) => (
-                                <li
-                                    key={index}
-                                    onClick={() => !showAnswer && handleAnswer(option)}
-                                    className={
-                                        showAnswer
-                                            ? option === questions[currentQuestion].answer
-                                                ? 'correct'
-                                                : option === userAnswer
-                                                    ? 'wrong'
-                                                    : ''
-                                            : ''
-                                    }
-                                >
-                                    {option}
-                                </li>
-                            ))}
-                        </ul>
-                        {showAnswer && (
-                            <button className="quiz-next" onClick={handleNextQuestion}>
-                                Next
-                            </button>
-                        )}
-                        <div className="quiz-index">{currentQuestion + 1} of {questions.length} questions</div>
-                    </>
-                ) : (
-                    <div className="quiz-result">
-                        <h2>Your Score: {score} / {questions.length}</h2>
-                        <button className="quiz-next" onClick={handleRetakeQuiz}>Retake quiz</button>
-                    </div>
-                )}
+            <video src='all-quiz.mp4' autoPlay muted playsInline loop className="background-video">
+                Unable to Play video
+            </video>
+            <div className="quiz-container">
+                <div className="q-container">
+                    <h1>Quiz App</h1>
+                    <hr />
+                    {currentQuestion < questions.length ? (
+                        <>
+                            <h2>{questions[currentQuestion].question}</h2>
+                            <ul>
+                                {questions[currentQuestion].options.map((option, index) => (
+                                    <li
+                                        key={index}
+                                        onClick={() => !showAnswer && handleAnswer(option)}
+                                        className={
+                                            showAnswer
+                                                ? option === questions[currentQuestion].answer
+                                                    ? 'correct'
+                                                    : option === userAnswer
+                                                        ? 'wrong'
+                                                        : ''
+                                                : ''
+                                        }
+                                    >
+                                        {option}
+                                    </li>
+                                ))}
+                            </ul>
+                            {showAnswer && (
+                                <button className="quiz-next" onClick={handleNextQuestion}>
+                                    Next
+                                </button>
+                            )}
+                            <div className="quiz-index">{currentQuestion + 1} of {questions.length} questions</div>
+                        </>
+                    ) : (
+                        <div className="quiz-result">
+                            <h2>Your Score: {score} / {questions.length}</h2>
+                            <button className="quiz-next" onClick={handleRetakeQuiz}>Retake quiz</button>
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
-    </div>
     );
 };
 

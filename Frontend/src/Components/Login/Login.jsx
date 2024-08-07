@@ -57,7 +57,7 @@ function Login() {
             <Navbar isLogged={isLogged} /> {/* Pass islogged state to Navbar */}
             <div className="login-container">
                 <video autoPlay muted loop id="login-video">
-                    <source src="https://cdn.pixabay.com/video/2016/02/10/2118-155244104_large.mp4" type="video/mp4" />
+                    <source src="log-vi.mp4" type="video/mp4" />
                     Your browser does not support HTML5 video.
                 </video>
                 <div className="login-form-container">

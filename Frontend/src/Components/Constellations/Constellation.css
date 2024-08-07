@@ -1,28 +1,33 @@
+/* Basic styling */
 .cont-real {
     position: relative;
-    background-color: #121212;
+    background-color: #121212f2;
     color: #d1d1d1;
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
+    font-family: 'proxima-nova', sans-serif;
     line-height: 1.6;
     width: 100%;
+}
+.newAnimated{
+    transition: all 0.4s ease-in;
+}
+.cont-temp{
+    padding: 1rem 2rem;
 }
 
 /* Hero section */
 .cont-hero {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-    justify-content: center;
     background: url('mainimg.jpg');
     background-size: cover;
     color: #ffffff;
-    padding: 0.1rem 2rem;
+    padding: 5rem 3rem;
+    /* padding-left: 5rem; */
     animation: fadeIn 2s ease-in-out;
-    height: 700px;
+    height: 400px;
 }
 
 .cont-hero h1 {
-    font-size: 3rem;
+    font-size: 5rem;
     animation: slideInDown 1s ease-in-out;
 }
 
@@ -33,7 +38,7 @@
 
 /* Content styles */
 .cont-know {
-    margin: 2rem auto;
+    margin: 2rem auto 0 auto;
     padding: 0 2rem;
     animation: fadeIn 2s ease-in-out;
 }
@@ -59,13 +64,15 @@
 .cont-fieldset {
     margin: 2rem;
     padding: 1.5rem;
-    border: 1px solid #ff6f61;
+    border: 1px solid #0757a1;
     border-radius: 8px;
     transition: all 0.3s ease-in;
 }
 
 .newAnimated:hover {
     transform: scale(1.03);
+
+   
 }
 
 .cont-fieldset legend img {
@@ -105,7 +112,7 @@
 }
 
 .newAnimated:hover {
-    transform: scale(1.03);
+    transform: scale(1.5);
 }
 
 .cont-main img {
@@ -115,14 +122,18 @@
 }
 
 .cont-highlight {
-    background-color: rgba(255, 111, 97, 0.2);
+    background-color: rgba(65, 77, 247, 0.2);
     padding: 0.5rem;
-    border-left: 4px solid #ff6f61;
+    border-left: 4px solid #0757a1;
+    padding: 20px;
+    line-height: 1.5;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .cont-small {
     padding: 1rem 2rem;
-    background-color: rgba(255, 111, 97, 0.1);
+    background-color: rgba(65, 77, 247, 0.2);
     border-radius: 8px;
     transition: all 0.3s ease-in;
 }
@@ -189,4 +200,43 @@
     .cont-main h1 {
         font-size: 1.5rem;
     }
+    .cont-know{
+        /* padding: 0; */
+    }
+    .cont-main{
+        padding: 0;
+        padding-bottom: 10px;
+
+    }
+    .cont-temp{
+        padding: 0;
+    }
+    .cont-real{
+        /* margin-bottom: 10px; */
+    }
+    .learn-cont-btn{
+        margin-bottom: 0;
+        padding: 0;
+    }
+}
+.learn-cont-btn {
+    display: block;
+    margin-top: 20px ;
+    padding: 10px 20px;
+    background-color: #404041da;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+}
+
+.learn-cont-btn:hover {
+    background-color: #141414;
+    transform: scale(1.05);
+}
+
+.learn-cont-btn.hidden {
+    display: none;
 }
